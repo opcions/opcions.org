@@ -1,0 +1,8 @@
+uuid: ce82dd0f-4183-4ae6-af08-8de4330456fd
+langcode: ca
+status: true
+dependencies: {  }
+id: html_week
+label: 'Setmana HTML'
+locked: true
+pattern: Y-\WW

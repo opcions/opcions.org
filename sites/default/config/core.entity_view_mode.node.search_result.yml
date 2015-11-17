@@ -1,0 +1,10 @@
+uuid: 064b85d2-5435-4c13-9d00-d5a1024ee949
+langcode: ca
+status: false
+dependencies:
+  module:
+    - node
+id: node.search_result
+label: 'Destaca els resultats de la cerca realitzada'
+targetEntityType: node
+cache: true

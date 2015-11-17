@@ -1,0 +1,18 @@
+uuid: 5d0552c2-6235-40de-8506-067d12db727c
+langcode: ca
+status: true
+dependencies:
+  module:
+    - user
+id: user.user.changed
+field_name: changed
+entity_type: user
+bundle: user
+label: Canviat
+description: 'The time that the user was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

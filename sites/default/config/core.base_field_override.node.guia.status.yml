@@ -1,0 +1,22 @@
+uuid: 98635b4c-6073-4cdf-a600-ffdde763016f
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.guia
+id: node.guia.status
+field_name: status
+entity_type: node
+bundle: guia
+label: 'Estat de la publicació'
+description: 'Un booleà que indica si el node està publicat.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Actiu
+  off_label: Inactiu
+field_type: boolean

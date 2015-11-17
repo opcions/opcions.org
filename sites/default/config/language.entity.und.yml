@@ -1,0 +1,9 @@
+uuid: 4038957e-5ab6-4cfc-8600-b46e348b1ddf
+langcode: ca
+status: true
+dependencies: {  }
+id: und
+label: 'Sense especificar'
+direction: ltr
+weight: 2
+locked: true

@@ -1,0 +1,27 @@
+{
+    "alias": "console.phar",
+    "chmod": "0755",
+    "directories": [
+        "config",
+        "src",
+        "templates"
+    ],
+    "files": [
+        "config.yml",
+        "bin/console.php",
+        "vendor/autoload.php"
+    ],
+    "finder": [
+        {
+            "name": "/(\\.php|\\.json|\\.yml|\\.twig)$/",
+            "exclude": ["Tests","tests", "docs"],
+            "in": "vendor"
+        }
+    ],
+    "compactors": [
+        "Herrera\\Box\\Compactor\\Php"
+    ],
+    "main": "bin/console",
+    "output": "console.phar",
+    "stub": true
+}

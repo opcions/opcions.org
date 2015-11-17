@@ -1,0 +1,11 @@
+uuid: 68216f08-b58e-400d-b63d-61aa4a04bc20
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+id: node_publish_action
+label: 'Publica el contingut'
+type: node
+plugin: node_publish_action
+configuration: {  }

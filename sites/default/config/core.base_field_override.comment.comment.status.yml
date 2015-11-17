@@ -1,0 +1,22 @@
+uuid: f9291149-18ef-4741-8900-f4aa4acaf34e
+langcode: ca
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+id: comment.comment.status
+field_name: status
+entity_type: comment
+bundle: comment
+label: 'Estat de la publicació'
+description: 'Un booleà indicant si el comentari està publicat.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Actiu
+  off_label: Inactiu
+field_type: boolean

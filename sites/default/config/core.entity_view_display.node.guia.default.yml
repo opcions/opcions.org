@@ -1,0 +1,44 @@
+uuid: 6f2ae877-d003-4e76-9116-22b0d0e7c4ed
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.node.guia.body
+    - field.field.node.guia.field_article_reference
+    - field.field.node.guia.field_shortname
+    - node.type.guia
+  module:
+    - text
+    - user
+id: node.guia.default
+targetEntityType: node
+bundle: guia
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_article_reference:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_shortname:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

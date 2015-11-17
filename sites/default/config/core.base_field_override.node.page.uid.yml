@@ -1,0 +1,20 @@
+uuid: c9096f5a-35b5-472e-b300-db083ff5d8fe
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.uid
+field_name: uid
+entity_type: node
+bundle: page
+label: 'Elaborat per'
+description: 'El nom d''usuari de l''autor del contingut.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

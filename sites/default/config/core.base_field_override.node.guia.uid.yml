@@ -1,0 +1,20 @@
+uuid: 4659b7b1-4ee5-471e-a000-b0537eefe5a4
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.guia
+id: node.guia.uid
+field_name: uid
+entity_type: node
+bundle: guia
+label: 'Elaborat per'
+description: 'El nom d''usuari de l''autor del contingut.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

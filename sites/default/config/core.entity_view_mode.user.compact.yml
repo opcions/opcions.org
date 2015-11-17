@@ -1,0 +1,10 @@
+uuid: 58f9f590-515c-4f90-9015-2195b758f0ff
+langcode: ca
+status: true
+dependencies:
+  module:
+    - user
+id: user.compact
+label: Compacta
+targetEntityType: user
+cache: true

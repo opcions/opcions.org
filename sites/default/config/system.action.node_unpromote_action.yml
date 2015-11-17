@@ -1,0 +1,11 @@
+uuid: a2397255-cb4a-4c04-9e00-bd10bb11aebe
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+id: node_unpromote_action
+label: 'Esborra el contingut de la portada'
+type: node
+plugin: node_unpromote_action
+configuration: {  }

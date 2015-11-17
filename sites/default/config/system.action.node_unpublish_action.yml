@@ -1,0 +1,11 @@
+uuid: e6b57449-aae1-48da-b006-6f7bd66053ac
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+id: node_unpublish_action
+label: 'Retira el contingut'
+type: node
+plugin: node_unpublish_action
+configuration: {  }

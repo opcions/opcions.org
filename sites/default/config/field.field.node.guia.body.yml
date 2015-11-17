@@ -1,0 +1,22 @@
+uuid: da5c6975-59f8-4be8-942b-43c9f0b694a5
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.guia
+  module:
+    - text
+id: node.guia.body
+field_name: body
+entity_type: node
+bundle: guia
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

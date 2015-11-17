@@ -1,0 +1,20 @@
+uuid: a289c7c9-cdc3-4a86-b35e-94c65833cd01
+langcode: ca
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - seven
+id: seven_help
+theme: seven
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Ajuda
+  provider: help
+  label_display: '0'
+visibility: {  }

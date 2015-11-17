@@ -1,0 +1,22 @@
+uuid: 3b635f38-c9f1-403a-861c-2870e614ee2c
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.guia
+id: node.guia.promote
+field_name: promote
+entity_type: node
+bundle: guia
+label: 'Promogut a la portada'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Actiu
+  off_label: Inactiu
+field_type: boolean

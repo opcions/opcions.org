@@ -1,0 +1,8 @@
+uuid: ab486b58-3923-47f0-ac00-bb800e0222f2
+langcode: ca
+status: true
+dependencies: {  }
+id: html_month
+label: 'Mes HTML'
+locked: true
+pattern: Y-m

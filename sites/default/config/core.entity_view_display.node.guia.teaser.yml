@@ -1,0 +1,31 @@
+uuid: eab32c4c-5276-4022-9800-0b1b7eb13565
+langcode: ca
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.guia.body
+    - field.field.node.guia.field_article_reference
+    - field.field.node.guia.field_shortname
+    - node.type.guia
+  module:
+    - text
+    - user
+id: node.guia.teaser
+targetEntityType: node
+bundle: guia
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_article_reference: true
+  field_shortname: true
+  langcode: true

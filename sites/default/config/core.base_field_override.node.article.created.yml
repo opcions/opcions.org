@@ -1,0 +1,18 @@
+uuid: 1ef768fe-38a8-4124-8003-3c6140a101eb
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.article
+id: node.article.created
+field_name: created
+entity_type: node
+bundle: article
+label: 'Elaborat el'
+description: 'L''hora en què es va crear el node.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,11 @@
+uuid: 67e697de-64f3-493f-9900-fcedd80722fa
+langcode: ca
+status: true
+dependencies: {  }
+name: Article
+type: article
+description: 'Utilitzeu els <em>articles</em> per a contingut sensible en el temps com notícies, comunicats de premsa o entrades de blog.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

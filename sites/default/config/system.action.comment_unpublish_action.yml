@@ -1,0 +1,11 @@
+uuid: 69e1ad15-3cfc-45e0-8756-86d37e171858
+langcode: ca
+status: true
+dependencies:
+  module:
+    - comment
+id: comment_unpublish_action
+label: 'Retira el comentari'
+type: comment
+plugin: comment_unpublish_action
+configuration: {  }

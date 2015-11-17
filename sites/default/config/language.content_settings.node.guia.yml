@@ -1,0 +1,16 @@
+uuid: 3c2dcc1b-4d40-49ec-a500-c0fdee5a2f3d
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.guia
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.guia
+target_entity_type_id: node
+target_bundle: guia
+default_langcode: site_default
+language_alterable: true

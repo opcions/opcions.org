@@ -1,0 +1,37 @@
+uuid: 4573144d-00c6-4e85-8400-e6cca443d300
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_paragraphs
+    - node.type.article
+  module:
+    - entity_reference_revisions
+id: node.article.field_article_paragraphs
+field_name: field_article_paragraphs
+entity_type: node
+bundle: article
+label: 'article paragraphs'
+description: 'Las partes del artículo'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      imagen_con_pie: imagen_con_pie
+      quote: quote
+      texto: texto
+    target_bundles_drag_drop:
+      imagen_con_pie:
+        weight: 4
+        enabled: false
+      quote:
+        weight: 5
+        enabled: false
+      texto:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

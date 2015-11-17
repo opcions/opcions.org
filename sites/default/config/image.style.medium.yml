@@ -1,0 +1,15 @@
+uuid: 4d30e397-ebf3-4a85-b233-519af396d9b5
+langcode: ca
+status: true
+dependencies: {  }
+name: medium
+label: 'Mitjà (220x220)'
+effects:
+  bddf0d06-42f9-4c75-a700-a33cafa25ea0:
+    uuid: bddf0d06-42f9-4c75-a700-a33cafa25ea0
+    id: image_scale
+    weight: 0
+    data:
+      width: 220
+      height: 220
+      upscale: false

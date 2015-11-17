@@ -1,0 +1,11 @@
+uuid: ebc5427c-7616-445d-8609-0943b7e05f28
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+id: node_make_sticky_action
+label: 'Fes el contingut estàtic'
+type: node
+plugin: node_make_sticky_action
+configuration: {  }

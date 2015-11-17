@@ -1,0 +1,18 @@
+uuid: b43c2f01-3f04-4464-9f07-7d3832a04836
+langcode: ca
+status: true
+dependencies: {  }
+id: authenticated
+label: 'Usuari autenticat'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'use text format basic_html'
+  - 'access comments'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'access site-wide contact form'
+  - 'access shortcuts'
+  - 'search content'
+  - 'use text format restricted_html'

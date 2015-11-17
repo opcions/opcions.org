@@ -1,0 +1,10 @@
+uuid: b2807e44-2d97-4517-a457-873a6e4a96e5
+langcode: ca
+status: true
+dependencies: {  }
+id: feedback
+label: 'Website feedback'
+recipients:
+  - eduardo.esclapes@gmail.com
+reply: ''
+weight: 0

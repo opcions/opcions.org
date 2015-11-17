@@ -1,0 +1,22 @@
+uuid: e3d6c172-c153-4eaf-8400-a4e0e8cb22e1
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.article
+id: node.article.status
+field_name: status
+entity_type: node
+bundle: article
+label: 'Estat de la publicació'
+description: 'Un booleà que indica si el node està publicat.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Actiu
+  off_label: Inactiu
+field_type: boolean

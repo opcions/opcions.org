@@ -1,0 +1,8 @@
+uuid: d03a59d4-3ef7-49d4-b351-81a850f5bde0
+langcode: ca
+status: true
+dependencies: {  }
+id: comment
+label: 'Comentaris predeterminat'
+target_entity_type_id: node
+description: 'Allows commenting on content'

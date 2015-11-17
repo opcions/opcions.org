@@ -1,0 +1,10 @@
+uuid: c8435590-82e1-47ec-ae4f-79eaf69bdebb
+langcode: ca
+status: false
+dependencies:
+  module:
+    - node
+id: node.full
+label: 'Contingut sencer'
+targetEntityType: node
+cache: true

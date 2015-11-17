@@ -1,0 +1,35 @@
+uuid: c1d867ba-7bcd-46ff-b100-a5d9b1dfa611
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.imagen_con_pie.field_paraghraph_image
+    - field.field.paragraph.imagen_con_pie.field_paragraph_image_caption
+    - paragraphs.paragraphs_type.imagen_con_pie
+  module:
+    - image
+    - text
+id: paragraph.imagen_con_pie.default
+targetEntityType: paragraph
+bundle: imagen_con_pie
+mode: default
+content:
+  field_paraghraph_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_paragraph_image_caption:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+  translation:
+    weight: 10
+hidden:
+  created: true
+  uid: true

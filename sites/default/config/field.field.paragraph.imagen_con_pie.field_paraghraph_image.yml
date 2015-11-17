@@ -1,0 +1,45 @@
+uuid: 32ce863a-f288-4322-a008-8fa33d19bba2
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paraghraph_image
+    - paragraphs.paragraphs_type.imagen_con_pie
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: paragraph.imagen_con_pie.field_paraghraph_image
+field_name: field_paraghraph_image
+entity_type: paragraph
+bundle: imagen_con_pie
+label: Imagen
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

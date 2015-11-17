@@ -1,0 +1,20 @@
+uuid: 2c6fef3b-24da-4154-8822-349e6f8bb26d
+langcode: ca
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - seven
+id: seven_messages
+theme: seven
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Missatge d''estat'
+  provider: system
+  label_display: '0'
+visibility: {  }

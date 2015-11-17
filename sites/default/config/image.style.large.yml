@@ -1,0 +1,15 @@
+uuid: 85ecb5dd-8fa8-453a-bf5c-924d1b1b088b
+langcode: ca
+status: true
+dependencies: {  }
+name: large
+label: 'Gran (480x480)'
+effects:
+  ddd73aa7-4bd6-4c85-b600-bdf2b1628d1d:
+    uuid: ddd73aa7-4bd6-4c85-b600-bdf2b1628d1d
+    id: image_scale
+    weight: 0
+    data:
+      width: 480
+      height: 480
+      upscale: false

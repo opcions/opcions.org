@@ -1,0 +1,9 @@
+uuid: 79c59210-7199-4d6d-b024-3667f38e60cb
+langcode: ca
+status: true
+dependencies: {  }
+id: zxx
+label: 'No aplicable'
+direction: ltr
+weight: 3
+locked: true

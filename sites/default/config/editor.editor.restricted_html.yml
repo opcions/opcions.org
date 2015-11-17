@@ -1,0 +1,39 @@
+uuid: df9620b1-c82f-42c0-b100-c61b38001742
+langcode: ca
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - ckeditor
+format: restricted_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Format
+          items:
+            - Bold
+            - Italic
+        -
+          name: Enllaços
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Eines
+          items:
+            - Source
+  plugins:
+    stylescombo:
+      styles: ''
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

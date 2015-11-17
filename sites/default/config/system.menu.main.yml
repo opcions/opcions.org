@@ -1,0 +1,8 @@
+uuid: 4d67b28f-9d27-4883-b700-bdf2fc736ef7
+langcode: ca
+status: true
+dependencies: {  }
+id: main
+label: 'Navegació principal'
+description: 'Site section links'
+locked: true

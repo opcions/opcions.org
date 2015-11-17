@@ -1,0 +1,20 @@
+uuid: d63ab92a-a192-4f4a-914d-77f981ad6152
+langcode: ca
+status: true
+dependencies:
+  theme:
+    - bartik
+id: bartik_local_tasks
+theme: bartik
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Pestanyes
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

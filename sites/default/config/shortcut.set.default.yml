@@ -1,0 +1,6 @@
+uuid: 9746dce3-9f76-48c9-b100-d7dd030489a9
+langcode: ca
+status: true
+dependencies: {  }
+id: default
+label: 'Per defecte'

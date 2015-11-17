@@ -1,0 +1,10 @@
+uuid: 3528f384-100f-48b2-8700-0e920b71ee49
+langcode: ca
+status: true
+dependencies:
+  module:
+    - user
+id: user.register
+label: Registra
+targetEntityType: user
+cache: true

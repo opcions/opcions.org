@@ -1,0 +1,8 @@
+uuid: bff11853-6110-477f-b100-ac3f2fd4620d
+langcode: ca
+status: true
+dependencies: {  }
+id: account
+label: 'Menú del compte d''usuari'
+description: 'Enllaços relacionats amb el compte d''usuari actiu'
+locked: true

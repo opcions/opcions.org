@@ -1,0 +1,20 @@
+uuid: 77671641-fca6-486f-9c00-af431cfb742e
+langcode: ca
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - seven
+id: seven_content
+theme: seven
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contingut principal de la pàgina'
+  provider: system
+  label_display: '0'
+visibility: {  }

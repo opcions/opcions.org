@@ -1,0 +1,18 @@
+uuid: 52a66fef-53f5-445b-a000-ce5d73d580ee
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.imagen_con_pie
+id: paragraph.imagen_con_pie.changed
+field_name: changed
+entity_type: paragraph
+bundle: imagen_con_pie
+label: Canviat
+description: 'The time that the Paragraph was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

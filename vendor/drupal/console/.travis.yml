@@ -1,0 +1,43 @@
+sudo: false
+
+language: php
+
+php:
+  - 5.5
+  - 5.6
+  - hhvm
+
+matrix:
+  allow_failures:
+    - php: hhvm
+
+env:
+  global:
+    - PROJECT_DIR=/home/project
+
+before_script:
+  # This fixes a fail when install Drupal.
+  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - composer self-update
+  - composer install --no-dev
+  - curl -LSs https://box-project.github.io/box2/installer.php | php
+  - composer global require drush/drush:dev-master
+  - composer global require drupal/coder:~8.1
+
+script:
+  - if [ -n "${TRAVIS_BUILD_DIR+1}" ]; then PROJECT_DIR=$TRAVIS_BUILD_DIR; fi
+  - phpunit
+  - php box.phar build
+  - php console.phar --version
+  - ~/.composer/vendor/bin/drush dl drupal-8.0.0-rc2 --drupal-project-rename=drupal8.dev
+  - cd drupal8.dev
+  - ~/.composer/vendor/bin/drush site-install standard --yes --account-name=root --account-pass=toor --db-url=sqlite:$PROJECT_DIR/drupal8.dev/sites/default/files/console.sqlite
+  - php ../console.phar chain --file=$PROJECT_DIR/config/dist/chain.yml
+  - ~/.composer/vendor/bin/phpcs --warning-severity=0 --standard=~/.composer/vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml $PROJECT_DIR/drupal8.dev/modules/custom/example
+
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/637685414a0d0ef9d4c6
+    on_success: change
+    on_failure: always

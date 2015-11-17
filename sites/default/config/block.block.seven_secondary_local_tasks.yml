@@ -1,0 +1,20 @@
+uuid: 2269adb5-0059-441a-ba06-6f566c308850
+langcode: ca
+status: true
+dependencies:
+  theme:
+    - seven
+id: seven_secondary_local_tasks
+theme: seven
+region: pre_content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Pestanyes secundàries'
+  provider: core
+  label_display: '0'
+  primary: false
+  secondary: true
+visibility: {  }

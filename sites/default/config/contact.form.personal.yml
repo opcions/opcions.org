@@ -1,0 +1,9 @@
+uuid: 00c76141-c58f-4d61-a900-f4b28dcb5467
+langcode: ca
+status: true
+dependencies: {  }
+id: personal
+label: 'Formulari de contacte personal'
+recipients: {  }
+reply: ''
+weight: 0

@@ -1,0 +1,11 @@
+uuid: e63dcfde-5101-4b63-9103-3c99fa38e7cc
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+id: node_delete_action
+label: 'Suprimeix el contingut'
+type: node
+plugin: node_delete_action
+configuration: {  }

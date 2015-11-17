@@ -1,0 +1,10 @@
+uuid: e6d0c03d-548c-49d7-ab47-71dc5a772118
+langcode: ca
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.full
+label: 'Pàgina del terme de la taxonomia'
+targetEntityType: taxonomy_term
+cache: true

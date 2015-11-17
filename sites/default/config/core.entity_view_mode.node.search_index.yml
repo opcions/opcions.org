@@ -1,0 +1,10 @@
+uuid: e5f4f571-f48d-4b46-8900-bce2656a3cbf
+langcode: ca
+status: false
+dependencies:
+  module:
+    - node
+id: node.search_index
+label: 'Índex de la cerca'
+targetEntityType: node
+cache: true

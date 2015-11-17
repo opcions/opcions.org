@@ -1,0 +1,12 @@
+uuid: ef9df274-438a-4ca1-8019-25200c87cde9
+name: Opcions
+mail: eduardo.esclapes@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: ca
+default_langcode: ca

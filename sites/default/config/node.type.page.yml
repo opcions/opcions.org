@@ -1,0 +1,11 @@
+uuid: 71082cc4-7580-455f-b900-b5c456c16f08
+langcode: ca
+status: true
+dependencies: {  }
+name: 'Pàgina bàsica'
+type: page
+description: 'Utilitzeu les <em>pàgines bàsiques</em> per al vostre contingut estàtic, com una pàgina de ''Qui som''.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

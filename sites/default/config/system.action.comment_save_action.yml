@@ -1,0 +1,11 @@
+uuid: d9b8aa4d-9f65-4c53-8819-25adf697745b
+langcode: ca
+status: true
+dependencies:
+  module:
+    - comment
+id: comment_save_action
+label: 'Desa el comentari'
+type: comment
+plugin: comment_save_action
+configuration: {  }

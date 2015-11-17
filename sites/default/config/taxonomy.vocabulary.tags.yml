@@ -1,0 +1,9 @@
+uuid: 1c1a428d-e277-47f8-8418-24a5a51e5c5b
+langcode: ca
+status: true
+dependencies: {  }
+name: Etiquetes
+vid: tags
+description: 'Utilitzeu les etiquetes per a agrupar en categories els articles de temes similars.'
+hierarchy: 0
+weight: 0

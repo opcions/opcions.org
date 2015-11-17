@@ -1,0 +1,19 @@
+uuid: 554d68b4-b794-45c5-9403-3fe479372f8f
+langcode: ca
+status: true
+dependencies:
+  module:
+    - comment
+    - text
+id: comment.comment_body
+field_name: comment_body
+entity_type: comment
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: true
+custom_storage: false

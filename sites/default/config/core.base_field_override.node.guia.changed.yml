@@ -1,0 +1,18 @@
+uuid: b49d13d3-af59-4387-a006-6cf07ef62277
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.guia
+id: node.guia.changed
+field_name: changed
+entity_type: node
+bundle: guia
+label: Canviat
+description: 'L''hora en què es va editar el node per darrera vegada.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

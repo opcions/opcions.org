@@ -1,0 +1,20 @@
+uuid: 62702ed4-ed3d-4f3c-8600-f228bb23666d
+langcode: ca
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bartik
+id: bartik_breadcrumbs
+theme: bartik
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Fil d''ariadna'
+  provider: system
+  label_display: '0'
+visibility: {  }

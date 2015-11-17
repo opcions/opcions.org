@@ -1,0 +1,11 @@
+uuid: 27c76f23-33ca-4333-9826-38d4ee23cb3a
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+id: node_save_action
+label: 'Desa el contingut'
+type: node
+plugin: node_save_action
+configuration: {  }

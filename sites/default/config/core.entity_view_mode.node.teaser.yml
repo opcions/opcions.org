@@ -1,0 +1,10 @@
+uuid: a11e73c3-e4b6-4eff-ac00-f968d3694542
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser
+label: Resum
+targetEntityType: node
+cache: true

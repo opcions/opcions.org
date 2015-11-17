@@ -1,0 +1,10 @@
+uuid: cdb09c09-fecc-4ded-8f06-06ab2eed5e28
+langcode: ca
+status: false
+dependencies:
+  module:
+    - user
+id: user.full
+label: 'Compte d''usuari'
+targetEntityType: user
+cache: true

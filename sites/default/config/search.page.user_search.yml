@@ -1,0 +1,12 @@
+uuid: 758f9433-b5d7-4554-b700-fa461836ed01
+langcode: ca
+status: true
+dependencies:
+  module:
+    - user
+id: user_search
+label: Usuaris
+path: user
+weight: 0
+plugin: user_search
+configuration: {  }

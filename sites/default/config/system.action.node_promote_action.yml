@@ -1,0 +1,11 @@
+uuid: e3b44fa9-a261-45f3-bb08-8f7c73d636d5
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+id: node_promote_action
+label: 'Promou el contingut a la portada'
+type: node
+plugin: node_promote_action
+configuration: {  }

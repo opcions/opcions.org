@@ -1,0 +1,18 @@
+uuid: 7fbdf25a-4ef7-42fa-b21b-27748d4b3323
+langcode: ca
+status: true
+dependencies:
+  theme:
+    - classy
+id: classy_page_title
+theme: classy
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Títol de la pàgina'
+  provider: core
+  label_display: '0'
+visibility: {  }

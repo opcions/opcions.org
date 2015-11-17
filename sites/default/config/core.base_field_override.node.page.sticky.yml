@@ -1,0 +1,22 @@
+uuid: 7e1f6472-3c41-421e-9e3e-621e0bd3dcd1
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.sticky
+field_name: sticky
+entity_type: node
+bundle: page
+label: 'Estàtic a la part superior de les llistes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Actiu
+  off_label: Inactiu
+field_type: boolean

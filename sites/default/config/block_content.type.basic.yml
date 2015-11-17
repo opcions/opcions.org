@@ -1,0 +1,8 @@
+uuid: 4541a84f-764e-4172-9a0e-14c847700f04
+langcode: ca
+status: true
+dependencies: {  }
+id: basic
+label: 'Bloc bàsic'
+revision: 0
+description: 'A basic block contains a title and a body.'

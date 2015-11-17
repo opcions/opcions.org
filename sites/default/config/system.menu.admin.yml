@@ -1,0 +1,8 @@
+uuid: 55e361a5-f930-4946-8b00-0d72d5eed0c2
+langcode: ca
+status: true
+dependencies: {  }
+id: admin
+label: Administració
+description: 'Administrative task links'
+locked: true
