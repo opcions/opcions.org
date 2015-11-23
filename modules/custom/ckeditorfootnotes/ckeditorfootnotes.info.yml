@@ -1,0 +1,8 @@
+name: CKEditorFootnotes
+type: module
+description: Drupal 8 wrapper for CKEditorFootnotes addon.
+core: 8.x
+package: CKEditor
+version: VERSION
+dependencies:
+  - ckeditor
