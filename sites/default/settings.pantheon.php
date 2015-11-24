@@ -47,6 +47,20 @@ else {
   );
 }
 
+/**
+ * Override the $install_state variable to let Drupal know that the settings are verified
+ * since they are being passed directly by the Pantheon.
+ *
+ * Issue: https://github.com/pantheon-systems/drops-8/issues/9
+ *
+ */
+if (
+  isset($_ENV['PANTHEON_ENVIRONMENT']) &&
+  $is_installer_url &&
+  (php_sapi_name() != "cli")
+) {
+  $GLOBALS['install_state']['settings_verified'] = TRUE;
+}
 
 /**
  * Allow Drupal 8 to Cleanly Redirect to Install.php For New Sites.
@@ -59,7 +73,7 @@ else {
 if (
   isset($_ENV['PANTHEON_ENVIRONMENT']) &&
   !$is_installer_url &&
-  (isset($_SERVER['PANTHEON_DATABASE_STATE']) && ($_SERVER['PANTHEON_DATABASE_STATE'] == 'empty')) &&
+  (!is_dir(__DIR__ . '/files/styles')) &&
   (empty($GLOBALS['install_state'])) &&
   (php_sapi_name() != "cli")
 ) {
