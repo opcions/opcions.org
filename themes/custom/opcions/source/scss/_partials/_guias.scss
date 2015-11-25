@@ -1,0 +1,12 @@
+
+.guia__updates {
+  @include callout($light-gray);
+}
+
+.guia-navigation {
+  border-top: 1px solid $medium-gray;
+  margin-top: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: $light-gray;
+}

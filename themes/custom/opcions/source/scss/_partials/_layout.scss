@@ -1,0 +1,14 @@
+.l-row, .l-header {
+  @include grid-row();
+  padding-bottom: 1.5rem;
+}
+
+include breakpoint(breakpoint) {
+  .header__brand {
+    @include grid-column(4);
+  }
+
+  .header__actions {
+    @include grid-column(8);
+  }
+}

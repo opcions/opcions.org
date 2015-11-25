@@ -4,5 +4,19 @@ description: A opcions classy theme.
 core: 8.x
 base theme: classy
 libraries:
+  - core/normalize
   - opcions/global-css
   - opcions/global-js
+regions:
+  header: Header # Items for the header region.
+  primary_menu: Menu # Items for the primary menu region.
+  # secondary_menu: # Items for the secondary menu region.
+  highlighted: Highlighted # Items for the highlighted content region.
+  help: Help # Dynamic help text, mostly for admin pages.
+  content: Content # The main content of the current page.
+  # sidebar_first: # Items for the first sidebar.
+  # sidebar_second: # Items for the second sidebar.
+  footer: Footer # Items for the footer region.
+  # breadcrumb: # Items for the breadcrumb region.
+  page_top: Page Top # Some modules might expect this one
+  page_bottom: Page Bottom # Some modules might expect this one

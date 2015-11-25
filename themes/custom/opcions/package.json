@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^5.2.0",
+    "browser-sync": "^2.9.11",
+    "browserify": "latest",
+    "cssnano": "^2.1.1",
+    "eslint": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "latest",
+    "parallelshell": "latest",
+    "rimraf": "latest",
+    "watch": "latest"
+  },
+  "dependencies": {
+    "foundation-sites": "latest"
+  },
+  "scripts": {
+    "clean": "rimraf css js && mkdirp css js",
+    "lint": "eslint source/js/**/*.js",
+    "build:css": "node-sass source/scss --output css --include-path source/scss/_partials --include-path source/scss/_mixins --include-path node_modules/foundation-sites/scss --source-map css",
+    "preoptimize:css": "npm run -s build:css",
+    "optimize:css": "postcss --config postcss.config.json",
+    "prebuild:js": "npm run lint",
+    "build:js": "browserify -e source/js/opcions.js -o js/opcions.js",
+    "build": "npm run build:css && npm run build:js",
+    "build:watch": "watch 'npm run -s build' source",
+    "bsync": "browser-sync start --proxy \"opcions.dev\" --reload-delay 2000 --files \"css, js, templates\"",
+    "dev": "parallelshell -v 'npm run bsync' 'npm run build:watch'"
+  }
+}

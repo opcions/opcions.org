@@ -1,9 +1,9 @@
 global-css:
   css:
     theme:
-      css/global.css: {}
+      css/opcions.css: {}
 global-js:
   js:
-    js/global.js: {}
+    js/opcions.js: {}
   dependencies:
-    core/jquery
+    - core/jquery

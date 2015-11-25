@@ -1,0 +1,67 @@
+.navigation-container {
+  @include grid-row;
+  &--collapsed {
+    .top-navigation {
+      @include grid-column(12);
+    }
+    .scroll {
+      overflow-x: scroll;
+      white-space: nowrap;
+      backface-visibility: hidden;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .navigation-container {
+      display: table-cell;
+    }
+
+    .top-navigation--primary,
+    .top-navigation--secondary {
+      display: inline-block;
+      overflow: hidden;
+      li {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        &.active a {
+          text-decoration: none;
+          color: grey;
+        }
+      }
+    }
+  }
+}
+
+.signposting {
+  @include breadcrumbs-container;
+}
+
+
+.top-navigation {
+  position: relative;
+  height: 2.25rem;
+  overflow: hidden;
+}
+
+.top-navigation--primary,
+.top-navigation--secondary {
+  @include inline-list;
+  li {
+    float:none;
+  }
+}
+
+.navbar__toggle {
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.navbar--secondary.is-hidden {
+  display: none;
+}
