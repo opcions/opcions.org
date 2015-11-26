@@ -543,7 +543,7 @@ a {
     border: 0; }
 
 hr {
-  max-width: 75rem;
+  max-width: 62.5rem;
   height: 0;
   border-top: 0;
   border-bottom: 1px solid #cacaca;
@@ -858,7 +858,7 @@ kbd {
     top: 0.2em; }
 
 .row {
-  max-width: 75rem;
+  max-width: 62.5rem;
   margin-left: auto;
   margin-right: auto; }
   .row::before, .row::after {
@@ -1563,6 +1563,9 @@ kbd {
   color: #8a8a8a;
   font-size: 0.8em; }
 
+.header {
+  background-color: #e6e6e6; }
+
 .header__brand,
 .header__actions {
   padding-top: 1.5rem;
@@ -1576,21 +1579,39 @@ kbd {
   .header__brand:last-child:not(:first-child) {
     float: right; }
 
+.header__logo a {
+  padding: 0.7rem 1rem; }
+
 .header__actions {
-  text-align: right;
   width: 66.66667%;
   float: left;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem; }
   .header__actions:last-child:not(:first-child) {
     float: right; }
-
-.header__action {
-  display: inline-block;
-  padding-left: 2em; }
+  .header__actions .menu {
+    margin: 0;
+    list-style-type: none; }
+    .header__actions .menu > li {
+      display: table-cell;
+      vertical-align: middle; }
+      [data-whatinput="mouse"] .header__actions .menu > li {
+        outline: 0; }
+    .header__actions .menu > li > a {
+      display: block;
+      padding: 0.7rem 1rem;
+      line-height: 1; }
+    .header__actions .menu input,
+    .header__actions .menu a,
+    .header__actions .menu button {
+      margin-bottom: 0; }
+    .header__actions .menu > li {
+      display: table-cell; }
+    .header__actions .menu > li {
+      float: right; }
 
 .navigation-container {
-  max-width: 75rem;
+  max-width: 62.5rem;
   margin-left: auto;
   margin-right: auto; }
   .navigation-container::before, .navigation-container::after {
@@ -1691,15 +1712,15 @@ kbd {
 .navbar--secondary.is-hidden {
   display: none; }
 
-.l-row, .l-header {
-  max-width: 75rem;
+.region {
+  max-width: 62.5rem;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 1.5rem; }
-  .l-row::before, .l-row::after, .l-header::before, .l-header::after {
+  .region::before, .region::after {
     content: ' ';
     display: table; }
-  .l-row::after, .l-header::after {
+  .region::after {
     clear: both; }
 
 includebreakpoint(breakpoint) .header__brand {
@@ -1833,7 +1854,7 @@ includebreakpoint(breakpoint) .header__actions {
         color: #fff; }
 
 .card-list {
-  max-width: 75rem;
+  max-width: 62.5rem;
   margin-left: auto;
   margin-right: auto; }
   .card-list::before, .card-list::after {
