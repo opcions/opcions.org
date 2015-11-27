@@ -19,9 +19,8 @@ function opcions_preprocess_block(&$variables) {
         case 'system_menu_block:account':
             $variables['attributes']['class'][] = 'header__actions';
             break;
-        case 'system_menu_block:main':
-            $variables['attributes']['class'][] = 'navigation-top__scroll';
-            break;
+        case 'language_block:language_interface':
+            $variables['attributes']['class'][] = 'header__language';
         default:
             //kint($variables['elements']['#plugin_id']);
     }
@@ -40,6 +39,7 @@ function opcions_preprocess_region(&$variables) {
             break;
         case 'primary_menu':
             $variables['attributes']['class'][] = 'navigation-top';
+            $variables['attributes']['class'][] = 'navigation-top--collapsed';
             break;
         default:
             //dpm($variables['region']);

@@ -4,7 +4,6 @@
 
 .header__brand,
 .header__actions {
-  padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
@@ -27,3 +26,20 @@
   }
 }
 
+.header__language {
+  @include grid-column-row;
+  padding-bottom: 0;
+  .links {
+    @include menu-base;
+    @include menu-direction(horizontal);
+    li {
+      float: right;
+    }
+  }
+  .language-link {
+    font-size: 0.8em;
+    &.is-active {
+      color: $dark-gray;
+    }
+  }
+}

@@ -16,10 +16,6 @@
   p {
     margin: 0;
   }
-  &__action {
-    padding: 1.25rem;
-    text-align: right;
-  }
   &__image {
     position: relative;
     overflow: hidden;
@@ -42,5 +38,15 @@
         color: #fff;
       }
     }
+  }
+  &__action {
+    padding: 1.25rem;
+    text-align: right;
+  }
+  &__action--category{
+    @include label;
+    background: $secondary-color;
+    color: foreground($secondary-color);
+    float: left;
   }
 }
