@@ -1,0 +1,20 @@
+uuid: 46752c61-a290-401d-a53d-619f6bee5e4d
+langcode: ca
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - opcions
+id: opcions_messages
+theme: opcions
+region: highlighted
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Missatge d''estat'
+  provider: system
+  label_display: '0'
+visibility: {  }

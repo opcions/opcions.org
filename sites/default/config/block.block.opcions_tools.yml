@@ -1,0 +1,24 @@
+uuid: 29690fe0-8baf-4377-8215-21d2f8cc1a0b
+langcode: ca
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - opcions
+id: opcions_tools
+theme: opcions
+region: '-1'
+weight: -5
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Eines
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

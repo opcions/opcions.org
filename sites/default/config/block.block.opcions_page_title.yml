@@ -1,0 +1,18 @@
+uuid: ec18267d-722f-4650-8000-f5270171e366
+langcode: ca
+status: true
+dependencies:
+  theme:
+    - opcions
+id: opcions_page_title
+theme: opcions
+region: content
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Títol de la pàgina'
+  provider: core
+  label_display: '0'
+visibility: {  }

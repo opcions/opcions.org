@@ -1,0 +1,7 @@
+export:
+  folder: custom
+langcode: ca
+profile:
+  machine_name: opcions
+  name: Opcions
+  description: ''

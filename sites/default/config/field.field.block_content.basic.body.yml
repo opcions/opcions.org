@@ -11,7 +11,7 @@ id: block_content.basic.body
 field_name: body
 entity_type: block_content
 bundle: basic
-label: Cos
+label: Body
 description: ''
 required: false
 translatable: false

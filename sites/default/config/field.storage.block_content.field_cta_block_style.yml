@@ -1,0 +1,30 @@
+uuid: d3d15e40-0501-48a6-a100-c780aba5b323
+langcode: ca
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_cta_block_style
+field_name: field_cta_block_style
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: left
+      label: Izquierda
+    -
+      value: right
+      label: Derecha
+    -
+      value: bottom
+      label: Debajo
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

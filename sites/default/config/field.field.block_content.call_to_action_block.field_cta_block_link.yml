@@ -1,0 +1,23 @@
+uuid: 037279b3-313e-4505-9000-d9bff5b19da7
+langcode: ca
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action_block
+    - field.storage.block_content.field_cta_block_link
+  module:
+    - link
+id: block_content.call_to_action_block.field_cta_block_link
+field_name: field_cta_block_link
+entity_type: block_content
+bundle: call_to_action_block
+label: Botón
+description: 'Texto y enlace para el botón del bloque'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

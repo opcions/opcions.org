@@ -5,9 +5,12 @@ dependencies:
   config:
     - field.field.node.guia.body
     - field.field.node.guia.field_article_reference
+    - field.field.node.guia.field_image
     - field.field.node.guia.field_shortname
+    - field.field.node.guia.field_txt_updates
     - node.type.guia
   module:
+    - image
     - path
     - text
 id: node.guia.default
@@ -36,8 +39,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_image:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_shortname:
     weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_txt_updates:
+    weight: 26
     settings:
       size: 60
       placeholder: ''

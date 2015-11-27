@@ -1,0 +1,20 @@
+uuid: 3465c3c3-c4cb-4028-a207-7f9e815db9a6
+langcode: ca
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - opcions
+id: opcions_content
+theme: opcions
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contingut principal de la pàgina'
+  provider: system
+  label_display: '0'
+visibility: {  }

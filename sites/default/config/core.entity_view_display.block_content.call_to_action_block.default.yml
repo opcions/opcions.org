@@ -1,0 +1,43 @@
+uuid: 636c0903-3214-49e9-bc00-f3f6b3a4d4e5
+langcode: ca
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action_block
+    - field.field.block_content.call_to_action_block.body
+    - field.field.block_content.call_to_action_block.field_cta_block_link
+    - field.field.block_content.call_to_action_block.field_cta_block_style
+  module:
+    - link
+    - options
+    - text
+id: block_content.call_to_action_block.default
+targetEntityType: block_content
+bundle: call_to_action_block
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_cta_block_link:
+    type: link
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+  field_cta_block_style:
+    type: list_key
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

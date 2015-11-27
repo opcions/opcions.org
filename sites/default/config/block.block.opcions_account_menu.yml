@@ -1,0 +1,24 @@
+uuid: c3a51c14-a2c5-4a6f-9600-dc6a59c417a8
+langcode: ca
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - opcions
+id: opcions_account_menu
+theme: opcions
+region: header
+weight: -5
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'Menú del compte d''usuari'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

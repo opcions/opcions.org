@@ -1,0 +1,20 @@
+uuid: 4c1631ac-5d4d-49ab-af30-482830667a1c
+langcode: ca
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - opcions
+id: opcions_powered
+theme: opcions
+region: '-1'
+weight: -4
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Funciona amb el Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

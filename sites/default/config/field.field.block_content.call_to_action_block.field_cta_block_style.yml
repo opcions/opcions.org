@@ -1,0 +1,23 @@
+uuid: 60eb1dea-fd22-46b0-a200-e57d2b3ab8b4
+langcode: ca
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action_block
+    - field.storage.block_content.field_cta_block_style
+  module:
+    - options
+id: block_content.call_to_action_block.field_cta_block_style
+field_name: field_cta_block_style
+entity_type: block_content
+bundle: call_to_action_block
+label: Estilo
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: right
+default_value_callback: ''
+settings: {  }
+field_type: list_string

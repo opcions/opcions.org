@@ -3,35 +3,33 @@ langcode: ca
 status: true
 dependencies:
   config:
+    - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_article_paragraphs
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - node.type.article
   module:
     - comment
-    - entity_reference_revisions
     - responsive_image
+    - text
     - user
 id: node.article.default
 targetEntityType: node
 bundle: article
 mode: default
 content:
+  body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   comment:
     label: above
     type: comment_default
     weight: 4
     settings:
       pager_id: 0
-    third_party_settings: {  }
-  field_article_paragraphs:
-    type: entity_reference_revisions_entity_view
-    weight: 1
-    label: above
-    settings:
-      view_mode: default
-      link: ''
     third_party_settings: {  }
   field_image:
     type: responsive_image

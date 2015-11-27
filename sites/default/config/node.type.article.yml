@@ -1,11 +1,18 @@
 uuid: 67e697de-64f3-493f-9900-fcedd80722fa
 langcode: ca
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
 name: Article
 type: article
 description: 'Utilitzeu els <em>articles</em> per a contingut sensible en el temps com notícies, comunicats de premsa o entrades de blog.'
 help: ''
 new_revision: false
 preview_mode: 1
-display_submitted: true
+display_submitted: false

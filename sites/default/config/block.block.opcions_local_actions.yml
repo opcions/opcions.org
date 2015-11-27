@@ -1,0 +1,18 @@
+uuid: a55ec86a-8bdb-41fe-a900-bc6fa9b256c6
+langcode: ca
+status: true
+dependencies:
+  theme:
+    - opcions
+id: opcions_local_actions
+theme: opcions
+region: content
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 2108c4be-c244-40af-8100-e4048897f410
+langcode: ca
+status: true
+dependencies:
+  theme:
+    - opcions
+id: opcions_local_tasks
+theme: opcions
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Pestanyes
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

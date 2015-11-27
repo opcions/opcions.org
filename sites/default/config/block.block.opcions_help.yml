@@ -1,0 +1,20 @@
+uuid: 018e31d5-c1cc-43df-ab47-7180205bc52e
+langcode: ca
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - opcions
+id: opcions_help
+theme: opcions
+region: content
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Ajuda
+  provider: help
+  label_display: '0'
+visibility: {  }
