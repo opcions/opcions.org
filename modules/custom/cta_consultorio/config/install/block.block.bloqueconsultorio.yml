@@ -1,0 +1,32 @@
+langcode: ca
+status: true
+dependencies:
+  content:
+    - 'block_content:call_to_action_block:bb3126ae-5b02-45a4-ae07-7eeae3e62aa7'
+  module:
+    - block_content
+    - node
+  theme:
+    - opcions
+id: bloqueconsultorio
+theme: opcions
+region: footer
+weight: null
+provider: null
+plugin: 'block_content:bb3126ae-5b02-45a4-ae07-7eeae3e62aa7'
+settings:
+  id: 'block_content:bb3126ae-5b02-45a4-ae07-7eeae3e62aa7'
+  label: '¿Quieres saber algo más sobre este producto?'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      guia: guia
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

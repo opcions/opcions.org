@@ -1,0 +1,9 @@
+name: 'Bloque consultorio'
+type: module
+core: 8.x
+dependencies:
+  - block_content
+  - node
+features:
+  required:
+    - block.block.bloqueconsultorio
