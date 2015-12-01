@@ -40,6 +40,6 @@
   {{ title_suffix }}
   {% block content %}
     {{ content | without('field_cta_block_link', 'field_cta_block_style') }}
-    <a class="button" href="{{ fields.field_cta_block_link.uri }}">{{ fields.field_cta_block_link.title }}</a>
+    {{ link(fields.field_cta_block_link.title, fields.field_cta_block_link.uri, {'class':['button', 'button-primary']}) }}
   {% endblock %}
 </div>
