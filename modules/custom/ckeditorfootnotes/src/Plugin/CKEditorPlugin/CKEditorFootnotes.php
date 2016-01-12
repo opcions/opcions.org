@@ -9,39 +9,19 @@ namespace Drupal\ckeditorfootnotes\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginInterface;
 use Drupal\ckeditor\CKEditorPluginButtonsInterface;
-use Drupal\Component\Plugin\PluginBase;
+use Drupal\ckeditor\CKEditorPluginBase;
 use Drupal\editor\Entity\Editor;
 
 /**
  * Defines the "CKEditorFootnotes" plugin.
  *
- * @CKEditorFootnotes(
- *   id = "ckeditorfootnotes",
- *   label = @Translation("CKEditorFootnotes")
+ * @CKEditorPlugin(
+ *   id = "footnotes",
+ *   label = @Translation("CKEditorFootnotes"),
+ *   module = "ckeditor"
  * )
  */
-class CKEditorFootnotes extends PluginBase implements CKEditorPluginInterface, CKEditorPluginButtonsInterface {
-
-  /**
-   * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getDependencies().
-   */
-  function getDependencies(Editor $editor) {
-    return array();
-  }
-
-  /**
-   * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getLibraries().
-   */
-  function getLibraries(Editor $editor) {
-    return array();
-  }
-
-  /**
-   * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::isInternal().
-   */
-  function isInternal() {
-    return FALSE;
-  }
+class CKEditorFootnotes extends CKEditorPluginBase implements CKEditorPluginInterface, CKEditorPluginButtonsInterface {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
@@ -55,9 +35,9 @@ class CKEditorFootnotes extends PluginBase implements CKEditorPluginInterface, C
    */
   function getButtons() {
     return array(
-      'Code' => array(
+      'CKEditorFootnotes' => array(
         'label' => t('Footnotes'),
-        'image' => drupal_get_path('module', 'codebutton') . '/js/footnotes/icons/footnotes.png'
+        'image' => drupal_get_path('module', 'ckeditorfootnotes') . '/js/footnotes/icons/footnotes.png'
       )
     );
   }

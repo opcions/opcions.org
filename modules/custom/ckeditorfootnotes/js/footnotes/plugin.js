@@ -6,17 +6,13 @@
  *
  */
 // Register the plugin within the editor.
-(function($) {
+(function($, CKEDITOR) {
     "use strict";
-
-
-
+    window.console.log('init');
     CKEDITOR.plugins.add( 'footnotes', {
 
-        footnote_ids: [],
         requires: 'widget',
-        icons: 'footnotes',
-
+        footnote_ids: [],
 
         // The plugin initialization logic goes inside this method.
         init: function(editor) {
@@ -120,7 +116,7 @@
             }));
 
             // Create a toolbar button that executes the above command.
-            editor.ui.addButton('Footnotes', {
+            editor.ui.addButton('CKEditorFootnotes', {
 
                 // The text part of the button (if available) and tooptip.
                 label: 'Insert Footnotes',
@@ -135,7 +131,6 @@
             // Register our dialog file. this.path is the plugin folder path.
             CKEDITOR.dialog.add('footnotesDialog', this.path + 'dialogs/footnotes.js');
         },
-
 
         build: function(footnote, is_new, editor) {
             var footnote_id;
@@ -314,4 +309,4 @@
             editor.fire('unlockSnapshot');
         }
     });
-}(window.jQuery));
+})(jQuery, CKEDITOR);
