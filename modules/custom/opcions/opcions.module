@@ -1,0 +1,50 @@
+<?php
+
+use Drupal\node\Entity\NodeType;
+use \Drupal\Core\Entity\EntityInterface;
+use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function opcions_entity_extra_field_info() {
+    $extra = array();
+
+    if ($bundle = NodeType::load('article')) {
+        $extra['node'][$bundle->Id()]['display']['opcions_collection'] = [
+            'label' => t('Guide / Collection'),
+            'description' => t('The guide and or collections this article belongs to'),
+            'weight' => 0,
+            'visible' => FALSE,
+        ];
+    }
+
+    return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function opcions_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
+
+    $article_id = $entity->id();
+
+    if ($display->getComponent('opcions_collection')) {
+
+        $collection_ids = \Drupal::entityQuery('node')
+            ->condition('type', 'guia')
+            ->condition('field_article_reference', $article_id)
+            ->execute();
+
+        foreach ( $collection_ids as $collection_id ) {
+
+            $build['opcions_collection'] = [
+                '#type' => 'markup',
+                '#markup' => "the article $article_id is referenced in collection $collection_id",
+            ];
+
+        }
+
+    }
+
+}

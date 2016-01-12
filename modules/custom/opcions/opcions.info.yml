@@ -1,0 +1,7 @@
+name: Opcions Main
+description: 'Main module for opcions'
+package: Opcions
+
+type: module
+core: 8.x
+
