@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "opcions_admin.css",
+	"sources": [
+		"../source/scss/opcions_admin.scss"
+	],
+	"mappings": "AAAA,eAAe,AAAA,uBAAuB,CAAC;EACrC,KAAK,EAAE,KAAM,GAAG",
+	"names": []
+}

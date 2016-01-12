@@ -1,0 +1,9 @@
+name: Opcions Admin
+type: theme
+description: A opcions admin seven subtheme.
+core: 8.x
+base theme: seven
+libraries:
+  - opcions/global-css
+ckeditor_stylesheets:
+  - css/ckeditor-overrides.css
