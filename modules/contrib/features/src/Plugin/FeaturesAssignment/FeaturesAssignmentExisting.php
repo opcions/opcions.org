@@ -7,7 +7,6 @@
 
 namespace Drupal\features\Plugin\FeaturesAssignment;
 
-use Drupal\Core\Extension\Extension;
 use Drupal\features\FeaturesAssignmentMethodBase;
 use Drupal\features\FeaturesManagerInterface;
 
@@ -52,16 +51,17 @@ class FeaturesAssignmentExisting extends FeaturesAssignmentMethodBase {
   public function assignPackages($force = FALSE) {
     $packages = $this->featuresManager->getPackages();
 
-    // Assign config to enabled modules first.
+    // Assign config to installed modules first.
     foreach ($packages as $name => $package) {
-      if ($package['status'] === FeaturesManagerInterface::STATUS_ENABLED) {
-        $this->safeAssignConfig($package['machine_name'], $package['extension']);
+      // @todo Introduce $package->isInstalled() and / or $package->isUninstalled().
+      if ($package->getStatus() === FeaturesManagerInterface::STATUS_INSTALLED) {
+        $this->safeAssignConfig($package->getMachineName(), $package->getExtension());
       }
     }
     // Now assign to disabled modules.
     foreach ($packages as $name => $info) {
-      if ($package['status'] === FeaturesManagerInterface::STATUS_DISABLED) {
-        $this->safeAssignConfig($package['machine_name'], $package['extension']);
+      if ($package->getStatus() === FeaturesManagerInterface::STATUS_DISABLED) {
+        $this->safeAssignConfig($package->getMachineName(), $package->getExtension());
       }
     }
   }

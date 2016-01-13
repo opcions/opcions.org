@@ -8,7 +8,6 @@
 namespace Drupal\features\Plugin\FeaturesAssignment;
 
 use Drupal\features\FeaturesAssignmentMethodBase;
-use Drupal\features\FeaturesManagerInterface;
 use Drupal\Core\Config\InstallStorage;
 
 /**
@@ -43,7 +42,7 @@ class FeaturesAssignmentProfile extends FeaturesAssignmentMethodBase {
 
       $profile_package = $this->featuresManager->getPackage($profile_name);
       if (empty($profile_package)) {
-        $this->featuresManager->initPackage($profile_name, $current_bundle->getName(), $current_bundle->getDescription(), 'profile', $current_bundle);
+        $profile_package = $this->featuresManager->initPackage($profile_name, $current_bundle->getName(), $current_bundle->getDescription(), 'profile', $current_bundle);
       }
 
       // Assign configuration by type.
@@ -98,19 +97,19 @@ class FeaturesAssignmentProfile extends FeaturesAssignmentMethodBase {
               // add a dependency.
               else {
                 $machine_name = $current_bundle->getFullName($config_collection[$item_name]->getPackage());
-                if (!in_array($machine_name, $profile_package['dependencies'])) {
-                  $profile_package['dependencies'][] = $machine_name;
+                if (!in_array($machine_name, $profile_package->getDependencies())) {
+                  $profile_package->appendDependency($machine_name);
                 }
               }
             }
             // Otherwise, copy it over from Standard.
             else {
               $filename = $item_name . '.yml';
-              $profile_package['files'][] = [
+              $profile_package->appendFile([
                 'filename' => $filename,
                 'subdirectory' => $subdirectory,
                 'string' => file_get_contents($standard_directory . '/' . $subdirectory . '/' . $filename)
-              ];
+              ]);
             }
           }
 
@@ -133,11 +132,11 @@ class FeaturesAssignmentProfile extends FeaturesAssignmentMethodBase {
                 $string
               );
               // Add the files to those to be output.
-              $profile_package['files'][$extension] = [
+              $profile_package->appendFile([
                 'filename' => $profile_name . '.' . $extension,
                 'subdirectory' => NULL,
                 'string' => $string
-              ];
+              ], $extension);
             }
           }
         }
@@ -147,8 +146,13 @@ class FeaturesAssignmentProfile extends FeaturesAssignmentMethodBase {
           $info_file_uri = $standard_directory . '/standard.info.yml';
           if (file_exists($info_file_uri)) {
             $profile_info = \Drupal::service('info_parser')->parse($info_file_uri);
-            // Merge in dependencies and themes data.
-            $profile_package = $this->featuresManager->mergeInfoArray($profile_package, $profile_info, ['dependencies', 'themes']);
+            $info = [
+              'dependencies' => $profile_package->getDependencies(),
+              'themes' => $profile_package->getThemes(),
+            ];
+            $info = $this->featuresManager->mergeInfoArray($info, $profile_info);
+            $profile_package->setDependencies($info['dependencies']);
+            $profile_package->setThemes($info['themes']);
           }
         }
         $this->featuresManager->setPackage($profile_package);

@@ -8,9 +8,6 @@
 namespace Drupal\features;
 
 use Drupal\Component\Plugin\PluginManagerInterface;
-use Drupal\features\Entity\FeaturesBundle;
-use Drupal\features\FeaturesBundleInterface;
-use Drupal\features\FeaturesManagerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Config\StorageInterface;
@@ -142,16 +139,9 @@ class FeaturesAssigner implements FeaturesAssignerInterface {
   }
 
   /**
-   * Applies a given package assignment method.
-   *
-   * @param string $method_id
-   *   The string identifier of the package assignment method to use to package
-   *   configuration.
-   * @param bool $force
-   *   (optional) If TRUE, assign config regardless of restrictions such as it
-   *   being already assigned to a package.
+   * {@inheritdoc}
    */
-  protected function applyAssignmentMethod($method_id, $force = FALSE) {
+  public function applyAssignmentMethod($method_id, $force = FALSE) {
     $this->getAssignmentMethodInstance($method_id)->assignPackages($force);
   }
 
@@ -221,10 +211,10 @@ class FeaturesAssigner implements FeaturesAssignerInterface {
   /**
    * {@inheritdoc}
    */
-  public function findBundle(array $info) {
+  public function findBundle(array $info, $features_info = NULL) {
     $bundle = NULL;
-    if (!empty($info['features']['bundle'])) {
-      $bundle = $this->getBundle($info['features']['bundle']);
+    if (!empty($features_info['bundle'])) {
+      $bundle = $this->getBundle($features_info['bundle']);
     }
     elseif (!empty($info['package'])) {
       $bundle = $this->findBundleByName($info['package']);
@@ -309,18 +299,20 @@ class FeaturesAssigner implements FeaturesAssignerInterface {
   public function createBundlesFromPackages() {
     $existing_bundles = $this->getBundleList();
     $new_bundles = [];
-    // Only parse from enabled features.
+    // Only parse from installed features.
     $modules = $this->featuresManager->getFeaturesModules(NULL, TRUE);
 
     foreach ($modules as $module) {
       $info = $this->featuresManager->getExtensionInfo($module);
+      // @todo This entire function could be simplified a lot using packages.
+      $features_info = $this->featuresManager->getFeaturesInfo($module);
       // Create a new bundle if:
       // - the feature specifies a bundle and
       // - that bundle doesn't yet exist locally.
       // Allow profiles to override previous values.
-      if (!empty($info['features']['bundle']) &&
-        !isset($existing_bundles[$info['features']['bundle']]) &&
-        (!in_array($info['features']['bundle'], $new_bundles) || $info['type'] == 'profile')) {
+      if (!empty($features_info['bundle']) &&
+        !isset($existing_bundles[$features_info['bundle']]) &&
+        (!in_array($features_info['bundle'], $new_bundles) || $info['type'] == 'profile')) {
         if ($info['type'] == 'profile') {
           $new_bundle = [
             'name' => $info['name'],
@@ -331,13 +323,13 @@ class FeaturesAssigner implements FeaturesAssignerInterface {
         }
         else {
           $new_bundle = [
-            'name' => isset($info['package']) ? $info['package'] : ucwords(str_replace('_', ' ', $info['features']['bundle'])),
+            'name' => isset($info['package']) ? $info['package'] : ucwords(str_replace('_', ' ', $features_info['bundle'])),
             'description' => NULL,
             'is_profile' => FALSE,
             'profile_name' => NULL,
           ];
         }
-        $new_bundle['machine_name'] = $info['features']['bundle'];
+        $new_bundle['machine_name'] = $features_info['bundle'];
         $new_bundles[$new_bundle['machine_name']] = $new_bundle;
       }
     }
