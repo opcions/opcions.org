@@ -1,10 +1,11 @@
-uuid: b2807e44-2d97-4517-a457-873a6e4a96e5
+uuid: 7202e4f0-8619-4b7f-8334-52f0d3db90c1
 langcode: ca
 status: true
 dependencies: {  }
-id: feedback
-label: 'Website feedback'
+id: contact
+label: Contacto
 recipients:
+  - cric@pangea.org
   - eduardo.esclapes@gmail.com
 reply: ''
 weight: 0

@@ -1,23 +1,23 @@
-uuid: 67b9fa46-856d-4a8f-8500-e7efb9006944
+uuid: e26a0b1a-4c65-4a56-a43a-58e98ba8c24c
 langcode: ca
 status: true
 dependencies:
   content:
-    - 'block_content:call_to_action_block:bb3126ae-5b02-45a4-ae07-7eeae3e62aa7'
+    - 'block_content:call_to_action_block:891e006f-4c74-48b8-a338-5644400f68fb'
   module:
     - block_content
     - node
   theme:
     - opcions
-id: bloqueconsultorio
+id: bloquectaconsultorio
 theme: opcions
-region: footer
-weight: -8
+region: content
+weight: -2
 provider: null
-plugin: 'block_content:bb3126ae-5b02-45a4-ae07-7eeae3e62aa7'
+plugin: 'block_content:891e006f-4c74-48b8-a338-5644400f68fb'
 settings:
-  id: 'block_content:bb3126ae-5b02-45a4-ae07-7eeae3e62aa7'
-  label: '¿Quieres saber algo más sobre este producto?'
+  id: 'block_content:891e006f-4c74-48b8-a338-5644400f68fb'
+  label: 'Vols saber alguna cosa més sobre aquest producte?'
   provider: block_content
   label_display: visible
   status: true

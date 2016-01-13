@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.guia.field_txt_updates
     - node.type.guia
   module:
-    - image
+    - responsive_image
     - text
     - user
 id: node.guia.default
@@ -21,11 +21,11 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   field_article_reference:
-    weight: 1
+    weight: 3
     label: above
     settings:
       view_mode: teaser
@@ -33,22 +33,22 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_image:
-    weight: 4
-    label: above
+    type: responsive_image
+    weight: 1
+    label: hidden
     settings:
-      image_style: ''
+      responsive_image_style: narrow
       image_link: ''
     third_party_settings: {  }
-    type: image
   field_txt_updates:
-    weight: 3
+    weight: 0
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   links:
-    weight: 2
+    weight: 4
     settings: {  }
     third_party_settings: {  }
 hidden:

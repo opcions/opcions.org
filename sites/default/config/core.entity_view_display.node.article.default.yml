@@ -27,7 +27,7 @@ content:
   comment:
     label: above
     type: comment_default
-    weight: 4
+    weight: 5
     settings:
       pager_id: 0
     third_party_settings: {  }
@@ -41,12 +41,16 @@ content:
     label: hidden
   field_tags:
     type: entity_reference_label
-    weight: 3
+    weight: 4
     label: above
     settings:
       link: true
     third_party_settings: {  }
   links:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  opcions_collection:
     weight: 2
     settings: {  }
     third_party_settings: {  }

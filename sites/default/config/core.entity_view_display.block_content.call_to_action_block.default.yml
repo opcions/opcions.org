@@ -23,11 +23,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_cta_block_link:
-    type: link
+    type: link_separate
     weight: 1
     label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: true
       url_plain: true
       rel: '0'

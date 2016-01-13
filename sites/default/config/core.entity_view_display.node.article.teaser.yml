@@ -38,3 +38,4 @@ hidden:
   field_tags: true
   langcode: true
   links: true
+  opcions_collection: true

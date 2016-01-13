@@ -7,7 +7,7 @@ dependencies:
 id: opcions_page_title
 theme: opcions
 region: content
-weight: -7
+weight: -4
 provider: null
 plugin: page_title_block
 settings:
