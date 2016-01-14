@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\opcions\Plugin\Block;
+namespace Drupal\opcions_main\Plugin\Block;
 
 use Drupal\block\BlockBase;
 use Drupal\Core\Session\AccountInterface;

@@ -7,7 +7,7 @@ use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 /**
  * Implements hook_entity_extra_field_info().
  */
-function opcions_entity_extra_field_info() {
+function opcions_main_entity_extra_field_info() {
     $extra = array();
 
     if ($bundle = NodeType::load('article')) {
@@ -25,7 +25,7 @@ function opcions_entity_extra_field_info() {
 /**
  * Implements hook_ENTITY_TYPE_view().
  */
-function opcions_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
+function opcions_main_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
 
     $article_id = $entity->id();
 
