@@ -37,14 +37,10 @@ function opcions_main_node_view(array &$build, EntityInterface $entity, EntityVi
             ->condition('field_article_reference', $article_id)
             ->execute();
 
-        foreach ( $collection_ids as $collection_id ) {
-
-            $collection = Node::load($collection_id);
-            //dpm($collection->get('field_shortname'));
-
+        if ( $id = reset($collection_ids) ) {
+            $collection = Node::load($id);
             $items = [];
             foreach ($collection->get('field_article_reference')->referencedEntities() as $article) {
-
                 $items[] = $article->id() == $article_id ? $article->getTitle() : $article->link();
             }
 
@@ -54,7 +50,6 @@ function opcions_main_node_view(array &$build, EntityInterface $entity, EntityVi
                 '#items' => $items,
                 '#title' => t('You are reading the guide about @shortname', ['@shortname' => strtolower($collection->get('field_shortname')->getString())]),
             ];
-
         }
 
     }
