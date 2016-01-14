@@ -1,16 +1,16 @@
-uuid: 7860f5ab-7260-4e9b-8300-f77362e95f80
+uuid: 88319b28-b369-4fab-9c38-564b46c0ef77
 langcode: ca
 status: true
 dependencies:
   module:
-    - link
     - paragraphs
-id: paragraph.field_paragraph_quote_link
-field_name: field_paragraph_quote_link
+    - text
+id: paragraph.field_changelog_description
+field_name: field_changelog_description
 entity_type: paragraph
-type: link
+type: text_long
 settings: {  }
-module: link
+module: text
 locked: false
 cardinality: 1
 translatable: true

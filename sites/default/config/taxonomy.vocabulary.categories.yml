@@ -1,0 +1,9 @@
+uuid: ea915770-5809-4524-9002-2b26bd6a7b8d
+langcode: und
+status: true
+dependencies: {  }
+name: Categories
+vid: categories
+description: 'Categorirs for articles'
+hierarchy: 0
+weight: 0

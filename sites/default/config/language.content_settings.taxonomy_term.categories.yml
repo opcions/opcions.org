@@ -1,0 +1,16 @@
+uuid: 9f734126-ea3e-49b9-9255-853d21d9eb48
+langcode: ca
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.categories
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.categories
+target_entity_type_id: taxonomy_term
+target_bundle: categories
+default_langcode: current_interface
+language_alterable: true

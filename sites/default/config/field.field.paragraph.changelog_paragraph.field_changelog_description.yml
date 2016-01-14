@@ -1,0 +1,21 @@
+uuid: c50e0af8-75d3-4c91-b401-1b630de94271
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_changelog_description
+    - paragraphs.paragraphs_type.changelog_paragraph
+  module:
+    - text
+id: paragraph.changelog_paragraph.field_changelog_description
+field_name: field_changelog_description
+entity_type: paragraph
+bundle: changelog_paragraph
+label: Descripción
+description: 'Los cambios relevantes a los artículos deben resumirse aquí. Esta información aparecerá en las colecciones correspondientes (guías, revistas y )'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
