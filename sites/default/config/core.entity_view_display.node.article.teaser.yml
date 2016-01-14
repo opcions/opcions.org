@@ -35,6 +35,8 @@ content:
     label: hidden
 hidden:
   comment: true
+  field_article_categories: true
+  field_article_changelog: true
   field_tags: true
   langcode: true
   links: true
