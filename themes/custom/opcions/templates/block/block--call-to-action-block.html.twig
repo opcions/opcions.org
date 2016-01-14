@@ -28,8 +28,7 @@
 {%
   set classes = [
     'block',
-    'block-call-to-action',
-    'block-call-to-action--' ~ content.field_cta_block_style|clean_class,
+    'block-call-to-action'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
