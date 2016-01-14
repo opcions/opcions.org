@@ -1,6 +1,7 @@
 <?php
 
-use Drupal\node\Entity\NodeType;
+use \Drupal\node\Entity\Node;
+use \Drupal\node\Entity\NodeType;
 use \Drupal\Core\Entity\EntityInterface;
 use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
@@ -25,7 +26,7 @@ function opcions_main_entity_extra_field_info() {
 /**
  * Implements hook_ENTITY_TYPE_view().
  */
-function opcions_main_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
+function opcions_main_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
 
     $article_id = $entity->id();
 
@@ -38,9 +39,20 @@ function opcions_main_node_view(array &$build, EntityInterface $entity, EntityVi
 
         foreach ( $collection_ids as $collection_id ) {
 
+            $collection = Node::load($collection_id);
+            //dpm($collection->get('field_shortname'));
+
+            $items = [];
+            foreach ($collection->get('field_article_reference')->referencedEntities() as $article) {
+
+                $items[] = $article->id() == $article_id ? $article->getTitle() : $article->link();
+            }
+
             $build['opcions_collection'] = [
-                '#type' => 'markup',
-                '#markup' => "the article $article_id is referenced in collection $collection_id",
+                '#theme' => 'item_list',
+                '#list_type' => 'ol',
+                '#items' => $items,
+                '#title' => t('You are reading the guide about @shortname', ['@shortname' => strtolower($collection->get('field_shortname')->getString())]),
             ];
 
         }
