@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains referenced_by.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function referenced_by_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the referenced_by module.
+    case 'help.page.referenced_by':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A condition plugin that checks if the current entity is referenced by other') . '</p>';
+      return $output;
+
+    default:
+  }
+}

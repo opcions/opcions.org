@@ -1,0 +1,7 @@
+name: Referenced By (Condition Plugin)
+type: module
+description: A condition plugin that checks if the current entity is referenced by other
+core: 8.x
+package: Other
+dependencies:
+  - entity_reference
