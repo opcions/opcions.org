@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.article.field_tags
     - node.type.article
   module:
-    - comment
     - entity_reference_revisions
     - responsive_image
     - text
@@ -27,15 +26,8 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  comment:
-    label: above
-    type: comment_default
-    weight: 5
-    settings:
-      pager_id: 0
-    third_party_settings: {  }
   field_article_categories:
-    weight: 7
+    weight: 6
     label: above
     settings:
       link: true
@@ -43,7 +35,7 @@ content:
     type: entity_reference_label
   field_article_changelog:
     type: entity_reference_revisions_entity_view
-    weight: 6
+    weight: 5
     label: above
     settings:
       view_mode: default
@@ -73,4 +65,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  comment: true
   langcode: true

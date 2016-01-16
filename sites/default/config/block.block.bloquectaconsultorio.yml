@@ -2,11 +2,13 @@ uuid: e26a0b1a-4c65-4a56-a43a-58e98ba8c24c
 langcode: ca
 status: true
 dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.guias
   content:
     - 'block_content:call_to_action_block:891e006f-4c74-48b8-a338-5644400f68fb'
   module:
     - block_content
-    - node
+    - block_visibility_groups
   theme:
     - opcions
 id: bloquectaconsultorio
@@ -24,10 +26,8 @@ settings:
   info: ''
   view_mode: full
 visibility:
-  node_type:
-    id: node_type
-    bundles:
-      guia: guia
+  condition_group:
+    id: condition_group
     negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
+    block_visibility_group: guias
+    context_mapping: {  }

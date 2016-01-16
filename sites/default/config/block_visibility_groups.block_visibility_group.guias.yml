@@ -1,0 +1,28 @@
+uuid: 34129459-f9ec-4569-ad03-3ec5b2d4578f
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+    - referenced_by
+id: guias
+label: Guias
+logic: or
+conditions:
+  2b82b54e-a724-4b1e-9900-c62b8af45db1:
+    id: node_type
+    bundles:
+      guia: guia
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 2b82b54e-a724-4b1e-9900-c62b8af45db1
+  6883888a-5430-4b22-8a4e-78e3ebe907ae:
+    id: referenced_by
+    referenced_by:
+      field_article_reference: field_article_reference
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 6883888a-5430-4b22-8a4e-78e3ebe907ae
+allow_other_conditions: false

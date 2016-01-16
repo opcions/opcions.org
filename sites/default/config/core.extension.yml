@@ -4,6 +4,8 @@ module:
   automated_cron: 0
   block: 0
   block_content: 0
+  block_visibility_groups: 0
+  block_visibility_groups_admin: 0
   breakpoint: 0
   ckeditor: 0
   color: 0
@@ -19,6 +21,7 @@ module:
   devel: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference: 0
   entity_reference_revisions: 0
   features: 0
   field: 0
@@ -41,6 +44,7 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  referenced_by: 0
   responsive_image: 0
   search: 0
   shortcut: 0
