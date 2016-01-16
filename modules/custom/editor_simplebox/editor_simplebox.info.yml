@@ -1,0 +1,9 @@
+name: Editor Simplebox
+description: A CKEDITOR widget.
+package: Custom
+
+type: module
+core: 8.x
+
+dependencies:
+  - ckeditor
