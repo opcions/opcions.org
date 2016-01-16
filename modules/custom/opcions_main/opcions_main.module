@@ -4,6 +4,7 @@ use \Drupal\node\Entity\Node;
 use \Drupal\node\Entity\NodeType;
 use \Drupal\Core\Entity\EntityInterface;
 use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use \Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements hook_entity_extra_field_info().
@@ -15,6 +16,15 @@ function opcions_main_entity_extra_field_info() {
         $extra['node'][$bundle->Id()]['display']['opcions_collection'] = [
             'label' => t('Guide / Collection'),
             'description' => t('The guide and or collections this article belongs to'),
+            'weight' => 0,
+            'visible' => FALSE,
+        ];
+    }
+
+    if ($bundle = NodeType::load('guia')) {
+        $extra['node'][$bundle->Id()]['display']['opcions_changelog'] = [
+            'label' => t('Changelog'),
+            'description' => t('The guide changelog based on the guide articles\' changelog'),
             'weight' => 0,
             'visible' => FALSE,
         ];
@@ -51,6 +61,29 @@ function opcions_main_node_view(array &$build, EntityInterface $entity, EntityVi
                 '#title' => t('You are reading the guide about @shortname', ['@shortname' => strtolower($collection->get('field_shortname')->getString())]),
             ];
         }
+
+    }
+
+    if ($display->getComponent('opcions_changelog')) {
+
+        $guia = $entity;
+
+
+        $changelog = [];
+        foreach ($guia->get('field_article_reference')->referencedEntities() as $article) {
+            foreach ($article->get('field_article_changelog') as $field ) {
+
+                $changelog[] = $field->view();
+
+            }
+        }
+
+        $build['opcions_changelog'] = [
+            '#theme' => 'item_list',
+            '#list_type' => 'ul',
+            '#items' => $changelog,
+        ];
+
 
     }
 
