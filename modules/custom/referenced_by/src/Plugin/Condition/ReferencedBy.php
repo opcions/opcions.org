@@ -27,7 +27,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 */
 class ReferencedBy extends ConditionPluginBase implements ContainerFactoryPluginInterface {
 
-
+    /**
+     * The field config storage
+     *
+     * @var ConfigEntityStorageInterface
+     */
     protected $fieldConfigStorage;
 
 
@@ -135,12 +139,14 @@ class ReferencedBy extends ConditionPluginBase implements ContainerFactoryPlugin
      */
      public function summary()
      {
-         $module = $this->getContextValue('module');
-         $modules = system_rebuild_module_data();
-
-         $status = ($modules[$module]->status)?t('enabled'):t('disabled');
-
-         return t('The module @module is @status.', array('@module' => $module, '@status' => $status));
+         if (count($this->configuration['referenced_by']) > 1) {
+             $fields = $this->configuration['referenced_by'];
+             $last = array_pop($fields);
+             $fields = implode(', ', $fields);
+             return $this->t('The node is referenced by @fields or @last', array('@fields' => $fields, '@last' => $last));
+         }
+         $field = reset($this->configuration['referenced_by']);
+         return $this->t('The node is referenced by @field', array('@field' => $field));
      }
 
 }
