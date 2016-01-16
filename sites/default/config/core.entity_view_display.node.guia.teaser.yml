@@ -46,3 +46,4 @@ hidden:
   field_txt_updates: true
   langcode: true
   links: true
+  opcions_changelog: true

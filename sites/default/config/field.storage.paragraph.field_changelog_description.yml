@@ -1,4 +1,4 @@
-uuid: 88319b28-b369-4fab-9c38-564b46c0ef77
+uuid: 876e49c9-fe2b-414b-8d00-a71275896af4
 langcode: ca
 status: true
 dependencies:
@@ -8,8 +8,9 @@ dependencies:
 id: paragraph.field_changelog_description
 field_name: field_changelog_description
 entity_type: paragraph
-type: text_long
-settings: {  }
+type: text
+settings:
+  max_length: 255
 module: text
 locked: false
 cardinality: 1

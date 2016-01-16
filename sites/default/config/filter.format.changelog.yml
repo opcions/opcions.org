@@ -1,0 +1,30 @@
+uuid: 36e127c1-1c95-46c2-a12e-46740de285ce
+langcode: ca
+status: true
+dependencies: {  }
+name: 'Changelog Format'
+format: changelog
+weight: 0
+filters:
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
