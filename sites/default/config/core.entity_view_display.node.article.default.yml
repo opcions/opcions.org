@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.article.field_tags
     - node.type.article
   module:
-    - entity_reference_revisions
     - responsive_image
     - text
     - user
@@ -27,20 +26,12 @@ content:
     third_party_settings: {  }
     type: text_default
   field_article_categories:
-    weight: 6
+    weight: 3
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_article_changelog:
-    type: entity_reference_revisions_entity_view
-    weight: 5
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
   field_image:
     type: responsive_image
     weight: 0
@@ -51,7 +42,7 @@ content:
     label: hidden
   field_tags:
     type: entity_reference_label
-    weight: 3
+    weight: 4
     label: above
     settings:
       link: true
@@ -61,9 +52,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   opcions_collection:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
 hidden:
   comment: true
+  field_article_changelog: true
   langcode: true
