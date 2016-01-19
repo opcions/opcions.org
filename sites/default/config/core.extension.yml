@@ -22,6 +22,7 @@ module:
   devel: 0
   dynamic_page_cache: 0
   editor: 0
+  editor_simplebox: 0
   entity_reference: 0
   entity_reference_revisions: 0
   features: 0

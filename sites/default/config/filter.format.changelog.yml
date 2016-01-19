@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 name: 'Changelog Format'
 format: changelog
-weight: 0
+weight: -6
 filters:
   filter_url:
     id: filter_url

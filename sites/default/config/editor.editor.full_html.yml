@@ -35,6 +35,7 @@ settings:
         -
           name: Media
           items:
+            - SimpleBox
             - Blockquote
             - DrupalImage
             - Table
@@ -51,11 +52,13 @@ settings:
   plugins:
     stylescombo:
       styles: ''
+    simplebox:
+      simplebox_align: '0'
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null
