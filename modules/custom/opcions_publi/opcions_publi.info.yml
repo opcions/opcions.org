@@ -1,0 +1,5 @@
+name: Opcions Publi
+type: module
+description: Blocks for opcions revive ad server
+core: 8.x
+package: Opcions

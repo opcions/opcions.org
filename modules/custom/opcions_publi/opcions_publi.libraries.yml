@@ -1,0 +1,27 @@
+content-ads:
+  js:
+    js/content-ads.js: {}
+  dependencies:
+      - core/jquery
+      - core/drupalSettings
+
+revive.spcjs:
+  header: true
+  remote: https://github.com/revive-adserver/revive-adserver/blob/master/www/delivery/spcjs.php
+  version: 3.2.2
+  license:
+    name: GNU General Public License
+    url: https://github.com/revive-adserver/revive-adserver/blob/master/LICENSE.txt
+    gpl-compatible: true
+  js:
+    http://reviveadserver.opcions.org/www/delivery/spcjs.php?id=1: { type: external, minified: true }
+
+lazyads.loader:
+  remote: https://github.com/madgex/lazy-ads
+  version: 1.1.10
+  license:
+    name: MIT
+    url: https://github.com/madgex/lazy-ads/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    js/lazyad-loader.min.js: {}

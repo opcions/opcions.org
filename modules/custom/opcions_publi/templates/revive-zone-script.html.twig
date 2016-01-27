@@ -1,0 +1,18 @@
+{% set breakpoint = 600 %}
+<div class="ad ad_item ad_item--aside"
+     data-lazyad
+     {% if zone_display == 'mobile' %}
+     data-matchmedia="only screen and (max-width: {{ breakpoint }}px)">
+     {% else %}
+     data-matchmedia="only screen and (min-width: {{ breakpoint + 1}}px)">
+     {% endif %}
+
+    <script type="text/lazyad">
+        <!--
+        <script type='text/javascript'>
+            OA_show({{ zone_id }});
+        </script>
+        -->
+    </script>
+
+</div>

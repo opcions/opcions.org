@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Contains opcions_publi.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_help().
+ */
+function opcions_publi_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the opcions_publi module.
+    case 'help.page.opcions_publi':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Blocks for opcions revive ad server') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function opcions_publi_theme($existing, $type, $theme, $path)
+{
+  return [
+
+    'revive_zone_script' => [
+
+      'variables' => ['zone_id' => NULL, 'zone_display' => 'desktop'],
+
+    ],
+
+  ];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function opcions_publi_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+
+  if ('article' == $entity->bundle() && $display->getComponent('body') ) {
+
+    $desktop = \Drupal::service('plugin.manager.block')
+        ->createInstance('revive_zone_block', ['zone_number' => 1, 'zone_display' => 'desktop'])
+        ->build();
+
+    $mobile = \Drupal::service('plugin.manager.block')
+        ->createInstance('revive_zone_block', ['zone_number' => 2, 'zone_display' => 'mobile'])
+        ->build();
+
+    $build['body']['#attached']['library'][] = 'opcions_publi/content-ads';
+    $build['body']['#attached']['drupalSettings']['opcions_publi']['content_ads'] = render($desktop) . render($mobile);
+  }
+
+
+
+
+
+}

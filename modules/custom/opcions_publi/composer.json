@@ -1,0 +1,16 @@
+{
+  "name": "drupal/opcions_publi",
+  "type": "drupal-module",
+  "description": "Blocks for opcions revive ad server",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/opcions_publi",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/opcions_publi",
+    "source": "http://cgit.drupalcode.org/opcions_publi"
+  },
+  "require": {
+    "wa72/htmlpagedom": "v1.2.1"
+  }
+}
