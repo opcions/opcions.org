@@ -1,0 +1,19 @@
+.ad {
+  border-top: 1px solid $medium-gray;
+  border-bottom: 1px solid $medium-gray;
+  display: none;
+  margin: 0 auto 1.25rem;
+  text-align: center;
+  padding: 1em 0;
+  width: 100%;
+  &[data-lazyad-loaded="true"] {
+    display: inline-block;
+  }
+  .ad__info {
+    font-size: 0.8em;
+    color: $dark-gray;
+  }
+  img {
+    margin: 1em 0;
+  }
+}
