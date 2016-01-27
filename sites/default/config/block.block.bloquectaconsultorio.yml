@@ -14,7 +14,7 @@ dependencies:
 id: bloquectaconsultorio
 theme: opcions
 region: content
-weight: -2
+weight: -4
 provider: null
 plugin: 'block_content:891e006f-4c74-48b8-a338-5644400f68fb'
 settings:

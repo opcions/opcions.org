@@ -1,0 +1,28 @@
+uuid: b85b3409-b4d7-404b-a400-ba826bda068e
+langcode: ca
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - opcions_publi
+  theme:
+    - opcions
+id: revivezoneblock_3
+theme: opcions
+region: content
+weight: -2
+provider: null
+plugin: revive_zone_block
+settings:
+  id: revive_zone_block
+  label: 'Publi (cuadrado post-contenido) (mobile)'
+  provider: opcions_publi
+  label_display: '0'
+  zone_number: '2'
+  zone_display: mobile
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

@@ -23,6 +23,7 @@ settings:
         -
           name: Linking
           items:
+            - Linkit
             - DrupalLink
             - DrupalUnlink
         -
@@ -33,6 +34,7 @@ settings:
         -
           name: Media
           items:
+            - SimpleBox
             - Blockquote
             - DrupalImage
             - Table
@@ -58,6 +60,10 @@ settings:
   plugins:
     stylescombo:
       styles: ''
+    simplebox:
+      simplebox_align: '0'
+    linkit:
+      linkit_profile: node_and_taxonomy
 image_upload:
   status: true
   scheme: public

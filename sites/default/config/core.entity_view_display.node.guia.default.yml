@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.guia.field_article_reference
     - field.field.node.guia.field_image
     - field.field.node.guia.field_shortname
-    - field.field.node.guia.field_txt_updates
     - node.type.guia
   module:
     - responsive_image
@@ -40,13 +39,6 @@ content:
       responsive_image_style: narrow
       image_link: ''
     third_party_settings: {  }
-  field_txt_updates:
-    weight: 1
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   links:
     weight: 5
     settings: {  }

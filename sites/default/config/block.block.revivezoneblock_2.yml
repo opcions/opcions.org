@@ -1,0 +1,28 @@
+uuid: a38e8c88-9192-4efb-b329-411b0844748c
+langcode: ca
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - opcions_publi
+  theme:
+    - opcions
+id: revivezoneblock_2
+theme: opcions
+region: content
+weight: -3
+provider: null
+plugin: revive_zone_block
+settings:
+  id: revive_zone_block
+  label: 'Publi (banner post-contenido)'
+  provider: opcions_publi
+  label_display: '0'
+  zone_number: '1'
+  zone_display: desktop
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

@@ -7,7 +7,7 @@ dependencies:
 id: opcions_local_tasks
 theme: opcions
 region: content
-weight: -6
+weight: -8
 provider: null
 plugin: local_tasks_block
 settings:

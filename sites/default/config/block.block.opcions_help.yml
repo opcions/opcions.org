@@ -9,7 +9,7 @@ dependencies:
 id: opcions_help
 theme: opcions
 region: content
-weight: -7
+weight: -9
 provider: null
 plugin: help_block
 settings:

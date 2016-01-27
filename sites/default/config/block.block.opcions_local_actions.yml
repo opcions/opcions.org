@@ -7,7 +7,7 @@ dependencies:
 id: opcions_local_actions
 theme: opcions
 region: content
-weight: -5
+weight: -7
 provider: null
 plugin: local_actions_block
 settings:

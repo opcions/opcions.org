@@ -1,0 +1,34 @@
+uuid: a8456a6e-a89d-499c-8200-e9f69ab62222
+langcode: ca
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node_and_taxonomy
+label: 'Node and taxonomy'
+description: ''
+attributes: {  }
+matchers:
+  3989a92b-8fa2-4be4-8e02-022f49e3a126:
+    uuid: 3989a92b-8fa2-4be4-8e02-022f49e3a126
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles:
+        article: article
+        guia: guia
+        page: page
+      group_by_bundle: true
+      include_unpublished: false
+  fca08e66-fb7c-4b86-9216-22caae2c6ada:
+    uuid: fca08e66-fb7c-4b86-9216-22caae2c6ada
+    id: 'entity:taxonomy_term'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles:
+        categories: categories
+        tags: tags
+      group_by_bundle: true
