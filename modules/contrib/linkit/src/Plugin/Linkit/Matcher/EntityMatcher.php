@@ -233,6 +233,8 @@ class EntityMatcher extends ConfigurableMatcherBase {
         continue;
       }
 
+      $entity = $this->entityManager->getTranslationFromContext($entity);
+
       $matches[] = [
         'title' => $this->buildLabel($entity),
         'description' => $this->buildDescription($entity),
