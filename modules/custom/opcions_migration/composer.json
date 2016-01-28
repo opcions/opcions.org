@@ -1,0 +1,14 @@
+{
+  "name": "drupal/opcions_migration",
+  "type": "drupal-module",
+  "description": "Migration of content",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/opcions_migration",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/opcions_migration",
+    "source": "http://cgit.drupalcode.org/opcions_migration"
+  },
+  "require": { }
+}

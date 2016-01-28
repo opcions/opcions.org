@@ -1,0 +1,61 @@
+id: opcions_articles
+label: Opcions articles from csv
+source:
+  plugin: csv
+  path: public://csv/articulos-blog-categorizados.csv
+  delimiter: ,          # The field separator of the source file.
+  enclosure: '"'        # Character used to enclose values in the source.
+  escape: "\\"          # Escape character within values in the source.
+  header_row_count: 1   # The number of rows at the beginning which are not data.
+  keys:
+    - nid
+  column_names:
+    0:
+      nid: Node id
+    2:
+      language: Language
+    5:
+      created: Created at
+    6:
+      changed: Updated at
+    11:
+      tnid: Translation source
+    15:
+      title: Article title
+    16:
+      category: Article main category
+    17:
+      body: Article body
+    18:
+      teaser: Article teaser
+    25:
+      path: Article path
+    47:
+      comment_count: Number of comments
+    89:
+      image_path: Path to article featured image
+    95:
+      tags: Article tags (comma separated)
+destination:
+  plugin: entity:node
+process:
+  type:
+    -
+      plugin: default_value
+      default_value: article
+  title: title
+  'body/format':
+    plugin: default_value
+    default_value: basic_html
+  'body/value': body
+  'body/summary': teaser
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  created: created
+  changed: changed
+# Required to cleanup CMI.
+dependencies:
+  module:
+    - opcions_migration

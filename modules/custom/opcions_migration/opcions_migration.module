@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains opcions_migration.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function opcions_migration_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the opcions_migration module.
+    case 'help.page.opcions_migration':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Migration of content') . '</p>';
+      return $output;
+
+    default:
+  }
+}
