@@ -29,6 +29,7 @@ module:
   features: 0
   field: 0
   field_ui: 0
+  fieldblock: 0
   file: 0
   filter: 0
   help: 0
