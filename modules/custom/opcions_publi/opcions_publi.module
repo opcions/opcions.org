@@ -49,11 +49,11 @@ function opcions_publi_node_view(array &$build, EntityInterface $entity, EntityV
   if ('article' == $entity->bundle() && $display->getComponent('body') ) {
 
     $desktop = \Drupal::service('plugin.manager.block')
-        ->createInstance('revive_zone_block', ['zone_number' => 1, 'zone_display' => 'desktop'])
+        ->createInstance('revive_zone_block', ['zone' => 'MRD'])
         ->build();
 
     $mobile = \Drupal::service('plugin.manager.block')
-        ->createInstance('revive_zone_block', ['zone_number' => 2, 'zone_display' => 'mobile'])
+        ->createInstance('revive_zone_block', ['zone' => 'MRM'])
         ->build();
 
     $build['body']['#attached']['library'][] = 'opcions_publi/content-ads';

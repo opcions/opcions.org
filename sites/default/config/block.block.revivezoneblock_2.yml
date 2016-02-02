@@ -20,6 +20,8 @@ settings:
   label_display: '0'
   zone_number: '1'
   zone_display: desktop
+  zone: LBD
+  zone_id: 1
 visibility:
   condition_group:
     id: condition_group
