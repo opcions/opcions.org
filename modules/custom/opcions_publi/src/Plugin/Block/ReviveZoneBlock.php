@@ -81,7 +81,7 @@ class ReviveZoneBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function build()
   {
     $config = $this->getCurrentLanguageConfig();
-    
+
     return [
       'opcions_publi_script' => [
         '#theme' => 'revive_zone_script',
