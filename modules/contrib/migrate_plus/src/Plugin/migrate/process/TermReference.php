@@ -98,7 +98,7 @@ class TermReference extends EntityLookup implements ContainerFactoryPluginInterf
    * Sets the entity type by default.
    */
   protected function setEntityType() {
-    if (!$this->configuration['entity_type']) {
+    if (empty($this->configuration['entity_type'])) {
       $this->configuration['entity_type'] = 'taxonomy_term';
     }
   }
