@@ -25,9 +25,6 @@ class MigrateEvent implements EventSubscriberInterface {
      *   The prepare-row event.
      */
     public function onPrepareRow(MigratePrepareRowEvent $event) {
-        $row = $event->getRow();
-        if ( empty($row->getSourceProperty('category')) ) {
-            throw new MigrateSkipRowException('No category set, skip row');
-        }
+
     }
 }

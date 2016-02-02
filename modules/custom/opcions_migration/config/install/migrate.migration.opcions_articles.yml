@@ -32,6 +32,8 @@ source:
       path: Article path
     47:
       comment_count: Number of comments
+    83:
+      fid: File id
     89:
       image_path: Path to article featured image
     95:
@@ -40,22 +42,50 @@ destination:
   plugin: entity:node
 process:
   type:
-    -
-      plugin: default_value
-      default_value: article
+    plugin: default_value
+    default_value: article
   title: title
   'body/format':
     plugin: default_value
     default_value: basic_html
   'body/value': body
   'body/summary': teaser
-  uid:
+  langcode: language
+  field_article_categories:
     -
-      plugin: default_value
-      default_value: 1
+      plugin: skip_on_empty
+      method: row
+      source: category
+    -
+      plugin: term_reference
+      ignore_case: true
+      bundle:
+        - vid: categories
+      value_type: name
+  field_tags:
+    -
+      plugin: explode
+      delimiter: ,
+      source: tags
+    -
+      plugin: term_reference
+      ignore_case: true
+      bundle:
+        - vid: tags
+      value_type: name
+  field_image:
+    plugin: migration
+    migration: opcions_files
+    source: fid
+  uid:
+    plugin: default_value
+    default_value: 1
   created: created
   changed: changed
 # Required to cleanup CMI.
+migration_dependencies:
+  required:
+    - opcions_files
 dependencies:
   module:
     - opcions_migration

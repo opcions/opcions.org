@@ -1,0 +1,54 @@
+id: opcions_files
+label: Opcions articles from csv
+source:
+  plugin: csv
+  path: public://csv/articulos-blog-categorizados.csv
+  delimiter: ,          # The field separator of the source file.
+  enclosure: '"'        # Character used to enclose values in the source.
+  escape: "\\"          # Escape character within values in the source.
+  header_row_count: 1   # The number of rows at the beginning which are not data.
+  constants:
+    file_directory_path: sites/default/files
+    temp_directory_path: /tmp
+    is_public: TRUE
+  keys:
+    - fid
+  column_names:
+    83:
+      fid: Field id
+    88:
+      filename: Filename
+    89:
+      filepath: File path
+    90:
+      filemime: File mime
+    91:
+      filesize: File size
+    92:
+      status: File status
+    93:
+      timestamp: File timestamp
+process:
+  fid: fid
+  filename: filename
+  uri:
+    plugin: file_uri
+    source:
+      - filepath
+      - file_directory_path
+      - temp_directory_path
+      - is_public
+  filemime: filemime
+  filesize: filesize
+  status: status
+  changed: timestamp
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:file
+  urlencode: true
+  source_base_path: http://opcions.org/
+dependencies:
+  module:
+    - opcions_migration
