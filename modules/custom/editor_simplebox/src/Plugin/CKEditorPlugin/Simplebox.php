@@ -22,7 +22,7 @@ use Drupal\ckeditor\CKEditorPluginConfigurableInterface;
  *   module = "ckeditor"
  * )
  */
-class SimpleBox extends CKEditorPluginBase implements CKEditorPluginConfigurableInterface {
+class SimpleBox extends CKEditorPluginBase {
 
     /**
      * {@inheritdoc}
@@ -48,35 +48,8 @@ class SimpleBox extends CKEditorPluginBase implements CKEditorPluginConfigurable
      * {@inheritdoc}
      */
     public function getConfig(Editor $editor) {
-        // Defaults
-        $config = [
-          'simplebox_align' => 'center'
-        ];
-        $settings = $editor->getSettings();
-        if (isset($settings['plugins']['simplebox'])) {
-            $config = $settings['plugins']['simplebox'];
-            return $config;
-        }
-        return $config;
-    }
 
-    /**
-     * Implements \Drupal\ckeditor\Plugin\CKEditorPluginConfigurableInterface::settingsForm().
-     * Returns a settings form to configure this CKEditor plugin.
-     */
-    public function settingsForm(array $form, FormStateInterface $form_state, Editor $editor) {
-
-        $config = $this->getConfig($editor);
-
-        $form['simplebox_align'] = [
-          '#title' => t('Wishes'),
-          '#description' => t('SimpleBox alignment'),
-          '#type' => 'select',
-          '#options' => ['center', 'left', 'right'],
-          '#default_value' => $config['simplebox_align'],
-        ];
-
-        return $form;
+        return [];
     }
 
 }
