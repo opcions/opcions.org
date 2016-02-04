@@ -47,7 +47,7 @@
         // The template will be used when creating new instances of the Simple Box widget.
         template: '<aside class="simplebox">' +
         '<h3 class="simplebox-title">Titol</h3>' +
-        '<div class="simplebox-con"><p>Contingut...</p></div>' +
+        '<div class="simplebox-content"><p>Contingut...</p></div>' +
         '</aside>',
 
         // Define the label for a widget toolbar button which will be automatically
