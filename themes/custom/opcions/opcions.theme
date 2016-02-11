@@ -5,25 +5,26 @@
  *
  * @param $variables
  */
-function opcions_preprocess_block(&$variables) {
+function opcions_preprocess_block(&$variables)
+{
 
-    // http://drupal.stackexchange.com/questions/171092/how-do-i-access-field-data-in-twig
-    if (isset($variables['elements']['content']['#block_content'])) {
-        $variables['fields'] = $variables['elements']['content']['#block_content'];
-    }
+  // http://drupal.stackexchange.com/questions/171092/how-do-i-access-field-data-in-twig
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $variables['fields'] = $variables['elements']['content']['#block_content'];
+  }
 
-    switch ($variables['elements']['#plugin_id']) {
-        case 'system_branding_block':
-            $variables['attributes']['class'][] = 'header__brand';
-            break;
-        case 'system_menu_block:account':
-            $variables['attributes']['class'][] = 'header__actions';
-            break;
-        case 'language_block:language_interface':
-            $variables['attributes']['class'][] = 'header__language';
-        default:
-            //kint($variables['elements']['#plugin_id']);
-    }
+  switch ($variables['elements']['#plugin_id']) {
+    case 'system_branding_block':
+      $variables['attributes']['class'][] = 'header__brand';
+      break;
+    case 'system_menu_block:account':
+      $variables['attributes']['class'][] = 'header__actions';
+      break;
+    case 'language_block:language_interface':
+      $variables['attributes']['class'][] = 'header__language';
+    default:
+      //kint($variables['elements']['#plugin_id']);
+  }
 }
 
 /**
@@ -31,19 +32,29 @@ function opcions_preprocess_block(&$variables) {
  *
  * @param $variables
  */
-function opcions_preprocess_region(&$variables) {
-
-    switch ($variables['region']) {
-        case 'header':
-            $variables['attributes']['class'][] = 'header';
-            break;
-        case 'primary_menu':
-            $variables['attributes']['class'][] = 'navigation-top';
-            $variables['attributes']['class'][] = 'navigation-top--collapsed';
-            break;
-        default:
-            //dpm($variables['region']);
-    }
+function opcions_preprocess_region(&$variables)
+{
+  switch ($variables['region']) {
+    case 'header':
+      $variables['attributes']['class'][] = 'header';
+      break;
+    case 'navigation_top':
+      $variables['attributes']['class'][] = 'navigation-top';
+      $variables['attributes']['class'][] = 'navigation-top--collapsed';
+      break;
+    case 'search_top':
+      $variables['attributes']['class'][] = 'hide';
+      $variables['attributes']['data-toggler'] = 'search';
+      $variables['attributes']['data-animate'] = 'hinge-in-from-top hinge-out-from-top';
+      break;
+    case 'navigation_main':
+      $variables['attributes']['class'][] = 'hide';
+      $variables['attributes']['data-toggler'] = 'navigation';
+      $variables['attributes']['data-animate'] = 'hinge-in-from-top hinge-out-from-top';
+      break;
+    default:
+      //dpm($variables['region']);
+  }
 }
 
 
@@ -53,10 +64,11 @@ function opcions_preprocess_region(&$variables) {
  * @param $suggestions
  * @param $variables
  */
-function opcions_theme_suggestions_block_alter(&$suggestions, $variables) {
-    $content = $variables['elements']['content'];
-    if (isset($content['#block_content']) && $content['#block_content'] instanceof \Drupal\block_content\BlockContentInterface) {
-        $suggestion = 'block__' . $content['#block_content']->bundle();
-        array_splice( $suggestions, 2, 0, $suggestion );
-    }
+function opcions_theme_suggestions_block_alter(&$suggestions, $variables)
+{
+  $content = $variables['elements']['content'];
+  if (isset($content['#block_content']) && $content['#block_content'] instanceof \Drupal\block_content\BlockContentInterface) {
+    $suggestion = 'block__' . $content['#block_content']->bundle();
+    array_splice($suggestions, 2, 0, $suggestion);
+  }
 }

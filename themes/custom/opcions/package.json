@@ -18,7 +18,7 @@
   "scripts": {
     "clean": "rimraf css js && mkdirp css js",
     "lint": "eslint source/js/**/*.js",
-    "build:css": "node-sass source/scss --output css --include-path source/scss/_partials --include-path source/scss/_mixins --include-path node_modules/foundation-sites/scss --source-map css",
+    "build:css": "node-sass source/scss --output css --include-path source/scss/_partials --include-path source/scss/_mixins --include-path node_modules/foundation-sites/scss --include-path node_modules/motion-ui/src --source-map css",
     "preoptimize:css": "npm run -s build:css",
     "optimize:css": "postcss --config postcss.config.json",
     "prebuild:js": "npm run lint",

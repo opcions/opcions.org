@@ -9,7 +9,9 @@ libraries:
   - opcions/global-js
 regions:
   header: Header # Items for the header region.
-  primary_menu: Menu # Items for the primary menu region.
+  navigation_top: Navigation Top # Items for the primary menu region.
+  search_top: Top Search (hidden by default) # Items for the full extenden menu region.
+  navigation_main: Main Menu (hidden by default) # Items for the full extenden menu region.
   # secondary_menu: # Items for the secondary menu region.
   highlighted: Highlighted # Items for the highlighted content region.
   help: Help # Dynamic help text, mostly for admin pages.

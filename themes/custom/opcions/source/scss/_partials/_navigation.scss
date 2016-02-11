@@ -1,46 +1,13 @@
+.menu--main .menu {
+  @include menu-base;
+  @include menu-direction(horizontal);
+}
+
 .navigation-top {
   @include grid-column-row;
   position: relative;
   background-color: $light-gray;
-  height: 2.25rem;
   overflow: hidden;
-  &--collapsed {
-    .scroll {
-      overflow-x: scroll;
-      white-space: nowrap;
-      backface-visibility: hidden;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-
-    .top-navigation--primary {
-      display: inline-block;
-      overflow: hidden;
-      li {
-        display: inline-block;
-        overflow: hidden;
-        white-space: nowrap;
-        &.active a {
-          text-decoration: none;
-          color: grey;
-        }
-      }
-    }
-  }
-  .menu {
-    @include menu-base;
-    @include menu-direction(horizontal);
-  }
-}
-
-.signposting {
-  @include breadcrumbs-container;
-}
-
-
-.top-navigation {
-
 }
 
 .navigation-top__toggle {
@@ -52,3 +19,4 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+

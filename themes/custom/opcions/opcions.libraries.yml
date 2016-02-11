@@ -7,3 +7,4 @@ global-js:
     js/opcions.js: {}
   dependencies:
     - core/jquery
+    - core/drupal

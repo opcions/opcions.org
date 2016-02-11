@@ -16,11 +16,19 @@
   set classes = [
     'region',
     'region-' ~ region|clean_class,
+    'navigation-top'
   ]
 %}
 {% set id = 'region-' ~ region|clean_id %}
 {% if content %}
   <div{{ attributes.addClass(classes).setAttribute('id', id) }}>
     {{ content }}
+    <div class="navigation-top__toggle">
+      <a class="js-search-top-toggle" data-toggle="region-search-top" href="#search">{% trans 'Search' %}</a>
+      <a class="lines-button x arrow-left js-navigation-top-toggle" data-toggle="region-navigation-main" aria-label="Toggle Navigation" href="#navigation">
+        {% trans 'Menu' %}
+        <span class="lines"></span>
+      </a>
+    </div>
   </div>
 {% endif %}
