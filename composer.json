@@ -12,9 +12,13 @@
     },
     "replace": {
         "drupal/core": "~8.0",
+        "drupal/address": "8.*",
+        "drupal/currency": "8.*",
         "drupal/webprofiler": "8.*",
         "drupal/ds": "8.*",
         "drupal/page_manager": "8.*",
+        "drupal/payment": "8.*",
+        "drupal/plugin": "8.*",
         "drupal/opcions_publi": "8.*"
     },
     "minimum-stability": "dev",
@@ -31,9 +35,13 @@
         "merge-plugin": {
             "include": [
                 "core/composer.json",
+                "modules/contrib/address/composer.json",
+                "modules/contrib/currency/composer.json",
                 "modules/contrib/devel/webprofiler/composer.json",
                 "modules/contrib/ds/composer.json",
                 "modules/contrib/page_manager/composer.json",
+                "modules/contrib/payment/composer.json",
+                "modules/contrib/plugin/composer.json",
                 "modules/custom/opcions_publi/composer.json"
             ],
             "recurse": false,
