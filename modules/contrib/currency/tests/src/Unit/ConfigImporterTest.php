@@ -18,7 +18,6 @@ use Drupal\currency\ConfigImporter;
 use Drupal\currency\Entity\CurrencyInterface;
 use Drupal\currency\Entity\CurrencyLocaleInterface;
 use Drupal\Tests\UnitTestCase;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * @coversDefaultClass \Drupal\currency\ConfigImporter
@@ -56,13 +55,6 @@ class ConfigImporterTest extends UnitTestCase {
   protected $entityTypeManager;
 
   /**
-   * The event dispatcher.
-   *
-   * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface|\PHPUnit_Framework_MockObject_MockObject
-   */
-  protected $eventDispatcher;
-
-  /**
    * The module handler.
    *
    * @var \Drupal\Core\Extension\ModuleHandlerInterface|\PHPUnit_Framework_MockObject_MockObject
@@ -93,8 +85,6 @@ class ConfigImporterTest extends UnitTestCase {
 
     $this->currencyLocaleStorage = $this->getMock(EntityStorageInterface::class);
 
-    $this->eventDispatcher = $this->getMock(EventDispatcherInterface::class);
-
     $this->moduleHandler = $this->getMock(ModuleHandlerInterface::class);
 
     $this->typedConfigManager = $this->getMock(TypedConfigManagerInterface::class);
@@ -108,14 +98,14 @@ class ConfigImporterTest extends UnitTestCase {
       ->method('getStorage')
       ->willReturnMap($map);
 
-    $this->sut = new ConfigImporter($this->moduleHandler, $this->eventDispatcher, $this->typedConfigManager, $this->entityTypeManager);
+    $this->sut = new ConfigImporter($this->moduleHandler, $this->typedConfigManager, $this->entityTypeManager);
   }
 
   /**
    * @covers ::__construct
    */
   public function testConstruct() {
-    $this->sut = new ConfigImporter($this->moduleHandler, $this->eventDispatcher, $this->typedConfigManager, $this->entityTypeManager);
+    $this->sut = new ConfigImporter($this->moduleHandler, $this->typedConfigManager, $this->entityTypeManager);
   }
 
   /**
