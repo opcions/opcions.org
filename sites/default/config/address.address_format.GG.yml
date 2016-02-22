@@ -1,0 +1,20 @@
+uuid: f7933c81-59f5-4028-8033-51ff496e44e2
+langcode: en
+status: true
+dependencies: {  }
+countryCode: GG
+format: "%recipient\n%organization\n%addressLine1\n%addressLine2\n%sortingCode\n%locality\nGUERNSEY\n%postalCode"
+requiredFields:
+  - recipient
+  - addressLine1
+  - locality
+  - postalCode
+uppercaseFields:
+  - locality
+  - postalCode
+administrativeAreaType: null
+localityType: city
+dependentLocalityType: null
+postalCodeType: postal
+postalCodePattern: 'GY\d[\dA-Z]?[ ]?\d[ABD-HJLN-UW-Z]{2}'
+postalCodePrefix: null

@@ -1,0 +1,18 @@
+uuid: 6dc81f2d-f1bb-4d23-9e06-6bc21c2beeb0
+langcode: en
+status: true
+dependencies: {  }
+countryCode: SG
+format: "%recipient\n%organization\n%addressLine1\n%addressLine2\nSINGAPORE %postalCode"
+requiredFields:
+  - recipient
+  - addressLine1
+  - postalCode
+uppercaseFields:
+  - locality
+administrativeAreaType: null
+localityType: null
+dependentLocalityType: null
+postalCodeType: postal
+postalCodePattern: '\d{6}'
+postalCodePrefix: null

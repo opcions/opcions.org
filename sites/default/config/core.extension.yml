@@ -1,4 +1,5 @@
 module:
+  address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
@@ -18,6 +19,7 @@ module:
   contact: 0
   content_translation: 0
   contextual: 0
+  currency: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -48,6 +50,8 @@ module:
   page_cache: 0
   paragraphs: 0
   path: 0
+  payment: 0
+  plugin: 0
   quickedit: 0
   rdf: 0
   referenced_by: 0

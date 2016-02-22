@@ -1,0 +1,30 @@
+uuid: a1123bf4-478b-4da6-a64c-76c1360a4fe6
+langcode: ca
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - block_visibility_groups
+    - system
+  theme:
+    - opcions
+id: menudelcomptedusuari
+theme: opcions
+region: navigation_main
+weight: -11
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'Menú del compte d''usuari'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
