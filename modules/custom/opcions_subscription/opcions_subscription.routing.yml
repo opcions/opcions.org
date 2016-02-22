@@ -1,7 +1,7 @@
 opcions.new_subscription:
   path: 'subscribe'
   defaults:
-    _form: '\Drupal\opcions_subscription\Form\SubscriptionForm'
+    _form: '\Drupal\opcions_subscription\Form\NewSubscriptionForm'
     _title: 'Subscribe'
   requirements:
     _permission: 'access content'
