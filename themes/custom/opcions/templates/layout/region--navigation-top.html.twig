@@ -24,8 +24,8 @@
   <div{{ attributes.addClass(classes).setAttribute('id', id) }}>
     {{ content }}
     <div class="navigation-top__toggle">
-      <a class="js-search-top-toggle" data-toggle="region-search-top" href="#search">{% trans 'Search' %}</a>
-      <a class="lines-button x arrow-left js-navigation-top-toggle" data-toggle="region-navigation-main" aria-label="Toggle Navigation" href="#navigation">
+      <a class="js-search-top-toggle" href="#search" aria-label="Toggle Search">{% trans 'Search' %}</a>
+      <a class="lines-button x arrow-left js-navigation-top-toggle" aria-label="Toggle Navigation" href="#region-footer">
         {% trans 'Menu' %}
         <span class="lines"></span>
       </a>

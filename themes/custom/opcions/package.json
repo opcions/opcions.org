@@ -13,7 +13,10 @@
     "watch": "latest"
   },
   "dependencies": {
-    "foundation-sites": "latest"
+    "foundation-sites": "^6.2.0-rc.1",
+    "motion-ui": "^1.2.0",
+    "velocity-animate": "^1.2.3",
+    "webfontloader": "^1.6.21"
   },
   "scripts": {
     "clean": "rimraf css js && mkdirp css js",
@@ -22,7 +25,7 @@
     "preoptimize:css": "npm run -s build:css",
     "optimize:css": "postcss --config postcss.config.json",
     "prebuild:js": "npm run lint",
-    "build:js": "browserify -e source/js/opcions.js -o js/opcions.js",
+    "build:js": "browserify -e source/js/opcions.js -o js/opcions.js && browserify -e source/js/opcions-fonts.js -o js/opcions-fonts.js ",
     "build": "npm run build:css && npm run build:js",
     "build:watch": "watch 'npm run -s build' source",
     "bsync": "browser-sync start --proxy \"opcions.dev\" --reload-delay 2000 --files \"css, js, templates, opcions.*\"",

@@ -1,5 +1,13 @@
+footer {
+  background: url('../img/textured_paper.png');
+  border-top: 1px solid $light-gray;
+  box-shadow: 0 0 10px hsl(0, 0%, 60%);
+  @include breakpoint(retina) {
+    background: url('../img/textured_paper_@2x.png');
+  }
+}
 .region-footer {
-  background-color: #292c2f;
+  background-color: transparent;
   text-align: center;
   font-size: 1.2rem;
   padding: 4rem;

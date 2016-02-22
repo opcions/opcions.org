@@ -1,6 +1,11 @@
 .menu--main .menu {
   @include menu-base;
   @include menu-direction(horizontal);
+
+  .menu-item--collapsed {
+    list-style-type: none;
+    list-style-image: none;
+  }
 }
 
 .navigation-top {

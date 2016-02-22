@@ -2,9 +2,15 @@ global-css:
   css:
     theme:
       css/opcions.css: {}
+  dependencies:
+      - opcions/webfonts
 global-js:
   js:
     js/opcions.js: {}
   dependencies:
     - core/jquery
     - core/drupal
+webfonts:
+  header: true
+  js:
+    js/opcions-fonts.js: {}

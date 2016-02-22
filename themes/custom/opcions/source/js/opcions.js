@@ -2,25 +2,24 @@
 (function ($, Drupal) {
   'use strict';
 
-  require('foundation-sites');
+  // require('foundation-sites');
+  require('velocity-animate');
+  require('velocity-animate/velocity.ui');
 
   Drupal.behaviors.opcionsToggle = {
     attach: function (context, settings) {
 
-      $(context).foundation();
-
       $(context).find('.js-navigation-top-toggle').on('click', function (e) {
-        $(this).toggleClass('close');
         e.preventDefault();
+
+        if ($(this).hasClass('close')) {
+          $('.js-navitation-main').velocity('slideUp');
+        }
+        else {
+          $('.js-navitation-main').velocity('slideDown');
+        }
+        $(this).toggleClass('close');
       });
-
-      $(context).find("[data-toggler='navigation']").on('on.zf.toggler', function () {
-      });
-
-      $(context).find("[data-toggler='navigation']").on('off.zf.toggler', function () {
-      });
-
-
 
     }
   };

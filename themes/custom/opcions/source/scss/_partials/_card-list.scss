@@ -1,17 +1,17 @@
 .card-list {
   @include grid-row();
-  @include grid-layout(1, '.card-list__item');
+  @include grid-layout(1, '.view-content .card-list__item');
 
   @include breakpoint(medium) {
-    @include grid-layout(2, '.card-list__item');
+    @include grid-layout(2, '.view-content  .card-list__item');
   }
 
   @include breakpoint(large) {
-    @include grid-layout(3, '.card-list__item');
+    @include grid-layout(3, '.view-content  .card-list__item');
   }
 
   @include breakpoint(xlarge) {
-    @include grid-layout(4, 'card-list__item');
+    @include grid-layout(4, '.view-content  .card-list__item');
   }
 
   &__item {

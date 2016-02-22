@@ -43,14 +43,14 @@ function opcions_preprocess_region(&$variables)
       $variables['attributes']['class'][] = 'navigation-top--collapsed';
       break;
     case 'search_top':
-      $variables['attributes']['class'][] = 'hide';
-      $variables['attributes']['data-toggler'] = 'search';
-      $variables['attributes']['data-animate'] = 'hinge-in-from-top hinge-out-from-top';
+      $variables['attributes']['class'][] = 'hide js-search-top';
+      //$variables['attributes']['data-toggler'] = 'search';
+      //$variables['attributes']['data-animate'] = 'hinge-in-from-top hinge-out-from-top';
       break;
     case 'navigation_main':
-      $variables['attributes']['class'][] = 'hide';
-      $variables['attributes']['data-toggler'] = 'navigation';
-      $variables['attributes']['data-animate'] = 'hinge-in-from-top hinge-out-from-top';
+      $variables['attributes']['class'][] = 'hide js-navitation-main';
+      //$variables['attributes']['data-toggler'] = 'navigation';
+      //$variables['attributes']['data-animate'] = 'hinge-in-from-top hinge-out-from-top';
       break;
     default:
       //dpm($variables['region']);
