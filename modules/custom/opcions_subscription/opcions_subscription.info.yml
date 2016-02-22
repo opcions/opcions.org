@@ -1,0 +1,7 @@
+name: Suscripciones Opcions
+type: module
+description: Forms and config for opcions subscriptions
+core: 8.x
+package: Opcions
+dependencies:
+  - payment

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains opcions_subscription.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function opcions_subscription_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the opcions_subscription module.
+    case 'help.page.opcions_subscription':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Forms and config for opcions subscriptions') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function opcions_subscription_theme() {
+  $items = [
+    'switch' => [
+      'render element' => 'element',
+    ],
+    'input__switch' => [
+      'variables' => ['element' => null, 'children' => null, 'attributes' => null],
+    ]
+  ];
+  return $items;
+}

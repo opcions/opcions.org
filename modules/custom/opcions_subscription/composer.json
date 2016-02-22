@@ -1,0 +1,14 @@
+{
+  "name": "drupal/opcions_subscription",
+  "type": "drupal-module",
+  "description": "Forms and config for opcions subscriptions",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/opcions_subscription",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/opcions_subscription",
+    "source": "http://cgit.drupalcode.org/opcions_subscription"
+  },
+  "require": { }
+}

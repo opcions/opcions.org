@@ -1,0 +1,8 @@
+subscription-form:
+  version: 1.x
+  css:
+    component:
+      css/subscription-form.css: {}
+      css/switch.css: {}
+  js:
+    js/subscription-form.js: {}

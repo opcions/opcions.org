@@ -1,0 +1,43 @@
+.price-select .form-radios .form-item-price {
+    display: inline-block;
+}
+
+.price-select input[type="radio"]{
+    position: fixed;
+    opacity: 0;
+}
+
+.price-select label{
+    margin: 0;
+    padding: 1em;
+}
+
+.price-select .form-item-price {
+    border: 0px;
+    border-bottom: 5px solid cadetblue;
+}
+
+.price-select .form-item-price:hover {
+    border: 0px;
+    border-bottom: 5px solid cadetblue;
+}
+
+.price-select .form-item-price.selected ~ .form-item-price {
+    border: 0px;
+    border-bottom: 5px solid transparent;
+}
+
+.price-select .form-item-price:first-of-type {
+    border: 0px;
+    border-bottom: 5px solid darkgray;
+}
+
+.price-select input[type="radio"]:checked+label{
+    font-weight: bold;
+}
+
+.paper-info {
+    display: none;
+    color: #999;
+    font-size: 0.9em;
+}
