@@ -1,0 +1,6 @@
+opcions_main.admin_config:
+  title: Opcions
+  route_name: opcions_main.admin_config
+  description: 'Admin opcions related configuration'
+  weight: -10
+  parent: system.admin_config

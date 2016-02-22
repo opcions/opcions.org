@@ -1,0 +1,7 @@
+opcions_main.admin_config:
+  path: '/admin/config/opcions'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Opcions'
+  requirements:
+    _permission: 'access administration pages'
