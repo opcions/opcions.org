@@ -15,7 +15,7 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * @package Drupal\opcions_subscription\Form
  */
-class SubscriptionForm extends FormBase {
+class NewSubscriptionForm extends FormBase {
 
   /**
    * {@inheritdoc}
