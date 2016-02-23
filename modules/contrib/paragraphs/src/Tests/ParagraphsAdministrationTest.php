@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\paragraphs\ParagraphsAdministrationTest.
+ * Contains \Drupal\paragraphs\Tests\ParagraphsAdministrationTest.
  */
 
 namespace Drupal\paragraphs\Tests;
@@ -260,9 +260,9 @@ class ParagraphsAdministrationTest extends WebTestBase {
 
     // Check the text and image after publish.
     $this->assertText('Test text 1');
-    $this->assertRaw('<img src="' . $img1_url);
+    $this->assertRaw('<img src="' . file_url_transform_relative($img1_url));
     $this->assertText('Test text 2');
-    $this->assertRaw('<img src="' . $img2_url);
+    $this->assertRaw('<img src="' . file_url_transform_relative($img2_url));
 
     // Tests for "Edit mode" settings.
     // Test for closed setting.
