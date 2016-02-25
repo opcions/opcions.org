@@ -23,7 +23,6 @@ function opcions_subscription_help($route_name, RouteMatchInterface $route_match
   }
 }
 
-
 /**
  * Implements hook_theme().
  */
