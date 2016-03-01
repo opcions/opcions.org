@@ -60,6 +60,8 @@ settings:
   plugins:
     stylescombo:
       styles: ''
+    simplebox:
+      simplebox_align: '0'
     linkit:
       linkit_profile: node_and_taxonomy
 image_upload:

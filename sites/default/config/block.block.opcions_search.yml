@@ -1,26 +1,20 @@
 uuid: dd49eee2-73a6-40f3-9161-97f09e5a24b6
 langcode: ca
-status: true
+status: false
 dependencies:
   module:
-    - block_visibility_groups
     - search
   theme:
     - opcions
 id: opcions_search
 theme: opcions
-region: search_top
-weight: -9
+region: '-1'
+weight: -6
 provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
   label: Cerca
   provider: search
-  label_display: '0'
-visibility:
-  condition_group:
-    id: condition_group
-    negate: false
-    block_visibility_group: ''
-    context_mapping: {  }
+  label_display: visible
+visibility: {  }

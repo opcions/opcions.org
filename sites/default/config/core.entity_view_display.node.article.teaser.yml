@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.article.field_article_changelog
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
-    - image.style.medium
     - node.type.article
   module:
     - image
