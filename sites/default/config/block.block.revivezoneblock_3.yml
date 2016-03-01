@@ -19,7 +19,9 @@ settings:
   provider: opcions_publi
   label_display: '0'
   zone_number: '2'
-  zone_display: mobile
+  zone_display: desktop
+  zone: MRM
+  zone_id: 2
 visibility:
   condition_group:
     id: condition_group
