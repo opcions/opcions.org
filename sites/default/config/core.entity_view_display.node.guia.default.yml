@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.guia.body
-    - field.field.node.guia.field_article_reference
     - field.field.node.guia.field_image
     - field.field.node.guia.field_shortname
     - node.type.guia
@@ -23,14 +22,6 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
-  field_article_reference:
-    weight: 4
-    label: above
-    settings:
-      view_mode: teaser
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_image:
     type: responsive_image
     weight: 2

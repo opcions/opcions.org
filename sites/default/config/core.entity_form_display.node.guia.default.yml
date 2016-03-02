@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.guia.body
-    - field.field.node.guia.field_article_reference
     - field.field.node.guia.field_image
     - field.field.node.guia.field_shortname
+    - image.style.thumbnail
     - node.type.guia
   module:
     - image
@@ -30,14 +30,6 @@ content:
     weight: 7
     settings: {  }
     third_party_settings: {  }
-  field_article_reference:
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
   field_image:
     weight: 2
     settings:
