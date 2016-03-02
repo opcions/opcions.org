@@ -1,0 +1,28 @@
+uuid: 66c9d01d-13c9-4544-8009-09a85edd22f2
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_reference
+    - node.type.article
+    - node.type.guia
+    - paragraphs.paragraphs_type.article_reference_paragraph
+id: paragraph.article_reference_paragraph.field_content_reference
+field_name: field_content_reference
+entity_type: paragraph
+bundle: article_reference_paragraph
+label: 'Referència al contingut'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      guia: guia
+    sort:
+      field: _none
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: 668c19e9-4e19-481f-b201-1d6482982746
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_override
+    - paragraphs.paragraphs_type.article_reference_paragraph
+id: paragraph.article_reference_paragraph.field_title_override
+field_name: field_title_override
+entity_type: paragraph
+bundle: article_reference_paragraph
+label: 'Sobrescriu el titol'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

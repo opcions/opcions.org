@@ -1,0 +1,38 @@
+uuid: f25a74b8-951c-4a09-8f23-35f5c16840fc
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.article_reference_paragraph.field_content_reference
+    - field.field.paragraph.article_reference_paragraph.field_title_override
+    - field.field.paragraph.article_reference_paragraph.field_title_override_mode
+    - paragraphs.paragraphs_type.article_reference_paragraph
+id: paragraph.article_reference_paragraph.default
+targetEntityType: paragraph
+bundle: article_reference_paragraph
+mode: default
+content:
+  field_content_reference:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_title_override:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_title_override_mode:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+hidden:
+  created: true
+  status: true
+  uid: true

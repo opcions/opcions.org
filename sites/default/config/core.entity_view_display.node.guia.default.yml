@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.guia.body
+    - field.field.node.guia.field_collection
     - field.field.node.guia.field_image
     - field.field.node.guia.field_shortname
+    - field.field.node.guia.field_summary
     - node.type.guia
   module:
+    - entity_reference_revisions
     - responsive_image
     - text
     - user
@@ -19,19 +22,27 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 2
     settings: {  }
+    third_party_settings: {  }
+  field_collection:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
   field_image:
     type: responsive_image
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       responsive_image_style: narrow
       image_link: ''
     third_party_settings: {  }
   links:
-    weight: 5
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   opcions_changelog:
@@ -40,4 +51,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_shortname: true
+  field_summary: true
   langcode: true

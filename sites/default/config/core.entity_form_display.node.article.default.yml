@@ -8,7 +8,9 @@ dependencies:
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_changelog
     - field.field.node.article.field_image
+    - field.field.node.article.field_summary
     - field.field.node.article.field_tags
+    - image.style.thumbnail
     - node.type.article
   module:
     - comment
@@ -110,4 +112,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_summary: true

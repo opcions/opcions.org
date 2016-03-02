@@ -1,9 +1,9 @@
-uuid: da5c6975-59f8-4be8-942b-43c9f0b694a5
+uuid: e0c4ce6f-af64-4443-a603-3f2b29831d45
 langcode: ca
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_summary
     - node.type.guia
   module:
     - allowed_formats
@@ -15,16 +15,15 @@ third_party_settings:
     full_html: '0'
     plain_text: '0'
     changelog: '0'
-id: node.guia.body
-field_name: body
+id: node.guia.field_summary
+field_name: field_summary
 entity_type: node
 bundle: guia
-label: Body
+label: Resúm
 description: ''
-required: false
-translatable: true
+required: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  display_summary: false
-field_type: text_with_summary
+settings: {  }
+field_type: text_long

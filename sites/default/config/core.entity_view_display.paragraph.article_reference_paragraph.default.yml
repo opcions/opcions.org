@@ -1,0 +1,33 @@
+uuid: 6105a7dd-0bd4-4840-a200-d1241168913d
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.article_reference_paragraph.field_content_reference
+    - field.field.paragraph.article_reference_paragraph.field_title_override
+    - field.field.paragraph.article_reference_paragraph.field_title_override_mode
+    - paragraphs.paragraphs_type.article_reference_paragraph
+id: paragraph.article_reference_paragraph.default
+targetEntityType: paragraph
+bundle: article_reference_paragraph
+mode: default
+content:
+  field_content_reference:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_title_override:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  field_title_override_mode: true
+  uid: true

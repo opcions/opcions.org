@@ -1,0 +1,30 @@
+uuid: eb5d7b11-5874-49f7-b700-bf7f37d86b59
+langcode: ca
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_title_override_mode
+field_name: field_title_override_mode
+entity_type: paragraph
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: Ocult
+    -
+      value: 1
+      label: Original
+    -
+      value: 2
+      label: Sobreescrit
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

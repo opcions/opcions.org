@@ -1,0 +1,6 @@
+uuid: 3d52e781-f388-424f-8905-059d6167fa85
+langcode: ca
+status: true
+dependencies: {  }
+id: article_reference_paragraph
+label: 'Article Reference Paragraph'
