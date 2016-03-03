@@ -40,9 +40,17 @@ function opcions_collections_theme($existing, $type, $theme, $path)
 }
 
 /**
+ * Implements hook_entity_view().
+ */
+function opcions_collections_paragraph_view_alter(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode)
+{
+  \Drupal::service('opcions_collections.paragraph_view_alter')->alter($build, $entity);
+}
+
+/**
  * Overrides the reference title if necessary
  */
 function template_preprocess_collection_item(&$variables) {
-  kint($variables['content']['field_content_reference'][0]['#node']);
-  $variables['content']['field_content_reference'][0]['#node']->setTitle('Alo');
+  //kint($variables['content']['field_content_reference'][0]['#node']);
+  //$variables['content']['field_content_reference'][0]['#node']->setTitle('Alo');
 }
