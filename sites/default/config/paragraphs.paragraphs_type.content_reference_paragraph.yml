@@ -1,0 +1,6 @@
+uuid: c892c0a6-01c3-44dc-9200-ede74e72eb05
+langcode: ca
+status: true
+dependencies: {  }
+id: content_reference_paragraph
+label: 'Content reference paragraph'
