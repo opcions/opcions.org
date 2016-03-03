@@ -40,7 +40,7 @@ function opcions_main_node_view(array &$build, EntityInterface $entity, EntityVi
 
     $article_id = $entity->id();
 
-    if ($display->getComponent('opcions_collection')) {
+    if (FALSE && $display->getComponent('opcions_collection')) {
 
         $collection_ids = \Drupal::entityQuery('node')
             ->condition('type', 'guia')
@@ -64,7 +64,7 @@ function opcions_main_node_view(array &$build, EntityInterface $entity, EntityVi
 
     }
 
-    if ($display->getComponent('opcions_changelog')) {
+    if (FALSE && $display->getComponent('opcions_changelog')) {
 
         $guia = $entity;
 

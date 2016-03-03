@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains opcions_collections.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function opcions_collections_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the opcions_collections module.
+    case 'help.page.opcions_collections':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Opcions collection tweaks for guides, series and revistas') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function opcions_collections_theme($existing, $type, $theme, $path)
+{
+  return [
+    'paragraph__article_reference_paragraph' => [
+      'render element' => 'elements',
+      'preprocess functions' => [
+        'template_preprocess_paragraph',
+        'template_preprocess_collection_item'
+      ]
+    ]
+  ];
+}
+
+/**
+ * Overrides the reference title if necessary
+ */
+function template_preprocess_collection_item(&$variables) {
+  kint($variables['content']['field_content_reference'][0]['#node']);
+  $variables['content']['field_content_reference'][0]['#node']->setTitle('Alo');
+}

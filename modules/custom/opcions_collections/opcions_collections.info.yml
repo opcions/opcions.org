@@ -1,0 +1,8 @@
+name: Opcions Collections
+type: module
+description: Opcions collection tweaks for guides, series and revistas
+core: 8.x
+package: Opcions
+dependencies:
+  - paragraphs
+  - opcions_main

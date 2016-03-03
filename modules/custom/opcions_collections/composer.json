@@ -1,0 +1,14 @@
+{
+  "name": "drupal/opcions_collections",
+  "type": "drupal-module",
+  "description": "Opcions collection tweaks for guides, series and revistas",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/opcions_collections",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/opcions_collections",
+    "source": "http://cgit.drupalcode.org/opcions_collections"
+  },
+  "require": { }
+}
