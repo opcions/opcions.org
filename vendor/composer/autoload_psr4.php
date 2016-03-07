@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Zumba\\Mink\\Driver\\' => array($vendorDir . '/jcalderonzumba/mink-phantomjs-driver/src'),
     'Zumba\\GastonJS\\' => array($vendorDir . '/jcalderonzumba/gastonjs/src'),
     'Zend\\Stdlib\\' => array($vendorDir . '/zendframework/zend-stdlib/src'),
@@ -22,6 +23,7 @@ return array(
     'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
     'Symfony\\Component\\HttpKernel\\' => array($vendorDir . '/symfony/http-kernel'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
+    'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
     'Symfony\\Component\\DomCrawler\\' => array($vendorDir . '/symfony/dom-crawler'),
@@ -35,6 +37,7 @@ return array(
     'Symfony\\Cmf\\Component\\Routing\\' => array($vendorDir . '/symfony-cmf/routing'),
     'Symfony\\Bridge\\PsrHttpMessage\\' => array($vendorDir . '/symfony/psr-http-message-bridge'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'Pharborist\\' => array($vendorDir . '/grom358/pharborist/src'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
@@ -44,6 +47,7 @@ return array(
     'Drupal\\payment_reference\\' => array($baseDir . '/modules/contrib/payment/modules/payment_reference/src'),
     'Drupal\\payment_form\\' => array($baseDir . '/modules/contrib/payment/modules/payment_form/src'),
     'Drupal\\payment\\' => array($baseDir . '/modules/contrib/payment/src'),
+    'Drupal\\drupalmoduleupgrader\\' => array($baseDir . '/modules/contrib/drupalmoduleupgrader/src'),
     'Drupal\\currency\\' => array($baseDir . '/modules/contrib/currency/src'),
     'Drupal\\composer_manager\\Composer\\' => array($baseDir . '/modules/contrib/composer_manager/src/Composer'),
     'Drupal\\Tests\\plugin\\' => array($baseDir . '/modules/contrib/plugin/tests/src'),

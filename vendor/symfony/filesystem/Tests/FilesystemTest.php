@@ -358,6 +358,28 @@ class FilesystemTest extends FilesystemTestCase
         $this->assertTrue($this->filesystem->exists($basePath.'folder'));
     }
 
+    /**
+     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     */
+    public function testFilesExistsFails()
+    {
+        if ('\\' !== DIRECTORY_SEPARATOR) {
+            $this->markTestSkipped('Test covers edge case on Windows only.');
+        }
+
+        $basePath = $this->workspace.'\\directory\\';
+
+        $oldPath = getcwd();
+        mkdir($basePath);
+        chdir($basePath);
+        $file = str_repeat('T', 259 - strlen($basePath));
+        $path = $basePath.$file;
+        exec('TYPE NUL >>'.$file); // equivalent of touch, we can not use the php touch() here because it suffers from the same limitation
+        self::$longPathNamesWindows[] = $path; // save this so we can clean up later
+        chdir($oldPath);
+        $this->filesystem->exists($path);
+    }
+
     public function testFilesExistsTraversableObjectOfFilesAndDirectories()
     {
         $basePath = $this->workspace.DIRECTORY_SEPARATOR;
@@ -1070,12 +1092,41 @@ class FilesystemTest extends FilesystemTestCase
         $filename = $this->workspace.DIRECTORY_SEPARATOR.'foo'.DIRECTORY_SEPARATOR.'baz.txt';
 
         $this->filesystem->dumpFile($filename, 'bar');
+
+        $this->assertFileExists($filename);
+        $this->assertSame('bar', file_get_contents($filename));
+    }
+
+    /**
+     * @group legacy
+     */
+    public function testDumpFileAndSetPermissions()
+    {
+        $filename = $this->workspace.DIRECTORY_SEPARATOR.'foo'.DIRECTORY_SEPARATOR.'baz.txt';
+
+        $this->filesystem->dumpFile($filename, 'bar', 0753);
+
         $this->assertFileExists($filename);
         $this->assertSame('bar', file_get_contents($filename));
 
         // skip mode check on Windows
         if ('\\' !== DIRECTORY_SEPARATOR) {
-            $this->assertFilePermissions(666, $filename);
+            $this->assertFilePermissions(753, $filename);
+        }
+    }
+
+    public function testDumpFileWithNullMode()
+    {
+        $filename = $this->workspace.DIRECTORY_SEPARATOR.'foo'.DIRECTORY_SEPARATOR.'baz.txt';
+
+        $this->filesystem->dumpFile($filename, 'bar', null);
+
+        $this->assertFileExists($filename);
+        $this->assertSame('bar', file_get_contents($filename));
+
+        // skip mode check on Windows
+        if ('\\' !== DIRECTORY_SEPARATOR) {
+            $this->assertFilePermissions(600, $filename);
         }
     }
 
