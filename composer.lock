@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f911b27ee426faa6b46ba6850b8b433a",
-    "content-hash": "1b0c949029c9f282d69d79a4453cc0f8",
+    "hash": "2b5276197920571242fd06f881df2e59",
+    "content-hash": "b01b854fd14ff4f6e9964241b2326e6a",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -1253,16 +1253,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea"
+                "reference": "bb9024c526b22f3fe6ae55a561fd70653d470aa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/b1e1c0d55f8083c71eda2c28c12a228d708294ea",
-                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/bb9024c526b22f3fe6ae55a561fd70653d470aa8",
+                "reference": "bb9024c526b22f3fe6ae55a561fd70653d470aa8",
                 "shasum": ""
             },
             "require": {
@@ -1300,7 +1300,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2015-10-15 22:28:00"
+            "time": "2016-03-08 01:15:46"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -3794,8 +3794,8 @@
             "time": "2015-11-09 15:21:02"
         },
         {
-            "name": "jcalderonzumba/gastonjs",
-            "version": "v1.0.2",
+            "name": "wikimedia/composer-merge-plugin",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/composer-merge-plugin.git",
@@ -4726,7 +4726,7 @@
         },
         {
             "name": "jcalderonzumba/gastonjs",
-            "version": "dev-master",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jcalderonzumba/gastonjs.git",
@@ -4955,7 +4955,13 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "commerceguys/intl": 20,
+        "commerceguys/addressing": 20,
+        "commerceguys/zone": 20,
+        "grom358/pharborist": 20,
+        "cebe/markdown": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
