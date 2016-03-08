@@ -1,0 +1,15 @@
+diff --git a/composer_manager.module b/composer_manager.module
+index 922f691..e3fc553 100644
+--- a/composer_manager.module
++++ b/composer_manager.module
+@@ -38,5 +38,10 @@ function composer_manager_initialize($root = NULL) {
+   $package['autoload']['psr-4']['Drupal\\composer_manager\\Composer\\'] = $module_path . '/src/Composer';
+   $package['scripts']['drupal-rebuild'] = 'Drupal\\composer_manager\\Composer\\Command::rebuild';
+   $package['scripts']['drupal-update'] = 'Drupal\\composer_manager\\Composer\\Command::update';
++
++  if (is_dir($root . '/modules/contrib')) {
++    $package['extra']['installer-paths']['modules/contrib/{$name}/'] = ['type:drupal-module'];
++  }
++
+   \Drupal\composer_manager\JsonFile::write($root . '/composer.json', $package);
+ }
