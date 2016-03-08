@@ -13,11 +13,10 @@ use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 
 /**
- * This plugin explodes a value.
+ * This plugin explodes a delimited string into an array of values.
  *
  * @MigrateProcessPlugin(
- *   id = "explode",
- *   handle_multiples = TRUE
+ *   id = "explode"
  * )
  */
 class Explode extends ProcessPluginBase {
@@ -28,7 +27,8 @@ class Explode extends ProcessPluginBase {
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     if (is_string($value)) {
       if (!empty($this->configuration['delimiter'])) {
-        return array_map('trim', explode($this->configuration['delimiter'], $value));
+        $limit = isset($this->configuration['limit']) ? $this->configuration['limit'] : PHP_INT_MAX;
+        return explode($this->configuration['delimiter'], $value, $limit);
       }
       else {
         throw new MigrateException('delimiter is empty');
@@ -39,8 +39,10 @@ class Explode extends ProcessPluginBase {
     }
   }
 
-  public function multiple()
-  {
+  /**
+   * {@inheritdoc}
+   */
+  public function multiple() {
     return TRUE;
   }
 

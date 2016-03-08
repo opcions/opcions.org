@@ -3623,7 +3623,7 @@
         },
         {
             "name": "jcalderonzumba/gastonjs",
-            "version": "dev-master",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jcalderonzumba/gastonjs.git",
@@ -4794,12 +4794,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "jcalderonzumba/gastonjs": 20,
-        "commerceguys/intl": 20,
-        "commerceguys/addressing": 20,
-        "commerceguys/zone": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

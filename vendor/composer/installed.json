@@ -3775,69 +3775,9 @@
         ]
     },
     {
-        "name": "behat/gherkin",
-        "version": "v4.4.1",
-        "version_normalized": "4.4.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Behat/Gherkin.git",
-            "reference": "1576b485c0f92ef6d27da9c4bbfc57ee30cf6911"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Behat/Gherkin/zipball/1576b485c0f92ef6d27da9c4bbfc57ee30cf6911",
-            "reference": "1576b485c0f92ef6d27da9c4bbfc57ee30cf6911",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.1"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0",
-            "symfony/yaml": "~2.1"
-        },
-        "suggest": {
-            "symfony/yaml": "If you want to parse features, represented in YAML files"
-        },
-        "time": "2015-12-30 14:47:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "4.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Behat\\Gherkin": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Konstantin Kudryashov",
-                "email": "ever.zet@gmail.com",
-                "homepage": "http://everzet.com"
-            }
-        ],
-        "description": "Gherkin DSL parser for PHP 5.3",
-        "homepage": "http://behat.org/",
-        "keywords": [
-            "BDD",
-            "Behat",
-            "Cucumber",
-            "DSL",
-            "gherkin",
-            "parser"
-        ]
-    },
-    {
-        "name": "behat/behat",
-        "version": "v3.0.15",
-        "version_normalized": "3.0.15.0",
+        "name": "symfony/class-loader",
+        "version": "v2.7.6",
+        "version_normalized": "2.7.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Behat/Behat.git",
@@ -4921,36 +4861,62 @@
         ]
     },
     {
-        "name": "drupal/token",
-        "version": "8.1.0-alpha2",
-        "version_normalized": "8.1.0.0-alpha2",
+        "name": "jcalderonzumba/gastonjs",
+        "version": "v1.0.2",
+        "version_normalized": "1.0.2.0",
         "source": {
             "type": "git",
-            "url": "https://git.drupal.org/project/token",
-            "reference": "918d0d5e8e8ee7f446d3e068cb6aa2d7c61ee625"
+            "url": "https://github.com/jcalderonzumba/gastonjs.git",
+            "reference": "21bebb8ca03eb0f93ec2f3fad61192fb079e2622"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/token-8.x-1.0-alpha2.zip",
-            "reference": null,
-            "shasum": null
+            "url": "https://api.github.com/repos/jcalderonzumba/gastonjs/zipball/21bebb8ca03eb0f93ec2f3fad61192fb079e2622",
+            "reference": "21bebb8ca03eb0f93ec2f3fad61192fb079e2622",
+            "shasum": ""
         },
         "require": {
-            "drupal/core": "8.*"
+            "guzzlehttp/guzzle": "~5.0|~6.0",
+            "php": ">=5.4"
         },
-        "time": "2016-01-21 08:02:24",
-        "type": "drupal-module",
+        "require-dev": {
+            "phpunit/phpunit": "~4.6",
+            "silex/silex": "~1.2",
+            "symfony/phpunit-bridge": "~2.7",
+            "symfony/process": "~2.1"
+        },
+        "time": "2016-01-18 09:21:03",
+        "type": "phantomjs-api",
         "extra": {
             "branch-alias": {
-                "dev-8.x-1.x": "8.1.x-dev"
+                "dev-master": "1.1.x-dev"
             }
         },
         "installation-source": "dist",
-        "notification-url": "https://packagist.drupal-composer.org/downloads/",
+        "autoload": {
+            "psr-4": {
+                "Zumba\\GastonJS\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "GPL-2.0+"
+            "MIT"
         ],
-        "description": "Provides a user interface for the Token API and some missing core tokens.",
-        "homepage": "https://www.drupal.org/project/token"
+        "authors": [
+            {
+                "name": "Juan Francisco Calderón Zumba",
+                "email": "juanfcz@gmail.com",
+                "homepage": "http://github.com/jcalderonzumba"
+            }
+        ],
+        "description": "PhantomJS API based server for webpage automation",
+        "homepage": "https://github.com/jcalderonzumba/gastonjs",
+        "keywords": [
+            "api",
+            "automation",
+            "browser",
+            "headless",
+            "phantomjs"
+        ]
     }
 ]

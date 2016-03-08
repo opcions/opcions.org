@@ -7,10 +7,8 @@
 
 namespace Drupal\Tests\migrate\Unit\process;
 
-use Drupal\Core\Extension\ModuleHandlerInterface;
-use Drupal\migrate\Plugin\MigrateProcessInterface;
 use Drupal\migrate\Plugin\migrate\process\Explode;
-use Drupal\Tests\migrate\Unit\process\MigrateProcessTestCase;
+use Drupal\migrate\Plugin\migrate\process\Concat;
 
 /**
  * Tests the Explode process plugin.
@@ -20,62 +18,65 @@ use Drupal\Tests\migrate\Unit\process\MigrateProcessTestCase;
 class ExplodeTest extends MigrateProcessTestCase {
 
   /**
-   * The module handler.
-   *
-   * @var \Drupal\Core\Extension\ModuleHandlerInterface
-   */
-  protected $moduleHandler;
-
-  /**
-   * The migration plugin.
-   *
-   * @var \Drupal\migrate\Plugin\MigrateProcessInterface
-   */
-  protected $migrationPlugin;
-
-  /**
    * {@inheritdoc}
    */
   protected function setUp() {
-    $this->moduleHandler = $this->prophesize(ModuleHandlerInterface::class);
-    $this->migrationPlugin = $this->prophesize(MigrateProcessInterface::class);
+    $configuration = [
+      'delimiter' => ',',
+    ];
+    $this->plugin = new Explode($configuration, 'map', []);
     parent::setUp();
   }
 
   /**
-   * Tests the transform process.
+   * Test explode transform process works.
    */
   public function testTransform() {
-    $configuration['delimiter'] = '_';
-    $this->plugin = new Explode($configuration, 'explode', [], $this->moduleHandler->reveal(), $this->migrationPlugin->reveal());
-    $source = 'color_bartik_stylesheets';
-    $result = ['color', 'bartik', 'stylesheets'];
-    $transformed_value = $this->plugin->transform($source, $this->migrateExecutable, $this->row, 'destinationproperty');
-    $this->assertSame($result, $transformed_value);
+    $value = $this->plugin->transform('foo,bar,tik', $this->migrateExecutable, $this->row, 'destinationproperty');
+    $this->assertSame($value, ['foo', 'bar', 'tik']);
   }
 
   /**
-   * Tests invalid input.
+   * Test explode transform process works with a limit.
+   */
+  public function testTransformLimit() {
+    $plugin = new Explode(['delimiter' => '_', 'limit' => 2], 'map', []);
+    $value = $plugin->transform('foo_bar_tik', $this->migrateExecutable, $this->row, 'destinationproperty');
+    $this->assertSame($value, ['foo', 'bar_tik']);
+  }
+
+  /**
+   * Test if the explode process can be chained with a handles_multiple process.
+   */
+  public function testChainedTransform() {
+    $exploded = $this->plugin->transform('foo,bar,tik', $this->migrateExecutable, $this->row, 'destinationproperty');
+
+    $concat = new Concat([], 'map', []);
+    $concatenated = $concat->transform($exploded, $this->migrateExecutable, $this->row, 'destinationproperty');
+    $this->assertSame($concatenated, 'foobartik');
+  }
+
+  /**
+   * Test explode fails properly on non-strings.
    *
    * @expectedException \Drupal\migrate\MigrateException
+   *
    * @expectedExceptionMessage is not a string
    */
-  public function testSourceString() {
-    $configuration['delimiter'] = '_';
-    $this->plugin = new Explode($configuration, 'explode', [], $this->moduleHandler->reveal(), $this->migrationPlugin->reveal());
-    $this->plugin->transform(['color_bartik_stylesheets'], $this->migrateExecutable, $this->row, 'destinationproperty');
+  public function testExplodeWithNonString() {
+    $this->plugin->transform(['foo'], $this->migrateExecutable, $this->row, 'destinationproperty');
   }
 
   /**
-   * Tests empty delimiter.
+   * Test explode fails with empty delimiter.
    *
    * @expectedException \Drupal\migrate\MigrateException
+   *
    * @expectedExceptionMessage delimiter is empty
    */
-  public function testDelimiterEmpty() {
-    $configuration['delimiter'] = '';
-    $this->plugin = new Explode($configuration, 'explode', [], $this->moduleHandler->reveal(), $this->migrationPlugin->reveal());
-    $this->plugin->transform('color_bartik_stylesheets', $this->migrateExecutable, $this->row, 'destinationproperty');
+  public function testExplodeWithEmptyDelimiter() {
+    $plugin = new Explode(['delimiter' => ''], 'map', []);
+    $plugin->transform('foo,bar', $this->migrateExecutable, $this->row, 'destinationproperty');
   }
 
 }
