@@ -21,12 +21,15 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      article_reference_paragraph: article_reference_paragraph
+      content_reference_paragraph: content_reference_paragraph
     target_bundles_drag_drop:
       article_reference_paragraph:
-        enabled: true
         weight: 3
+        enabled: false
       changelog_paragraph:
         weight: 4
         enabled: false
+      content_reference_paragraph:
+        enabled: true
+        weight: 6
 field_type: entity_reference_revisions

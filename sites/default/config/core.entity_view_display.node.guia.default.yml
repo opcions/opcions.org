@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.guia.field_summary
     - node.type.guia
   module:
-    - entity_reference_revisions
+    - opcions_collections
     - responsive_image
     - text
     - user
@@ -26,12 +26,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_collection:
-    type: entity_reference_revisions_entity_view
+    type: reference_override_formatter
     weight: 4
     label: hidden
-    settings:
-      view_mode: default
-      link: ''
+    settings: {  }
     third_party_settings: {  }
   field_image:
     type: responsive_image

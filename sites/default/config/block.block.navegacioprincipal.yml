@@ -1,27 +1,27 @@
-uuid: 8086d3c3-7a73-43ee-b600-e05c9e08180d
+uuid: 82c218fe-7b2b-4c2b-a000-b6efdf781d1a
 langcode: ca
 status: true
 dependencies:
+  config:
+    - system.menu.main
   module:
     - block_visibility_groups
-    - opcions_publi
+    - system
   theme:
     - opcions
-id: revivezoneblock
+id: navegacioprincipal
 theme: opcions
-region: header
+region: footer
 weight: -10
 provider: null
-plugin: revive_zone_block
+plugin: 'system_menu_block:main'
 settings:
-  id: revive_zone_block
-  label: 'Publi (banner cabecera)'
-  provider: opcions_publi
+  id: 'system_menu_block:main'
+  label: 'Navegació principal'
+  provider: system
   label_display: '0'
-  zone_number: '1'
-  zone_display: desktop
-  zone: LBD
-  zone_id: 2
+  level: 1
+  depth: 0
 visibility:
   condition_group:
     id: condition_group

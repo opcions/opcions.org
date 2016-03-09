@@ -3,13 +3,14 @@ langcode: ca
 status: true
 dependencies:
   module:
+    - block_visibility_groups
     - system
   theme:
     - opcions
 id: opcions_branding
 theme: opcions
 region: header
-weight: -6
+weight: -9
 provider: null
 plugin: system_branding_block
 settings:
@@ -17,7 +18,12 @@ settings:
   label: 'Site branding'
   provider: system
   label_display: '0'
-  use_site_logo: false
-  use_site_name: true
+  use_site_logo: true
+  use_site_name: false
   use_site_slogan: false
-visibility: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

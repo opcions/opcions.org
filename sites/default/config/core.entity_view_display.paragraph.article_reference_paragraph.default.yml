@@ -16,18 +16,11 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: teaser
-      link: false
+      link: true
     third_party_settings: {  }
-    type: entity_reference_entity_view
-  field_title_override:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
+    type: entity_reference_label
 hidden:
   created: true
+  field_title_override: true
   field_title_override_mode: true
   uid: true

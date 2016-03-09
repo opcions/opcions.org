@@ -1,6 +1,6 @@
 uuid: c944fef6-2bfa-4697-b100-a1b9479c5baf
 langcode: ca
-status: false
+status: true
 dependencies:
   config:
     - system.menu.main
@@ -10,8 +10,8 @@ dependencies:
     - opcions
 id: opcions_main_menu
 theme: opcions
-region: '-1'
-weight: -6
+region: navigation_main
+weight: -9
 provider: null
 plugin: 'system_menu_block:main'
 settings:
