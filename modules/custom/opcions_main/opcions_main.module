@@ -34,6 +34,24 @@ function opcions_main_entity_extra_field_info() {
 }
 
 /**
+ * Implements hook_block_view_BASE_BLOCK_ID_alter().
+ */
+function opcions_main_block_view_language_block_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block)
+{
+    $build['#pre_render'][] = 'opcions_prerender_language_block';
+}
+
+function opcions_prerender_language_block($build){
+    unset($build['content']['#theme']);
+    $build['content']['#type'] = 'dropbutton';
+    $build['content']['#subtype'] = 'language';
+    $langcode = Drupal::languageManager()->getCurrentLanguage()->getId();
+    $build['content']['#links'] = [$langcode => $build['content']['#links'][$langcode]] + $build['content']['#links'];
+    
+    return $build;
+}
+
+/**
  * Implements hook_ENTITY_TYPE_view().
  */
 function opcions_main_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
