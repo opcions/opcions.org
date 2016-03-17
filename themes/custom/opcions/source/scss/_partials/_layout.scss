@@ -1,6 +1,14 @@
-.region {
-  @include grid-row();
+.layout-container > * {
+  @include grid-row;
   padding-bottom: 1.5rem;
+}
+
+.layout-content {
+  @include grid-column-row;
+}
+s
+.layout-content {
+  @include grid-column-row;
 }
 
 include breakpoint(breakpoint) {

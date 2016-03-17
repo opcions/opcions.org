@@ -1992,18 +1992,74 @@ select {
     .search-block-form.container-inline .form-actions input {
       border-radius: 0 0 0 0; }
 
-.region {
+.layout-container > * {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 1.5rem; }
-  .region::before, .region::after {
+  .layout-container > *::before, .layout-container > *::after {
     content: ' ';
     display: table;
     flex-basis: 0;
     order: 1; }
-  .region::after {
+  .layout-container > *::after {
     clear: both; }
+
+.layout-content {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
+  .layout-content::before, .layout-content::after {
+    content: ' ';
+    display: table;
+    flex-basis: 0;
+    order: 1; }
+  .layout-content::after {
+    clear: both; }
+  @media screen and (min-width: 40em) {
+    .layout-content {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .layout-content:last-child:not(:first-child) {
+    float: right; }
+  .layout-content, .layout-content:last-child {
+    float: none; }
+
+s
+.layout-content {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
+  s
+.layout-content::before, s
+.layout-content::after {
+    content: ' ';
+    display: table;
+    flex-basis: 0;
+    order: 1; }
+  s
+.layout-content::after {
+    clear: both; }
+  @media screen and (min-width: 40em) {
+    s
+.layout-content {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  s
+.layout-content:last-child:not(:first-child) {
+    float: right; }
+  s
+.layout-content, s
+.layout-content:last-child {
+    float: none; }
 
 includebreakpoint(breakpoint) .header__brand {
   width: 33.33333%;
@@ -2062,6 +2118,9 @@ footer {
     .region-footer .links a:last-child::after {
       content: "";
       padding: 0 0.4rem 0 0.8rem; }
+
+input[type="email"] {
+  max-width: 20em; }
 
 #toc-magellan .toc-h3 {
   padding-left: 1em;
@@ -2212,6 +2271,69 @@ footer {
       .card-list > .view-content .card-list__item:nth-of-type(4n+1) {
         clear: both; }
       .card-list > .view-content .card-list__item:last-child {
+        float: left; } }
+  .card-list__item {
+    width: 100%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    list-style: none; }
+    @media screen and (min-width: 40em) {
+      .card-list__item {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .card-list__item:last-child:not(:first-child) {
+      float: right; }
+
+.card-list {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .card-list::before, .card-list::after {
+    content: ' ';
+    display: table;
+    flex-basis: 0;
+    order: 1; }
+  .card-list::after {
+    clear: both; }
+  .card-list > .card-list__item {
+    width: 100%;
+    float: left; }
+    .card-list > .card-list__item:nth-of-type(1n) {
+      clear: none; }
+    .card-list > .card-list__item:nth-of-type(1n+1) {
+      clear: both; }
+    .card-list > .card-list__item:last-child {
+      float: left; }
+  @media screen and (min-width: 40em) {
+    .card-list > .card-list__item {
+      width: 50%;
+      float: left; }
+      .card-list > .card-list__item:nth-of-type(1n) {
+        clear: none; }
+      .card-list > .card-list__item:nth-of-type(2n+1) {
+        clear: both; }
+      .card-list > .card-list__item:last-child {
+        float: left; } }
+  @media screen and (min-width: 64em) {
+    .card-list > .card-list__item {
+      width: 33.33333%;
+      float: left; }
+      .card-list > .card-list__item:nth-of-type(1n) {
+        clear: none; }
+      .card-list > .card-list__item:nth-of-type(3n+1) {
+        clear: both; }
+      .card-list > .card-list__item:last-child {
+        float: left; } }
+  @media screen and (min-width: 75em) {
+    .card-list > .card-list__item {
+      width: 25%;
+      float: left; }
+      .card-list > .card-list__item:nth-of-type(1n) {
+        clear: none; }
+      .card-list > .card-list__item:nth-of-type(4n+1) {
+        clear: both; }
+      .card-list > .card-list__item:last-child {
         float: left; } }
   .card-list__item {
     width: 100%;
