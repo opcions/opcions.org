@@ -11,42 +11,56 @@
     <ini name="error_reporting" value="32767"/>
     <!-- Do not limit the amount of memory tests take to run. -->
     <ini name="memory_limit" value="-1"/>
-    <env name="SIMPLETEST_BASE_URL" value=""/>
+    <env name="SIMPLETEST_BASE_URL" value="http://opcions.dev"/>
     <!-- Example SIMPLETEST_BASE_URL value: http://localhost -->
-    <env name="SIMPLETEST_DB" value=""/>
+    <env name="SIMPLETEST_DB" value="mysql://drupal/drupalvm@drupal.dev/d8"/>
     <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
   </php>
   <testsuites>
     <testsuite name="unit">
       <directory>./tests/Drupal/Tests</directory>
       <directory>./modules/*/tests/src/Unit</directory>
-      <directory>../modules/*/tests/src/Unit</directory>
+      <!-- Allow for discovery of tests in sub-directories in the top-level
+           modules/ directory. -->
+      <directory>../modules</directory>
       <directory>../profiles/*/tests/src/Unit</directory>
+      <!-- Do not find tests in sub-directory modules under sites/. This is a
+           security measure. Move modules to modules/ for testing. -->
       <directory>../sites/*/modules/*/tests/src/Unit</directory>
       <!-- Exclude Composer's vendor directory so we don't run tests there. -->
-      <exclude>./vendor</exclude>
+      <exclude>../vendor</exclude>
+      <!-- Exclude vendor directories which may be present in modules/. -->
+      <exclude>../modules/*/vendor</exclude>
       <!-- Exclude Drush tests. -->
       <exclude>./drush/tests</exclude>
     </testsuite>
     <testsuite name="kernel">
       <directory>./tests/Drupal/KernelTests</directory>
       <directory>./modules/*/tests/src/Kernel</directory>
-      <directory>../modules/*/tests/src/Kernel</directory>
+      <!-- Allow for discovery of tests in sub-directories in the top-level
+           modules/ directory. -->
+      <directory>../modules</directory>
       <directory>../profiles/*/tests/src/Kernel</directory>
       <directory>../sites/*/modules/*/tests/src/Kernel</directory>
       <!-- Exclude Composer's vendor directory so we don't run tests there. -->
-      <exclude>./vendor</exclude>
+      <exclude>../vendor</exclude>
+      <!-- Exclude vendor directories which may be present in modules/. -->
+      <exclude>../modules/*/vendor</exclude>
       <!-- Exclude Drush tests. -->
       <exclude>./drush/tests</exclude>
     </testsuite>
     <testsuite name="functional">
       <directory>./tests/Drupal/FunctionalTests</directory>
       <directory>./modules/*/tests/src/Functional</directory>
-      <directory>../modules/*/tests/src/Functional</directory>
+      <!-- Allow for discovery of tests in sub-directories in the top-level
+           modules/ directory. -->
+      <directory>../modules</directory>
       <directory>../profiles/*/tests/src/Functional</directory>
       <directory>../sites/*/modules/*/tests/src/Functional</directory>
       <!-- Exclude Composer's vendor directory so we don't run tests there. -->
-      <exclude>./vendor</exclude>
+      <exclude>../vendor</exclude>
+      <!-- Exclude vendor directories which may be present in modules/. -->
+      <exclude>../modules/*/vendor</exclude>
       <!-- Exclude Drush tests. -->
       <exclude>./drush/tests</exclude>
     </testsuite>
