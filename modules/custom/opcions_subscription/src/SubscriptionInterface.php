@@ -18,8 +18,17 @@ use Drupal\user\EntityOwnerInterface;
  * @ingroup opcions_subscription
  */
 interface SubscriptionInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface {
-  // Add get/set methods for your configuration properties here.
 
+  // Possible status states.
+  const STATUS_ACTIVE = 0;
+  const STATUS_UNSUBSCRIBED = 1;
+  const STATUS_PENDING_PAYMENT = 2;
+  const STATUS_NEW = 3;
+  const STATUS_EXPIRED = 4;
+  const STATUS_PENDING_RENEWAL = 5;
+  const STATUS_ARCHIVED = 5;
+
+  // Add get/set methods for your configuration properties here.
   /**
    * Gets the Subscription name.
    *
@@ -59,24 +68,22 @@ interface SubscriptionInterface extends ContentEntityInterface, EntityChangedInt
   public function setCreatedTime($timestamp);
 
   /**
-   * Returns the Subscription published status indicator.
-   *
-   * Unpublished Subscription are only visible to restricted users.
+   * Returns the Subscription acitve status indicator.
    *
    * @return bool
-   *   TRUE if the Subscription is published.
+   *   TRUE if the Subscription is active.
    */
-  public function isPublished();
+  public function isActive();
 
   /**
    * Sets the published status of a Subscription.
    *
-   * @param bool $published
-   *   TRUE to set this Subscription to published, FALSE to set it to unpublished.
+   * @param integer $stattus
+   *   The status key from this inteface contants.
    *
    * @return \Drupal\opcions_subscription\SubscriptionInterface
    *   The called Subscription entity.
    */
-  public function setPublished($published);
+  public function setStatus($status);
 
 }

@@ -1,7 +1,14 @@
-opcions.new_subscription:
-  path: 'subscribe'
+opcions.new_subscription_1:
+  path: 'opcions/subscribe'
   defaults:
-    _form: '\Drupal\opcions_subscription\Form\NewSubscriptionForm'
+    _form: '\Drupal\opcions_subscription\Form\NewSubscription\NewSubscriptionStepOneForm'
     _title: 'Subscribe'
+  requirements:
+    _permission: 'access content'
+opcions.new_subscription_2:
+  path: 'opcions/subscribe/data'
+  defaults:
+    _form: '\Drupal\opcions_subscription\Form\NewSubscription\NewSubscriptionStepTwoForm'
+    _title: 'Personal Data'
   requirements:
     _permission: 'access content'

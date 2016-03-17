@@ -2,12 +2,11 @@
 
 /**
  * @file
- * Contains \Drupal\opcions_subscription\Form\SubscriptionForm.
+ * Contains \Drupal\opcions_subscription\Form\NewSubscriptionForm.
  */
 
-namespace Drupal\opcions_subscription\Form;
+namespace Drupal\opcions_subscription\Form\NewSubscription;
 
-use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\opcions_subscription\Entity\Subscription;
 use Drupal\user\Entity\User;
@@ -17,19 +16,21 @@ use Drupal\user\Entity\User;
  *
  * @package Drupal\opcions_subscription\Form
  */
-class NewSubscriptionForm extends FormBase {
+class NewSubscriptionStepOneForm extends NewSubscriptionFormBase {
 
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'subscription_form';
+    return 'opcions_new_subscription_one';
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+
+    $form = parent::buildForm($form, $form_state);
 
     $form['price'] = array(
       '#type' => 'radios',
@@ -50,18 +51,8 @@ class NewSubscriptionForm extends FormBase {
 
     );
 
-    $form['price_custom'] = array(
-      '#type' => 'number',
-      '#title' => $this->t('price'),
-      '#states' => [
-        'visible' => [
-          '.price-select input[type="radio"]' => array('value' => 'custom'),
-        ],
-      ]
-    );
-
     $form['paper'] = array(
-      '#type' => 'switch',
+      '#type' => 'checkbox',
       '#states' => [
         'disabled' => [
           '.price-select input[type="radio"]' => array('value' => '48'),
@@ -71,18 +62,16 @@ class NewSubscriptionForm extends FormBase {
         ],
 
       ],
+      '#attributes' => [ 'class' => [ 'switch' ]],
       '#title' => $this->t('Paper magazine (twice a year)') . '&nbsp;<span class="paper-info">' . $this->t('Paper version is only available for subscriptions from 54&euro;') . '</span>',
     );
 
-    $form['email'] = array(
+    $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Email'),
-    );
+    ];
 
-    $form['submit'] = array(
-      '#type' => 'submit',
-      '#value' => $this->t('Submit'),
-    );
+    $form['actions']['submit']['#value'] = $this->t('Next');
 
     $form['#attached']['library'][] = 'opcions_subscription/subscription-form';
 
@@ -96,22 +85,20 @@ class NewSubscriptionForm extends FormBase {
     // validate form
 
     $email = $form_state->getValue('email');
-    $user = \Drupal::service('opcions_subscription.new_subscriber')->get($email);
 
-    // redirect with waring if user has subscription
-    $subscription = Subscription::create(['user_id' => $user->id()]);
+    $this->store->set('email', $email);
+    $this->store->set('price', $form_state->getValue('price'));
+    $this->store->set('paper', $form_state->getValue('paper'));
 
-    $subscription->set('name', $email);
+    $subscription = \Drupal::service('opcions_subscription.new_subscriber')->get($email);
+
+    $subscription->set('paper_version', $form_state->getValue('paper'));
+    $subscription->set('price', $form_state->getValue('price'));
     $subscription->save();
 
+    $this->store->set('subscription_id', $subscription->id());
 
-    // create subscription and attach to user
-
-    // sent email
-
-
-
-    kint($form_state);
+    $form_state->setRedirect('opcions.new_subscription_2');
   }
 
 }
