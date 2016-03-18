@@ -1,0 +1,19 @@
+uuid: 1f9500e6-14f8-4493-8b04-0405b705939f
+langcode: ca
+status: true
+dependencies:
+  module:
+    - address
+    - opcions_subscription
+id: subscription.field_address
+field_name: field_address
+entity_type: subscription
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 7d21eae2-5543-410d-8703-3c0e86c7327b
+langcode: en
+status: true
+dependencies: {  }
+countryCode: HN
+format: "%recipient\n%organization\n%addressLine1\n%addressLine2\n%locality, %administrativeArea\n%postalCode"
+requiredFields:
+  - recipient
+  - addressLine1
+  - locality
+  - administrativeArea
+uppercaseFields:
+  - locality
+administrativeAreaType: province
+localityType: city
+dependentLocalityType: null
+postalCodeType: postal
+postalCodePattern: '\d{5}'
+postalCodePrefix: null

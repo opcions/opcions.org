@@ -1,0 +1,19 @@
+uuid: 6e33e843-6458-4583-9f00-b6d0cd3c1ec9
+langcode: en
+status: true
+dependencies: {  }
+countryCode: AX
+format: "%organization\n%recipient\n%addressLine1\n%addressLine2\n%postalCode %locality\nÅLAND"
+requiredFields:
+  - recipient
+  - addressLine1
+  - locality
+  - postalCode
+uppercaseFields:
+  - locality
+administrativeAreaType: null
+localityType: city
+dependentLocalityType: null
+postalCodeType: postal
+postalCodePattern: '22\d{3}'
+postalCodePrefix: AX-

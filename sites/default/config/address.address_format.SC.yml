@@ -1,0 +1,18 @@
+uuid: 97012715-ec04-4814-9c03-3d2db9743c10
+langcode: en
+status: true
+dependencies: {  }
+countryCode: SC
+format: "%recipient\n%organization\n%addressLine1\n%addressLine2\n%locality\n%administrativeArea"
+requiredFields:
+  - recipient
+  - addressLine1
+  - locality
+uppercaseFields:
+  - administrativeArea
+administrativeAreaType: island
+localityType: city
+dependentLocalityType: null
+postalCodeType: null
+postalCodePattern: null
+postalCodePrefix: null

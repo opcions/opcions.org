@@ -1,0 +1,46 @@
+uuid: 112445f8-26aa-48cc-a45c-92ed52e748e1
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.subscription.field_address
+  module:
+    - address
+    - opcions_subscription
+id: subscription.subscription.field_address
+field_name: field_address
+entity_type: subscription
+bundle: subscription
+label: Address
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    langcode: ca
+    country_code: ES
+    administrative_area: ''
+    locality: ''
+    dependent_locality: null
+    postal_code: ''
+    sorting_code: null
+    address_line1: ''
+    address_line2: ''
+    organization: ''
+    recipient: ''
+default_value_callback: ''
+settings:
+  available_countries:
+    ES: ES
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    postalCode: postalCode
+    addressLine1: addressLine1
+    addressLine2: addressLine2
+    recipient: recipient
+    dependentLocality: '0'
+    sortingCode: '0'
+    organization: '0'
+  langcode_override: ''
+field_type: address
