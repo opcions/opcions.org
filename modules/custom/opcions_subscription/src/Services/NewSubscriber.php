@@ -10,7 +10,7 @@ class NewSubscriber {
   /**
    * @param $email
    *
-   * @return Drupal\user\Entity\User
+   * @return Drupal\opcions_subscription\Entity\Subscription
    */
   public function get($email) {
 
@@ -27,5 +27,10 @@ class NewSubscriber {
     }
 
     return $subscription;
+  }
+
+  public function getById($id) {
+
+    return \Drupal\opcions_subscription\Entity\Subscription::load($id);
   }
 }

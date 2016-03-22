@@ -27,11 +27,6 @@ abstract class NewSubscriptionFormBase extends FormBase {
   private $sessionManager;
 
   /**
-   * @var \Drupal\Core\Session\AccountInterface
-   */
-  private $currentUser;
-
-  /**
    * @var \Drupal\user\PrivateTempStore
    */
   protected $store;
@@ -41,12 +36,10 @@ abstract class NewSubscriptionFormBase extends FormBase {
    *
    * @param \Drupal\user\PrivateTempStoreFactory $temp_store_factory
    * @param \Drupal\Core\Session\SessionManagerInterface $session_manager
-   * @param \Drupal\Core\Session\AccountInterface $current_user
    */
-  public function __construct(PrivateTempStoreFactory $temp_store_factory, SessionManagerInterface $session_manager, AccountInterface $current_user) {
+  public function __construct(PrivateTempStoreFactory $temp_store_factory, SessionManagerInterface $session_manager) {
     $this->tempStoreFactory = $temp_store_factory;
     $this->sessionManager = $session_manager;
-    $this->currentUser = $current_user;
 
     $this->store = $this->tempStoreFactory->get('multistep_data');
   }
@@ -57,8 +50,7 @@ abstract class NewSubscriptionFormBase extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('user.private_tempstore'),
-      $container->get('session_manager'),
-      $container->get('current_user')
+      $container->get('session_manager')
     );
   }
 
@@ -67,7 +59,7 @@ abstract class NewSubscriptionFormBase extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     // Start a manual session for anonymous users.
-    if ($this->currentUser->isAnonymous() && !isset($_SESSION['opcions_new_subscription_holds_session'])) {
+    if ($this->currentUser()->isAnonymous() && !isset($_SESSION['opcions_new_subscription_holds_session'])) {
       $_SESSION['opcions_new_subscription_holds_session'] = true;
       $this->sessionManager->start();
     }

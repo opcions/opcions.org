@@ -46,7 +46,6 @@ use Drupal\user\UserInterface;
  *     "id" = "id",
  *     "label" = "email",
  *     "uuid" = "uuid",
- *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "status" = "status",
  *   },
@@ -172,6 +171,7 @@ class Subscription extends ContentEntityBase implements SubscriptionInterface {
         'type' => 'author',
         'weight' => 0,
       ))
+      ->setRequired(FALSE)
       ->setDisplayOptions('form', array(
         'type' => 'entity_reference_autocomplete',
         'weight' => 5,
@@ -236,7 +236,7 @@ class Subscription extends ContentEntityBase implements SubscriptionInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['experies_on'] = BaseFieldDefinition::create('datetime')
+    $fields['expires_on'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Expires on'))
       ->setDescription(t('Date when the subscription will expire.'))
       ->setDefaultValue([

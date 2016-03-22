@@ -42,23 +42,13 @@ class NewSubscriptionStepTwoForm extends NewSubscriptionFormBase {
     $subscription = Subscription::load($id);
 
     $display = EntityFormDisplay::collectRenderDisplay($subscription, 'default');
-
     $display->buildForm($subscription, $form, $form_state);
-/*
-    $element = array(
-      '#title' => 'Data',
-      '#description' => 'Data description',
-    );
 
-    $element = $display->getRenderer('field_address')
-      ->formElement($subscription->address, 0, $element, $form, $form_state);
+    $disable = ['email', 'price', 'wants_paper'];
+    foreach ($disable as $field) {
+      $form[$field]['#disabled'] = TRUE;
+    }
 
-    $form['address'] = $element;
-
-    $form['actions']['submit']['#value'] = $this->t('Payment');
-
-    $form['#attached']['library'][] = 'opcions_subscription/subscription-form';
-*/
     return $form;
   }
 
@@ -66,19 +56,15 @@ class NewSubscriptionStepTwoForm extends NewSubscriptionFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // validate form
 
-    $email = $form_state->getValue('email');
-    $subscription = \Drupal::service('opcions_subscription.new_subscriber')->get($email);
 
-    $this->store->set('email', $email);
-    $this->store->set('price', $form_state->getValue('price'));
+    $subscription = \Drupal::service('opcions_subscription.new_subscriber')->getById($this->store->get('subscription_id'));
+
+    $subscription->set('field_address', $form_state->getValue('field_address'));
 
     $subscription->save();
 
-    $this->store->set('subscription_id', $subscription->id());
-
-    $form_state->setRedirect('opcions.new_subscription_2');
+    $form_state->setRedirect('opcions.new_subscription_thanks');
   }
 
 }

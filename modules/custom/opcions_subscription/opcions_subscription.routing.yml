@@ -12,3 +12,18 @@ opcions.new_subscription_2:
     _title: 'Personal Data'
   requirements:
     _permission: 'access content'
+opcions.new_subscription_thanks:
+  path: 'opcions/subscribe/thanks'
+  defaults:
+    _controller: '\Drupal\opcions_subscription\Controller\SubscriptionController::thankYouPage'
+    _title: 'Thanks!'
+  requirements:
+    _permission: 'access content'
+opcions.confirm_print_subscription:
+  path: 'admin/opcions/subscriptions/print'
+  defaults:
+    _form: '\Drupal\opcions_subscription\Form\ConfirmPrintSubscription'
+    _title: 'Print Subscriptions'
+  requirements:
+    _permission: 'administer subscription entities'
+

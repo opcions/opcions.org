@@ -1,0 +1,11 @@
+id: subscription_print_action
+label: 'Subscription Print Action'
+status: true
+langcode: en
+type: subscription
+plugin: subscription_print_action
+dependencies:
+  module:
+    - subscription
+    - opcions_subscription
+
