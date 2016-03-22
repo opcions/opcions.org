@@ -79,7 +79,7 @@ class PrintSubscription extends ActionBase implements ContainerFactoryPluginInte
    */
   public function access($object, AccountInterface $account = NULL, $return_as_object = FALSE) {
     /** @var \Drupal\opcions_subscription\Entity\Subscription $object */
-    return $object->access('administer subscription entities', $account, $return_as_object);
+    return $object->access('administer', $account, $return_as_object);
   }
 
 }

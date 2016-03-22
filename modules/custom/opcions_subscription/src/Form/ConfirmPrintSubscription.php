@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ConfirmPrintSubscription extends ConfirmFormBase
 {
-  const ROUTE_NAME = 'views.view.subscriptions_views.page_1';
+  const ROUTE_NAME = 'view.subscriptions.page_1';
 
   /**
    * The temp store collection.
@@ -131,15 +131,16 @@ class ConfirmPrintSubscription extends ConfirmFormBase
     if ($form_state->getValue('confirm')) {
       $ids = array_keys($form_state->getValue('subscriptions'));
       $subscriptions = $this->subscriptionStorage->loadMultiple($ids);
+      $display = \Drupal::entityTypeManager()->getStorage('entity_view_display')->load('subscription.subscription.default');
       $view = '';
       foreach ($subscriptions as $subscription) {
 
         // build view
-        $view .= $this->twig->renderInline('test {{ $subscription.email }}<br/>', ['subscription' => $subscription]);
+        $view .= $this->twig->renderInline('test {{ subscription.email.value }}', ['subscription' => $subscription]);
 
       }
       // create pdf
-      drupal_set_message('$view');
+      drupal_set_message($view);
       // set download headers
     }
     $form_state->setRedirect(self::ROUTE_NAME);

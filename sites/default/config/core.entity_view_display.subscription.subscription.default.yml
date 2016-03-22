@@ -64,3 +64,5 @@ content:
     third_party_settings: {  }
 hidden:
   experies_at: true
+  expires_on: true
+  paper_version: true

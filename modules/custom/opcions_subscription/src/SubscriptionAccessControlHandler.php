@@ -37,6 +37,10 @@ class SubscriptionAccessControlHandler extends EntityAccessControlHandler {
 
       case 'delete':
         return AccessResult::allowedIfHasPermission($account, 'delete subscription entities');
+
+      case 'administer':
+        return AccessResult::allowedIfHasPermission($account, 'administer subscription entities');
+
     }
 
     // Unknown operation, no opinion.
