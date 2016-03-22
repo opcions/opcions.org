@@ -47,7 +47,6 @@ return array(
     'Drupal\\payment_reference\\' => array($baseDir . '/modules/contrib/payment/modules/payment_reference/src'),
     'Drupal\\payment_form\\' => array($baseDir . '/modules/contrib/payment/modules/payment_form/src'),
     'Drupal\\payment\\' => array($baseDir . '/modules/contrib/payment/src'),
-    'Drupal\\drupalmoduleupgrader\\' => array($baseDir . '/modules/contrib/drupalmoduleupgrader/src'),
     'Drupal\\currency\\' => array($baseDir . '/modules/contrib/currency/src'),
     'Drupal\\composer_manager\\Composer\\' => array($baseDir . '/modules/contrib/composer_manager/src/Composer'),
     'Drupal\\Tests\\plugin\\' => array($baseDir . '/modules/contrib/plugin/tests/src'),
