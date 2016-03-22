@@ -26,14 +26,6 @@ function opcions_preprocess_block(&$variables)
       //kint($variables['elements']['#plugin_id']);
   }
 }
-//
-//function opcions_preprocess_links__language_block (&$variables) {
-//  kint($variables);
-//  //$links = $variables['links'];
-//  unset($variables['links']);
-//  $variables['#type'] = 'dropbutton';
-//  //$variables['links']['#links'] = $links;
-//}
 
 /**
  * Implements hook_preprocess_region.
@@ -52,13 +44,9 @@ function opcions_preprocess_region(&$variables)
       break;
     case 'search_top':
       $variables['attributes']['class'][] = 'hide js-search-top';
-      //$variables['attributes']['data-toggler'] = 'search';
-      //$variables['attributes']['data-animate'] = 'hinge-in-from-top hinge-out-from-top';
       break;
     case 'navigation_main':
       $variables['attributes']['class'][] = 'hide js-navitation-main';
-      //$variables['attributes']['data-toggler'] = 'navigation';
-      //$variables['attributes']['data-animate'] = 'hinge-in-from-top hinge-out-from-top';
       break;
     default:
       //dpm($variables['region']);
