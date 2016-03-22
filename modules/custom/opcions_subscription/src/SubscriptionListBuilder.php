@@ -34,7 +34,7 @@ class SubscriptionListBuilder extends EntityListBuilder {
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\opcions_subscription\Entity\Subscription */
     $row['id'] = $entity->id();
-    $row['name'] = $this->l(
+    $row['email'] = $this->l(
       $entity->label(),
       new Url(
         'entity.subscription.edit_form', array(

@@ -1,0 +1,18 @@
+uuid: 7b5dbc01-91f9-4539-8106-6f6947000f10
+langcode: en
+status: true
+dependencies: {  }
+countryCode: TJ
+format: "%recipient\n%organization\n%addressLine1\n%addressLine2\n%postalCode %locality"
+requiredFields:
+  - recipient
+  - addressLine1
+  - locality
+uppercaseFields:
+  - locality
+administrativeAreaType: null
+localityType: city
+dependentLocalityType: null
+postalCodeType: postal
+postalCodePattern: '\d{6}'
+postalCodePrefix: null

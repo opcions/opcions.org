@@ -1,0 +1,19 @@
+uuid: 7413bc6f-b279-4eb6-8d00-a067eba9022d
+langcode: en
+status: true
+dependencies: {  }
+countryCode: UZ
+format: "%recipient\n%organization\n%addressLine1\n%addressLine2\n%postalCode %locality\n%administrativeArea"
+requiredFields:
+  - recipient
+  - addressLine1
+  - locality
+uppercaseFields:
+  - locality
+  - administrativeArea
+administrativeAreaType: province
+localityType: city
+dependentLocalityType: null
+postalCodeType: postal
+postalCodePattern: '\d{6}'
+postalCodePrefix: null

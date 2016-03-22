@@ -12,6 +12,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeFieldItemList;
 use Drupal\opcions_subscription\SubscriptionInterface;
 use Drupal\user\UserInterface;
 
@@ -43,9 +44,8 @@ use Drupal\user\UserInterface;
  *   admin_permission = "administer subscription entities",
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "name",
+ *     "label" = "email",
  *     "uuid" = "uuid",
- *     "uid" = "user_id",
  *     "langcode" = "langcode",
  *     "status" = "status",
  *   },
@@ -67,7 +67,7 @@ class Subscription extends ContentEntityBase implements SubscriptionInterface {
   public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
     parent::preCreate($storage_controller, $values);
     $values += array(
-      'user_id' => \Drupal::currentUser()->id(),
+
     );
   }
 
@@ -134,15 +134,15 @@ class Subscription extends ContentEntityBase implements SubscriptionInterface {
   /**
    * {@inheritdoc}
    */
-  public function isPublished() {
-    return (bool) $this->getEntityKey('status');
+  public function isActive() {
+    return (bool) $this->getEntityKey('active');
   }
 
   /**
    * {@inheritdoc}
    */
-  public function setPublished($published) {
-    $this->set('status', $published ? NODE_PUBLISHED : NODE_NOT_PUBLISHED);
+  public function setStatus($status = self::STATUS_NEW) {
+    $this->set('status', $status);
     return $this;
   }
 
@@ -154,24 +154,24 @@ class Subscription extends ContentEntityBase implements SubscriptionInterface {
       ->setLabel(t('ID'))
       ->setDescription(t('The ID of the Subscription entity.'))
       ->setReadOnly(TRUE);
+
     $fields['uuid'] = BaseFieldDefinition::create('uuid')
       ->setLabel(t('UUID'))
       ->setDescription(t('The UUID of the Subscription entity.'))
       ->setReadOnly(TRUE);
 
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Authored by'))
-      ->setDescription(t('The user ID of author of the Subscription entity.'))
-      ->setRevisionable(TRUE)
+      ->setLabel(t('User'))
+      ->setDescription(t('The user ID of the subscriber.'))
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
-      ->setDefaultValueCallback('Drupal\node\Entity\Node::getCurrentUserId')
-      ->setTranslatable(TRUE)
+      ->setDefaultValue([])
       ->setDisplayOptions('view', array(
         'label' => 'hidden',
         'type' => 'author',
         'weight' => 0,
       ))
+      ->setRequired(FALSE)
       ->setDisplayOptions('form', array(
         'type' => 'entity_reference_autocomplete',
         'weight' => 5,
@@ -185,13 +185,9 @@ class Subscription extends ContentEntityBase implements SubscriptionInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Name'))
-      ->setDescription(t('The name of the Subscription entity.'))
-      ->setSettings(array(
-        'max_length' => 50,
-        'text_processing' => 0,
-      ))
+    $fields['email'] = BaseFieldDefinition::create('email')
+      ->setLabel(t('Email'))
+      ->setDescription(t('The email used when creating the subscription'))
       ->setDefaultValue('')
       ->setDisplayOptions('view', array(
         'label' => 'above',
@@ -205,10 +201,30 @@ class Subscription extends ContentEntityBase implements SubscriptionInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['status'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('Publishing status'))
-      ->setDescription(t('A boolean indicating whether the Subscription is published.'))
-      ->setDefaultValue(TRUE);
+    $fields['price'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Price'))
+      ->setDescription(t('The yearly price for the subscription'))
+      ->setDefaultValue('')
+      ->setRevisionable(TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['paper_version'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Wants paper version'))
+      ->setDefaultValue(TRUE)
+      ->setRevisionable(TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['status'] = BaseFieldDefinition::create('list_integer')
+      ->setLabel(t('Subscription status'))
+      ->setDescription(t('A subscriptions status.'))
+      ->setDefaultValue(self::STATUS_NEW)
+      ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
+      ->setSetting('allowed_values', self::getStatusOptions())
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['langcode'] = BaseFieldDefinition::create('language')
       ->setLabel(t('Language code'))
@@ -217,7 +233,18 @@ class Subscription extends ContentEntityBase implements SubscriptionInterface {
         'type' => 'language_select',
         'weight' => 10,
       ))
-      ->setDisplayConfigurable('form', TRUE);
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['expires_on'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Expires on'))
+      ->setDescription(t('Date when the subscription will expire.'))
+      ->setDefaultValue([
+        'default_date_type' => DateTimeFieldItemList::DEFAULT_VALUE_CUSTOM,
+        'default_date' => '+1 year'
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
@@ -230,4 +257,22 @@ class Subscription extends ContentEntityBase implements SubscriptionInterface {
     return $fields;
   }
 
+  public static function getStatusOptions() {
+    return [
+      self::STATUS_NEW => t('New (abandoned)'),
+      self::STATUS_ACTIVE => t('Active'),
+      self::STATUS_EXPIRED => t('Expired'),
+      self::STATUS_ARCHIVED => t('Archived'),
+      self::STATUS_UNSUBSCRIBED => t('Unsubscribed'),
+      self::STATUS_PENDING_PAYMENT => t('Pending Payment'),
+      self::STATUS_PENDING_RENEWAL => t('Pending Renewal'),
+    ];
+  }
+
+  /* @todo: remove after development */
+  public static function deleteAll() {
+    foreach(self::loadMultiple() as $entity) {
+      $entity->delete();
+    }
+  }
 }
