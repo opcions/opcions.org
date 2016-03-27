@@ -1,4 +1,11 @@
 # Subscription menu items definition
+opcions.subscription.new:
+  title: 'Subscribe'
+  route_name: opcions.new_subscription_1
+  description: 'Subscribe now link'
+  menu_name: account
+  weight: -20
+
 entity.subscription.collection:
   title: 'Subscription list'
   route_name: entity.subscription.collection
