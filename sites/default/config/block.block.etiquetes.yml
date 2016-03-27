@@ -1,27 +1,27 @@
-uuid: 19be3364-159e-42a9-a71e-30e0920e0e1e
+uuid: 5a7abf57-5a48-4a93-9807-7f3da379e23e
 langcode: ca
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.tags
   module:
     - block_visibility_groups
     - system
   theme:
     - opcions
-id: navegacioprincipal
+id: etiquetes
 theme: opcions
-region: navigation_top
+region: navigation_main
 weight: -10
 provider: null
-plugin: 'system_menu_block:main'
+plugin: 'system_menu_block:tags'
 settings:
-  id: 'system_menu_block:main'
-  label: 'Navegació principal'
+  id: 'system_menu_block:tags'
+  label: Etiquetes
   provider: system
-  label_display: visible
+  label_display: '0'
   level: 1
-  depth: 0
+  depth: 1
 visibility:
   condition_group:
     id: condition_group

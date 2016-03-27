@@ -1,0 +1,8 @@
+uuid: 4c435523-0a71-42ea-bc00-ee4bc0fe7c60
+langcode: ca
+status: true
+dependencies: {  }
+id: categories
+label: Categories
+description: ''
+locked: false

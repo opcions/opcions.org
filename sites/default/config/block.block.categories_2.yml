@@ -1,27 +1,27 @@
-uuid: 19be3364-159e-42a9-a71e-30e0920e0e1e
+uuid: 90f680a7-d78e-4a4b-bf08-8bb5e7424fb4
 langcode: ca
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.categories
   module:
     - block_visibility_groups
     - system
   theme:
     - opcions
-id: navegacioprincipal
+id: categories_2
 theme: opcions
-region: navigation_top
-weight: -10
+region: footer
+weight: -13
 provider: null
-plugin: 'system_menu_block:main'
+plugin: 'system_menu_block:categories'
 settings:
-  id: 'system_menu_block:main'
-  label: 'Navegació principal'
+  id: 'system_menu_block:categories'
+  label: Categories
   provider: system
   label_display: visible
   level: 1
-  depth: 0
+  depth: 1
 visibility:
   condition_group:
     id: condition_group

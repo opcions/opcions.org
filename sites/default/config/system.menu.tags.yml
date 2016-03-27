@@ -1,0 +1,8 @@
+uuid: d2ce84c4-1e66-4888-a037-550e30e1e2e1
+langcode: ca
+status: true
+dependencies: {  }
+id: tags
+label: Etiquetes
+description: 'Llistat de etiquetes per a mostrar al menu'
+locked: false

@@ -7,8 +7,8 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus:
-      - main
-    parent: 'main:views_view:views.guias.page_1'
+      - guies-de-consum
+    parent: 'guies-de-consum:'
 name: Guía
 type: guia
 description: 'Guía de producto'

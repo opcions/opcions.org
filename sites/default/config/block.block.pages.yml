@@ -1,27 +1,27 @@
-uuid: 0a147f46-1ae7-473a-b750-804f88f2f5be
+uuid: dbd08765-56e4-4aec-bd02-2f342c9cf3db
 langcode: ca
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.pages
   module:
     - block_visibility_groups
     - system
   theme:
     - opcions
-id: navegacioprincipal_2
+id: pages
 theme: opcions
-region: navigation_top
-weight: -11
+region: navigation_main
+weight: -8
 provider: null
-plugin: 'system_menu_block:main'
+plugin: 'system_menu_block:pages'
 settings:
-  id: 'system_menu_block:main'
-  label: 'Navegació principal'
+  id: 'system_menu_block:pages'
+  label: Pàgines
   provider: system
   label_display: '0'
   level: 1
-  depth: 0
+  depth: 1
 visibility:
   condition_group:
     id: condition_group

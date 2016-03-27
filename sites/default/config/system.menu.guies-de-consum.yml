@@ -1,0 +1,8 @@
+uuid: 0abd7dff-9513-4b56-9200-bfbf738d8665
+langcode: ca
+status: true
+dependencies: {  }
+id: guies-de-consum
+label: 'Guies de consum'
+description: 'Guies de consumo mostrades al menu pricipal desplegable'
+locked: false

@@ -1,27 +1,27 @@
-uuid: 19be3364-159e-42a9-a71e-30e0920e0e1e
+uuid: 469be71a-5ba2-49e4-983f-63f9c2d4bf90
 langcode: ca
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.guies-de-consum
   module:
     - block_visibility_groups
     - system
   theme:
     - opcions
-id: navegacioprincipal
+id: guiesdeconsum_2
 theme: opcions
-region: navigation_top
-weight: -10
+region: footer
+weight: -11
 provider: null
-plugin: 'system_menu_block:main'
+plugin: 'system_menu_block:guies-de-consum'
 settings:
-  id: 'system_menu_block:main'
-  label: 'Navegació principal'
+  id: 'system_menu_block:guies-de-consum'
+  label: 'Guies de consum'
   provider: system
   label_display: visible
   level: 1
-  depth: 0
+  depth: 1
 visibility:
   condition_group:
     id: condition_group

@@ -1,6 +1,6 @@
 uuid: 080dbb4d-22c4-4d1b-9200-eb75e544e754
 langcode: ca
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -8,8 +8,8 @@ dependencies:
     - opcions
 id: opcions_breadcrumbs
 theme: opcions
-region: '-1'
-weight: -5
+region: navigation_top
+weight: -9
 provider: null
 plugin: system_breadcrumb_block
 settings:

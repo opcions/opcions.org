@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: authenticated
 label: 'Usuari autenticat'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'access content'

@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: anonymous
 label: 'Usuari anònim'
-weight: 0
+weight: -10
 is_admin: false
 permissions:
   - 'access content'

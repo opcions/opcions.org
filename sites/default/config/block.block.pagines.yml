@@ -1,23 +1,23 @@
-uuid: 19be3364-159e-42a9-a71e-30e0920e0e1e
+uuid: 227b968b-ef65-487b-b400-f1f62de15421
 langcode: ca
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.pages
   module:
     - block_visibility_groups
     - system
   theme:
     - opcions
-id: navegacioprincipal
+id: pagines
 theme: opcions
-region: navigation_top
+region: footer
 weight: -10
 provider: null
-plugin: 'system_menu_block:main'
+plugin: 'system_menu_block:pages'
 settings:
-  id: 'system_menu_block:main'
-  label: 'Navegació principal'
+  id: 'system_menu_block:pages'
+  label: Pàgines
   provider: system
   label_display: visible
   level: 1

@@ -1,0 +1,8 @@
+uuid: 37f33a41-130c-4078-8800-e71d3d3e5216
+langcode: ca
+status: true
+dependencies: {  }
+id: pages
+label: Pàgines
+description: 'Llistat de pàgines per a mostrar al menú'
+locked: false
