@@ -15,6 +15,7 @@
   "dependencies": {
     "foundation-sites": "^6.2.0-rc.1",
     "motion-ui": "^1.2.0",
+    "rrssb": "^1.10.0",
     "velocity-animate": "^1.2.3",
     "webfontloader": "^1.6.21"
   },
