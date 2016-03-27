@@ -6,7 +6,7 @@
 
   WebFont.load({
     google: {
-      families: ['Lora', 'Roboto']
+      families: ['Lora:400,400italic,700,700italic:latin', 'Roboto:400,400italic:latin']
     }
   });
 

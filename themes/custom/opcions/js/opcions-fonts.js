@@ -27,7 +27,7 @@ g,0<c.length&&(c=Aa[c[0]])&&(a.c[e]=c))}a.c[e]||(c=Aa[e])&&(a.c[e]=c);for(c=0;c<
 
   WebFont.load({
     google: {
-      families: ['Lora', 'Roboto']
+      families: ['Lora:400,400italic,700,700italic:latin', 'Roboto:400,400italic:latin']
     }
   });
 
