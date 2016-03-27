@@ -19,9 +19,9 @@ settings:
   id: 'system_menu_block:main'
   label: 'Navegació principal'
   provider: system
-  label_display: visible
+  label_display: '0'
   level: 1
-  depth: 0
+  depth: 1
 visibility:
   condition_group:
     id: condition_group
