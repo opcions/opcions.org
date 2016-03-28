@@ -1,0 +1,6 @@
+uuid: 5b24d985-a28c-4b33-953d-61a27cb19f56
+langcode: ca
+status: true
+dependencies: {  }
+id: content_reference
+label: 'Referència senzilla'

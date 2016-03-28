@@ -1,23 +1,23 @@
-uuid: 77720a46-3c7e-4cb6-b756-8609704a9d78
+uuid: c8eb9cb9-ad54-47fb-b000-b25d0e141d04
 langcode: ca
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title_override_mode
-    - paragraphs.paragraphs_type.article_reference_paragraph
+    - paragraphs.paragraphs_type.content_reference_overide
   module:
     - options
-id: paragraph.article_reference_paragraph.field_title_override_mode
+id: paragraph.content_reference_overide.field_title_override_mode
 field_name: field_title_override_mode
 entity_type: paragraph
-bundle: article_reference_paragraph
-label: 'Mostra títol'
+bundle: content_reference_overide
+label: 'Title override mode'
 description: ''
 required: true
 translatable: false
 default_value:
   -
-    value: 1
+    value: 0
 default_value_callback: ''
 settings: {  }
 field_type: list_integer

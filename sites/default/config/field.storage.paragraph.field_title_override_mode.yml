@@ -1,4 +1,4 @@
-uuid: eb5d7b11-5874-49f7-b700-bf7f37d86b59
+uuid: cba7d700-8bd4-4c55-a800-b1c4c43b51cd
 langcode: ca
 status: true
 dependencies:
@@ -13,13 +13,13 @@ settings:
   allowed_values:
     -
       value: 0
-      label: Ocult
-    -
-      value: 1
       label: Original
     -
+      value: 1
+      label: Override
+    -
       value: 2
-      label: Sobreescrit
+      label: None
   allowed_values_function: ''
 module: options
 locked: false

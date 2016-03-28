@@ -1,14 +1,14 @@
-uuid: 668c19e9-4e19-481f-b201-1d6482982746
+uuid: 4ad39fab-49ff-499a-8b00-f2e0d808522a
 langcode: ca
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title_override
-    - paragraphs.paragraphs_type.article_reference_paragraph
-id: paragraph.article_reference_paragraph.field_title_override
+    - paragraphs.paragraphs_type.content_reference_overide
+id: paragraph.content_reference_overide.field_title_override
 field_name: field_title_override
 entity_type: paragraph
-bundle: article_reference_paragraph
+bundle: content_reference_overide
 label: 'Sobrescriu el titol'
 description: ''
 required: false

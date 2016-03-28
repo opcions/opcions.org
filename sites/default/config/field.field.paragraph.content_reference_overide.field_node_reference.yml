@@ -1,19 +1,19 @@
-uuid: d5578089-eab9-4db5-8b4a-74d00847c6b9
+uuid: 7672c2e2-9ea8-4a07-9b4b-7560a3062c06
 langcode: ca
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_content_reference
+    - field.storage.paragraph.field_node_reference
     - node.type.article
     - node.type.guia
-    - paragraphs.paragraphs_type.content_reference_paragraph
-id: paragraph.content_reference_paragraph.field_content_reference
-field_name: field_content_reference
+    - paragraphs.paragraphs_type.content_reference_overide
+id: paragraph.content_reference_overide.field_node_reference
+field_name: field_node_reference
 entity_type: paragraph
-bundle: content_reference_paragraph
-label: 'Referència al contingut'
+bundle: content_reference_overide
+label: 'Article / Guia'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
