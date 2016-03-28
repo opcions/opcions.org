@@ -1,10 +1,10 @@
 <?php
-namespace Drupal\opcions_collections\Services;
+namespace Drupal\opcions_collections\Hook;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\paragraphs\ParagraphInterface;
 
-class ReferenceOverride implements ReferenceOverrideInterface
+class ContentReferenceOverrideAlter
 {
 
   /**
