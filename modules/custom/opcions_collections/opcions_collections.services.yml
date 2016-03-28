@@ -1,5 +1,3 @@
 services:
-  opcions_collections.content_reference_paragraph.override:
-    class: Drupal\opcions_collections\Services\ReferenceOverride
-  opcions_collections.article_reference_paragraph.override:
-    class: Drupal\opcions_collections\Services\ReferenceOverride
+  opcions.collections.content_reference_overide.alter:
+    class: Drupal\opcions_collections\Hook\ContentReferenceOverrideAlter
