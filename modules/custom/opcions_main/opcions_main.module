@@ -58,34 +58,45 @@ function opcions_main_node_view(array &$build, EntityInterface $entity, EntityVi
 
     $article_id = $entity->id();
 
-    if (FALSE && $display->getComponent('opcions_collection')) {
+    if ($display->getComponent('opcions_collection')) {
 
-        $collection_ids = \Drupal::entityQuery('node')
-            ->condition('type', 'guia')
-            ->condition('field_article_reference', $article_id)
+        // find the paragraphs that point to this article
+        $paragraph_ids = \Drupal::entityQuery('paragraph')
+            ->condition('field_node_reference', $article_id)
             ->execute();
 
-        if ( $id = reset($collection_ids) ) {
-            $collection = Node::load($id);
-            $items = [];
-            foreach ($collection->get('field_article_reference')->referencedEntities() as $article) {
-                $items[] = $article->id() == $article_id ? $article->getTitle() : $article->link();
-            }
+        if($paragraph_id = reset($paragraph_ids)){
+            // if we have a paragraph, get the collection it is attached to
+            $collection_ids = \Drupal::entityQuery('node')
+              ->condition('type', 'guia')
+              ->condition('field_collection', $paragraph_id)
+              ->execute();
 
-            $build['opcions_collection'] = [
-                '#theme' => 'item_list',
-                '#list_type' => 'ol',
-                '#items' => $items,
-                '#title' => t('You are reading the guide about @shortname', ['@shortname' => strtolower($collection->get('field_shortname')->getString())]),
-            ];
+            if ( $id = reset($collection_ids) ) {
+                // if we find the collection load it to get all other paragraphs
+                $collection = Node::load($id);
+                $items = [];
+                foreach ($collection->get('field_collection')->referencedEntities() as $paragraph) {
+                    foreach ($paragraph->field_node_reference->referencedEntities() as $article) {
+                        $items[] = $article->id() == $article_id ? $article->getTitle() : $article->link();
+                    }
+                }
+
+                $build['opcions_collection'] = [
+                    '#theme' => 'item_list',
+                    '#list_type' => 'ol',
+                    '#items' => $items,
+                    '#title' => t('You are reading the guide about @shortname', ['@shortname' => strtolower($collection->get('field_shortname')->getString())]),
+                ];
+            }
         }
 
     }
 
+    // @TODO: move to using paragraphs FALSE until then
     if (FALSE && $display->getComponent('opcions_changelog')) {
 
         $guia = $entity;
-
 
         $changelog = [];
         foreach ($guia->get('field_article_reference')->referencedEntities() as $article) {
@@ -101,7 +112,6 @@ function opcions_main_node_view(array &$build, EntityInterface $entity, EntityVi
             '#list_type' => 'ul',
             '#items' => $changelog,
         ];
-
 
     }
 

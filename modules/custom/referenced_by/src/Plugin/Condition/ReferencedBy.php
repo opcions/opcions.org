@@ -79,7 +79,7 @@ class ReferencedBy extends ConditionPluginBase implements ContainerFactoryPlugin
          $options = [];
          foreach($this->fieldConfigStorage->loadMultiple() as $fieldConfig) {
              $settings = $fieldConfig->getSettings();
-             if ($fieldConfig->getTargetEntityTypeId() == 'node' && $fieldConfig->getType() == 'entity_reference') {
+             if ($fieldConfig->getType() == 'entity_reference') {
                  $options[$fieldConfig->getName()] = $fieldConfig->label();
              }
          }
@@ -123,7 +123,7 @@ class ReferencedBy extends ConditionPluginBase implements ContainerFactoryPlugin
 
           $node = $this->getContextValue('node');
 
-          $query = \Drupal::entityQuery('node', 'OR');
+          $query = \Drupal::entityQuery('paragraph', 'OR');
 
           foreach ($this->configuration['referenced_by'] as $id) {
               $query->condition($id, $node->id());
