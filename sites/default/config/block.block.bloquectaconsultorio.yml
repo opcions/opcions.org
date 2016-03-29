@@ -2,8 +2,6 @@ uuid: e26a0b1a-4c65-4a56-a43a-58e98ba8c24c
 langcode: ca
 status: true
 dependencies:
-  config:
-    - block_visibility_groups.block_visibility_group.guias
   content:
     - 'block_content:call_to_action_block:891e006f-4c74-48b8-a338-5644400f68fb'
   module:
@@ -13,7 +11,7 @@ dependencies:
     - opcions
 id: bloquectaconsultorio
 theme: opcions
-region: content
+region: '-1'
 weight: -4
 provider: null
 plugin: 'block_content:891e006f-4c74-48b8-a338-5644400f68fb'
@@ -29,5 +27,5 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: guias
+    block_visibility_group: ''
     context_mapping: {  }

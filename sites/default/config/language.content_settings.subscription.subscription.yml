@@ -1,0 +1,11 @@
+uuid: 0736e2b0-b1ca-4cdd-b956-8637d9fe0d7d
+langcode: ca
+status: true
+dependencies:
+  module:
+    - opcions_subscription
+id: subscription.subscription
+target_entity_type_id: subscription
+target_bundle: subscription
+default_langcode: site_default
+language_alterable: false

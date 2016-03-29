@@ -22,7 +22,7 @@ settings:
   handler_settings:
     target_bundles:
       content_reference: content_reference
-      content_reference_overide: content_reference_overide
+      content_reference_override: content_reference_override
     target_bundles_drag_drop:
       changelog_paragraph:
         weight: 4
@@ -30,7 +30,7 @@ settings:
       content_reference:
         enabled: true
         weight: 5
-      content_reference_overide:
+      content_reference_override:
         enabled: true
         weight: 6
 field_type: entity_reference_revisions

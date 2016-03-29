@@ -6,15 +6,15 @@ dependencies:
     - field.storage.paragraph.field_node_reference
     - node.type.article
     - node.type.guia
-    - paragraphs.paragraphs_type.content_reference_overide
-id: paragraph.content_reference_overide.field_node_reference
+    - paragraphs.paragraphs_type.content_reference_override
+id: paragraph.content_reference_override.field_node_reference
 field_name: field_node_reference
 entity_type: paragraph
-bundle: content_reference_overide
+bundle: content_reference_override
 label: 'Article / Guia'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

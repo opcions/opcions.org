@@ -3,13 +3,13 @@ langcode: ca
 status: true
 dependencies:
   config:
-    - field.field.paragraph.content_reference_overide.field_node_reference
-    - field.field.paragraph.content_reference_overide.field_title_override
-    - field.field.paragraph.content_reference_overide.field_title_override_mode
-    - paragraphs.paragraphs_type.content_reference_overide
-id: paragraph.content_reference_overide.default
+    - field.field.paragraph.content_reference_override.field_node_reference
+    - field.field.paragraph.content_reference_override.field_title_override
+    - field.field.paragraph.content_reference_override.field_title_override_mode
+    - paragraphs.paragraphs_type.content_reference_override
+id: paragraph.content_reference_override.default
 targetEntityType: paragraph
-bundle: content_reference_overide
+bundle: content_reference_override
 mode: default
 content:
   field_node_reference:
