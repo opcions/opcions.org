@@ -1,1 +1,13 @@
-@import "inline-lists";
+@mixin aspect-ratio($width, $height, $child: 'div') {
+  padding-top: ($height / $width) * 100%;
+  position: relative;
+  height: 0;
+  #{$child} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
