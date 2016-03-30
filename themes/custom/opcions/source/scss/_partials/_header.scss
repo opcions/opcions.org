@@ -1,46 +1,27 @@
 .header {
   background-color: $light-gray;
+  padding-bottom: 0;
+  text-align: right;
+  @include clearfix;
+}
+
+.header__brand {
+  float: left;
+  padding: 0;
+  .site-logo img {
+    max-width: 200px;
+    width: 100%;
+  }
 }
 
 .header__language,
 .header__actions {
+  display: inline-block;
   margin-top: 1.5rem;
 }
 
-.header__brand {
-  @include grid-column(4);
-  padding: 0;
-  .site-logo img {
-    width: 100%;
-    max-width: 200px;
-  }
-}
-
-.header__actions {
-  @include grid-column(6);
-  .menu {
-    @include menu-base;
-    @include menu-direction(horizontal);
-    > li {
-      float: right;
-    }
-  }
-}
-
-.header__language {
-  @include grid-column(2);
-  .dropbutton-wrapper {
-    margin-top: 0.7em;
-    margin-bottom: 0.5em;
-  }
-  .dropbutton-widget {
-    background-color: transparent;
-    border: none;
-  }
-  .language-link {
-    font-size: 0.8em;
-    &.is-active {
-      color: $dark-gray;
-    }
-  }
+.header__actions .menu,
+.header__language .links {
+  @include menu-base;
+  @include menu-direction(horizontal);
 }

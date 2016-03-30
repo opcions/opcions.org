@@ -10,10 +10,6 @@
     @include grid-layout(3, '.view-content  .card-list__item');
   }
 
-  @include breakpoint(xlarge) {
-    @include grid-layout(4, '.view-content  .card-list__item');
-  }
-
   &__item {
     @include grid-column();
     list-style: none;
@@ -30,10 +26,6 @@
 
   @include breakpoint(large) {
     @include grid-layout(3, '.card-list__item');
-  }
-
-  @include breakpoint(xlarge) {
-    @include grid-layout(4, '.card-list__item');
   }
 
   &__item {

@@ -22,6 +22,7 @@ function opcions_preprocess_block(&$variables)
       break;
     case 'language_block:language_interface':
       $variables['attributes']['class'][] = 'header__language';
+      break;
     default:
       //kint($variables['elements']['#plugin_id']);
   }
