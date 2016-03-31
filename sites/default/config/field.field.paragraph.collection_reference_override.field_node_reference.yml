@@ -1,0 +1,28 @@
+uuid: 7672c2e2-9ea8-4a07-9b4b-7560a3062c06
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_node_reference
+    - node.type.article
+    - node.type.guia
+    - paragraphs.paragraphs_type.collection_reference_override
+id: paragraph.collection_reference_override.field_node_reference
+field_name: field_node_reference
+entity_type: paragraph
+bundle: collection_reference_override
+label: 'Article / Guia'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      guia: guia
+    sort:
+      field: _none
+field_type: entity_reference

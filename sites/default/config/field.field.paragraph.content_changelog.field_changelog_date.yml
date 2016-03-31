@@ -1,0 +1,24 @@
+uuid: c509c33c-5626-4bbe-9f00-baaff94b89ce
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_changelog_date
+    - paragraphs.paragraphs_type.content_changelog
+  module:
+    - datetime
+id: paragraph.content_changelog.field_changelog_date
+field_name: field_changelog_date
+entity_type: paragraph
+bundle: content_changelog
+label: Date
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

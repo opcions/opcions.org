@@ -1,0 +1,18 @@
+uuid: 2eb1e4d2-eb3a-43ec-8643-6748f750dd39
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.collection_reference_override
+id: paragraph.collection_reference_override.changed
+field_name: changed
+entity_type: paragraph
+bundle: collection_reference_override
+label: Canviat
+description: 'The time that the Paragraph was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

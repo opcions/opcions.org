@@ -1,0 +1,27 @@
+uuid: 57e62327-3f2d-4ee4-b045-69cf9017a997
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.collection_reference_override.field_node_reference
+    - field.field.paragraph.collection_reference_override.field_title_override
+    - field.field.paragraph.collection_reference_override.field_title_override_mode
+    - paragraphs.paragraphs_type.collection_reference_override
+id: paragraph.collection_reference_override.default
+targetEntityType: paragraph
+bundle: collection_reference_override
+mode: default
+content:
+  field_node_reference:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+hidden:
+  created: true
+  field_title_override: true
+  field_title_override_mode: true
+  uid: true

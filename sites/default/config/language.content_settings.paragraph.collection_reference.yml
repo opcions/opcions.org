@@ -1,0 +1,16 @@
+uuid: ea4d7cea-f3c0-48bf-b500-b19c361fe7b3
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.collection_reference
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: paragraph.collection_reference
+target_entity_type_id: paragraph
+target_bundle: collection_reference
+default_langcode: site_default
+language_alterable: true

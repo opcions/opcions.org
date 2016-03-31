@@ -1,0 +1,23 @@
+uuid: c8eb9cb9-ad54-47fb-b000-b25d0e141d04
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_override_mode
+    - paragraphs.paragraphs_type.collection_reference_override
+  module:
+    - options
+id: paragraph.collection_reference_override.field_title_override_mode
+field_name: field_title_override_mode
+entity_type: paragraph
+bundle: collection_reference_override
+label: 'Title override mode'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

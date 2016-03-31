@@ -1,0 +1,29 @@
+uuid: 1fea2621-fae2-4abe-bc00-eef6f2dacd66
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_changelog
+    - node.type.article
+  module:
+    - entity_reference_revisions
+id: node.article.field_changelog
+field_name: field_changelog
+entity_type: node
+bundle: article
+label: Changelog
+description: 'Cada cambio relevante que se realiza en un artículo debe indicarse creando un nuevo registro de changelog que aparecerá principalmente en las colecciones (guías, revistas y series) a las que pertenece este artículo.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      content_changelog: content_changelog
+    target_bundles_drag_drop:
+      content_changelog:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

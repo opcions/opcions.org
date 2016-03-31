@@ -1,0 +1,29 @@
+uuid: 0eedbdb2-9e86-4647-8400-abd5db4b1a90
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_changelog_description
+    - paragraphs.paragraphs_type.content_changelog
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    changelog: changelog
+    basic_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.content_changelog.field_changelog_description
+field_name: field_changelog_description
+entity_type: paragraph
+bundle: content_changelog
+label: Descripción
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

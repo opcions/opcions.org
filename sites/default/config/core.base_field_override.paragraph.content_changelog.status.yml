@@ -1,0 +1,22 @@
+uuid: 14869495-3f7a-4dbc-9200-d3df1ae70403
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.content_changelog
+id: paragraph.content_changelog.status
+field_name: status
+entity_type: paragraph
+bundle: content_changelog
+label: Publicat
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Actiu
+  off_label: Inactiu
+field_type: boolean

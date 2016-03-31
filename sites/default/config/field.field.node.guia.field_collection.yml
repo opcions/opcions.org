@@ -21,16 +21,16 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      content_reference: content_reference
-      content_reference_override: content_reference_override
+      collection_reference: collection_reference
+      collection_reference_override: collection_reference_override
     target_bundles_drag_drop:
-      changelog_paragraph:
+      content_changelog:
         weight: 4
         enabled: false
-      content_reference:
+      collection_reference:
         enabled: true
         weight: 5
-      content_reference_override:
+      collection_reference_override:
         enabled: true
         weight: 6
 field_type: entity_reference_revisions

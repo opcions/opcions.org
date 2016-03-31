@@ -1,0 +1,33 @@
+uuid: 01ea6a10-314b-413c-b517-234b9ae97d67
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_changelog.field_changelog_date
+    - field.field.paragraph.content_changelog.field_changelog_description
+    - paragraphs.paragraphs_type.content_changelog
+  module:
+    - datetime
+    - text
+id: paragraph.content_changelog.default
+targetEntityType: paragraph
+bundle: content_changelog
+mode: default
+content:
+  field_changelog_date:
+    weight: 0
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+    type: datetime_default
+  field_changelog_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  uid: true

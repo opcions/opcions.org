@@ -1,0 +1,24 @@
+uuid: 48ac2eff-3764-471d-9605-057954c8d02b
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.collection_reference.field_node_reference
+    - paragraphs.paragraphs_type.collection_reference
+id: paragraph.collection_reference.default
+targetEntityType: paragraph
+bundle: collection_reference
+mode: default
+content:
+  field_node_reference:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,16 @@
+uuid: 69530305-f168-4524-8616-2259099c064e
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.content_changelog
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.content_changelog
+target_entity_type_id: paragraph
+target_bundle: content_changelog
+default_langcode: site_default
+language_alterable: true

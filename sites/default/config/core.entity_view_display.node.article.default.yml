@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_article_categories
-    - field.field.node.article.field_article_changelog
+    - field.field.node.article.field_categories
+    - field.field.node.article.field_changelog
     - field.field.node.article.field_image
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
@@ -26,7 +26,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_article_categories:
+  field_categories:
     weight: 3
     label: inline
     settings:
@@ -58,6 +58,6 @@ content:
     third_party_settings: {  }
 hidden:
   comment: true
-  field_article_changelog: true
+  field_changelog: true
   field_summary: true
   langcode: true

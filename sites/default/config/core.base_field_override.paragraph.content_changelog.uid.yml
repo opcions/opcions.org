@@ -1,0 +1,20 @@
+uuid: b23b407b-797b-4695-bb04-4a04d9da9481
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.content_changelog
+id: paragraph.content_changelog.uid
+field_name: uid
+entity_type: paragraph
+bundle: content_changelog
+label: 'Elaborat per'
+description: 'The user ID of the paragraphs author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\paragraphs\Entity\Paragraph::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

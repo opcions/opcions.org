@@ -1,0 +1,6 @@
+uuid: ef4dcdc2-6769-4034-a61e-307a37e32a02
+langcode: ca
+status: true
+dependencies: {  }
+id: collection_reference_override
+label: 'Referència amb canvis'

@@ -1,0 +1,18 @@
+uuid: 4b06f37a-f9e8-436f-9343-67a55e9d57b6
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.content_changelog
+id: paragraph.content_changelog.changed
+field_name: changed
+entity_type: paragraph
+bundle: content_changelog
+label: Canviat
+description: 'The time that the Paragraph was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

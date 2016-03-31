@@ -1,0 +1,18 @@
+uuid: ef498e4c-6fe1-4121-8759-89087c3a4762
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.content_changelog
+id: paragraph.content_changelog.created
+field_name: created
+entity_type: paragraph
+bundle: content_changelog
+label: 'Elaborat el'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

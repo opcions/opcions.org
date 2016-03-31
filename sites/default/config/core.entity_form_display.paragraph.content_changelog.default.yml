@@ -1,0 +1,32 @@
+uuid: 5f62ba74-f1e0-4fce-8300-fbdd3e7d1ceb
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_changelog.field_changelog_date
+    - field.field.paragraph.content_changelog.field_changelog_description
+    - paragraphs.paragraphs_type.content_changelog
+  module:
+    - datetime
+    - text
+id: paragraph.content_changelog.default
+targetEntityType: paragraph
+bundle: content_changelog
+mode: default
+content:
+  field_changelog_date:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+  field_changelog_description:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -6,8 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_article_categories
-    - field.field.node.article.field_article_changelog
+    - field.field.node.article.field_categories
+    - field.field.node.article.field_changelog
     - field.field.node.article.field_image
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
@@ -22,7 +22,7 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  field_article_categories:
+  field_categories:
     type: entity_reference_label
     weight: 2
     label: visually_hidden
@@ -46,7 +46,7 @@ content:
 hidden:
   body: true
   comment: true
-  field_article_changelog: true
+  field_changelog: true
   field_tags: true
   langcode: true
   links: true

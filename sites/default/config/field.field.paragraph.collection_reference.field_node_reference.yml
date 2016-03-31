@@ -1,0 +1,28 @@
+uuid: 94483130-6b74-4e22-8000-d3683e5804ab
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_node_reference
+    - node.type.article
+    - node.type.guia
+    - paragraphs.paragraphs_type.collection_reference
+id: paragraph.collection_reference.field_node_reference
+field_name: field_node_reference
+entity_type: paragraph
+bundle: collection_reference
+label: 'Node Reference'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      guia: guia
+    sort:
+      field: _none
+field_type: entity_reference

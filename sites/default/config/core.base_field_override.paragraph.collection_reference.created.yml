@@ -1,0 +1,18 @@
+uuid: b133a9ac-814a-439f-9f00-ab08d39178d3
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.collection_reference
+id: paragraph.collection_reference.created
+field_name: created
+entity_type: paragraph
+bundle: collection_reference
+label: 'Elaborat el'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

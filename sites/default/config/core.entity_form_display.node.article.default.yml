@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_article_categories
-    - field.field.node.article.field_article_changelog
+    - field.field.node.article.field_categories
+    - field.field.node.article.field_changelog
     - field.field.node.article.field_image
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
@@ -41,12 +41,12 @@ content:
     weight: 9
     settings: {  }
     third_party_settings: {  }
-  field_article_categories:
+  field_categories:
     weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_article_changelog:
+  field_changelog:
     type: entity_reference_paragraphs
     weight: 6
     settings:
