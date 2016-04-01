@@ -154,6 +154,18 @@ class InlineParagraphsWidget extends WidgetBase {
    * @see \Drupal\content_translation\Controller\ContentTranslationController::prepareTranslation()
    *   Uses a similar approach to populate a new translation.
    */
+  public function form(FieldItemListInterface $items, array &$form, FormStateInterface $form_state, $get_delta = NULL) {
+    $elements = parent::form($items, $form, $form_state, $get_delta);
+    // Generally set widget to multilingual to avoid misleading
+    // all language indication.
+    $elements['#multilingual'] = TRUE;
+    return $elements;
+  }
+
+
+  /**
+   * {@inheritdoc}
+   */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $field_name = $this->fieldDefinition->getName();
     $parents = $element['#field_parents'];
