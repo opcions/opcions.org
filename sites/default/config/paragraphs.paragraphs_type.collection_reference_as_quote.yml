@@ -1,0 +1,6 @@
+uuid: 8b321e41-e5f4-4d47-a209-9aeb00a7b1e8
+langcode: ca
+status: true
+dependencies: {  }
+id: collection_reference_as_quote
+label: 'Referència com cita'

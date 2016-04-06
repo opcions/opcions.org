@@ -1,0 +1,16 @@
+uuid: b7e4252e-fe69-4fd7-8516-22bcca316287
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.collection_reference_as_quote
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.collection_reference_as_quote
+target_entity_type_id: paragraph
+target_bundle: collection_reference_as_quote
+default_langcode: site_default
+language_alterable: true

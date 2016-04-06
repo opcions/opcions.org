@@ -1,0 +1,37 @@
+uuid: 0a1c7f24-dc01-405b-b900-c13740d2a57d
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.collection_reference_as_quote.field_node_reference
+    - field.field.paragraph.collection_reference_as_quote.field_quote
+    - field.field.paragraph.collection_reference_as_quote.field_quote_source
+    - paragraphs.paragraphs_type.collection_reference_as_quote
+id: paragraph.collection_reference_as_quote.default
+targetEntityType: paragraph
+bundle: collection_reference_as_quote
+mode: default
+content:
+  field_node_reference:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_quote:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_quote_source:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

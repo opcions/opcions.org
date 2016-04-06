@@ -1,0 +1,20 @@
+uuid: 7bdc7a9c-d206-47b9-8f07-0722ad7831f0
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.collection_reference_as_quote
+id: paragraph.collection_reference_as_quote.uid
+field_name: uid
+entity_type: paragraph
+bundle: collection_reference_as_quote
+label: 'Elaborat per'
+description: 'The user ID of the paragraphs author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\paragraphs\Entity\Paragraph::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

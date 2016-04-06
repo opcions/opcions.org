@@ -22,12 +22,16 @@ settings:
   handler_settings:
     target_bundles:
       collection_reference: collection_reference
+      collection_reference_as_quote: collection_reference_as_quote
       collection_reference_override: collection_reference_override
     target_bundles_drag_drop:
       content_changelog:
         weight: 4
         enabled: false
       collection_reference:
+        enabled: true
+        weight: 5
+      collection_reference_as_quote:
         enabled: true
         weight: 5
       collection_reference_override:

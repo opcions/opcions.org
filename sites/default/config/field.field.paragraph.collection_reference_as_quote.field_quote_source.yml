@@ -1,0 +1,19 @@
+uuid: ffe93316-96a8-44ae-a31f-31dd6c86c59f
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote_source
+    - paragraphs.paragraphs_type.collection_reference_as_quote
+id: paragraph.collection_reference_as_quote.field_quote_source
+field_name: field_quote_source
+entity_type: paragraph
+bundle: collection_reference_as_quote
+label: Font
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

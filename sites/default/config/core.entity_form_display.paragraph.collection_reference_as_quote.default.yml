@@ -1,0 +1,40 @@
+uuid: 150f51a1-459a-40c5-ad15-212868cd4ed5
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.collection_reference_as_quote.field_node_reference
+    - field.field.paragraph.collection_reference_as_quote.field_quote
+    - field.field.paragraph.collection_reference_as_quote.field_quote_source
+    - paragraphs.paragraphs_type.collection_reference_as_quote
+id: paragraph.collection_reference_as_quote.default
+targetEntityType: paragraph
+bundle: collection_reference_as_quote
+mode: default
+content:
+  field_node_reference:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_quote:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_quote_source:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

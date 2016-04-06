@@ -1,0 +1,22 @@
+uuid: 9a0daad1-0e82-4182-9500-f231930e0649
+langcode: ca
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.collection_reference_as_quote
+id: paragraph.collection_reference_as_quote.status
+field_name: status
+entity_type: paragraph
+bundle: collection_reference_as_quote
+label: Publicat
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Actiu
+  off_label: Inactiu
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: e46518e5-90af-4d74-8a06-6c5f2546b9de
+langcode: ca
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.categories
+id: taxonomy_term.categories.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: categories
+label: Canviat
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
