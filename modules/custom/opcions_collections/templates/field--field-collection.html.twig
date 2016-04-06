@@ -54,14 +54,14 @@
 
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes.addClass(classes, 'card-list') }}>
+    <div{{ attributes.addClass(classes, 'collection').setAttribute('data-equalizer', '') }}>
       {% for item in items %}
-        <div{{ item.attributes.addClass('card-list__item') }}>{{ item.content }}</div>
+        <div{{ item.attributes.addClass('collection__item').setAttribute('data-equalizer-watch', '') }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes, 'card-list__item') }}>{{ item.content }}</div>
+      <div{{ attributes.addClass(classes, 'collection__item') }}>{{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}
@@ -71,7 +71,7 @@
       <div class="card_list">
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('card-list__item') }}>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('collection__item') }}>{{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>

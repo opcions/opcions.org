@@ -1,3 +1,5 @@
 services:
-  opcions.collections.collection_reference_override.alter:
+  opcions.collections.hook.collection_reference_override:
     class: Drupal\opcions_collections\Hook\CollectionReferenceOverrideAlter
+  opcions.collections.hook.collection_reference_as_quote:
+    class: Drupal\opcions_collections\Hook\CollectionReferenceAsQuoteAlter

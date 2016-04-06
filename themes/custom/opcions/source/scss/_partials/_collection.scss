@@ -1,0 +1,39 @@
+.collection {
+  @include grid-row();
+  @include grid-layout(1,'.collection__item');
+
+  @include breakpoint(medium) {
+    @include grid-layout(2, '.collection__item');
+  }
+
+  @include breakpoint(large) {
+    @include grid-layout(3, '.collection__item');
+  }
+}
+
+.collection__item .collection-quote {
+
+  height: 100%;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: -0.4em;
+  }
+
+  blockquote {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 3em;
+  }
+
+  footer {
+    display: block;
+    clear: both;
+    text-align: right;
+  }
+}
+

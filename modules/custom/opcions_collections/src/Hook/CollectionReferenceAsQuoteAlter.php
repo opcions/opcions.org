@@ -2,31 +2,17 @@
 
 namespace Drupal\opcions_collections\Hook;
 
-use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\paragraphs\ParagraphInterface;
 
-class CollectionReferenceOverrideAlter
+class CollectionReferenceAsQuoteAlter
 {
-
-  const ORIGINAL = 0;
-  const OVERRIDE = 1;
-  const HIDE = 2;
-
   /**
    * {@inheritdoc}
    */
   public function alter(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
     /* @var \Drupal\Core\Field\EntityReferenceFieldItemList */
     $reference = &$build['field_node_reference']['#items'];
-    $overrides = [];
-    switch ($entity->field_title_override_mode->value) {
-      case self::OVERRIDE:
-        //kint($build);
-        $overrides['title'] = $entity->field_title_override->value;
-        break;
-      case self::HIDE:
-        $overrides['title'] = '';
-    }
+
+    $overrides['#title'] = $entity->field_quote->value;
 
     $reference->_reference_overrides = $overrides;
   }
@@ -39,7 +25,7 @@ class CollectionReferenceOverrideAlter
   public function preprocess(&$variables, $item, $delta) {
     if (!empty($overrides = $item->_reference_overrides)) {
       foreach ($overrides as $property => $value) {
-        $variables['items'][$delta]['content']['#node']->{$property} = $value;
+        $variables['items'][$delta]['content'][$property] = $value;
       }
     }
   }

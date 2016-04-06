@@ -2032,13 +2032,9 @@ select {
   .layout-content, .layout-content:last-child {
     float: none; }
 
-footer {
-  background: url("../img/textured_paper.png");
+.layout-container > footer {
   border-top: 1px solid #e6e6e6;
   box-shadow: 0 0 10px #999999; }
-  @media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    footer {
-      background: url("../img/textured_paper_@2x.png"); } }
 
 .region-footer {
   background-color: transparent;
@@ -2174,6 +2170,65 @@ input[type="email"] {
     background: #777;
     color: #fefefe;
     float: left; }
+
+.collection {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .collection::before, .collection::after {
+    content: ' ';
+    display: table;
+    flex-basis: 0;
+    order: 1; }
+  .collection::after {
+    clear: both; }
+  .collection > .collection__item {
+    width: 100%;
+    float: left; }
+    .collection > .collection__item:nth-of-type(1n) {
+      clear: none; }
+    .collection > .collection__item:nth-of-type(1n+1) {
+      clear: both; }
+    .collection > .collection__item:last-child {
+      float: left; }
+  @media screen and (min-width: 40em) {
+    .collection > .collection__item {
+      width: 50%;
+      float: left; }
+      .collection > .collection__item:nth-of-type(1n) {
+        clear: none; }
+      .collection > .collection__item:nth-of-type(2n+1) {
+        clear: both; }
+      .collection > .collection__item:last-child {
+        float: left; } }
+  @media screen and (min-width: 64em) {
+    .collection > .collection__item {
+      width: 33.33333%;
+      float: left; }
+      .collection > .collection__item:nth-of-type(1n) {
+        clear: none; }
+      .collection > .collection__item:nth-of-type(3n+1) {
+        clear: both; }
+      .collection > .collection__item:last-child {
+        float: left; } }
+
+.collection__item .collection-quote {
+  height: 100%; }
+  .collection__item .collection-quote:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: -0.4em; }
+  .collection__item .collection-quote blockquote {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 3em; }
+  .collection__item .collection-quote footer {
+    display: block;
+    clear: both;
+    text-align: right; }
 
 .card-list {
   max-width: 75rem;

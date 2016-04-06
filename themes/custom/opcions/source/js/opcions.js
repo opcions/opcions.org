@@ -2,7 +2,7 @@
 (function ($, Drupal) {
   'use strict';
 
-  // require('foundation-sites');
+  require('foundation-sites');
   require('velocity-animate');
   require('velocity-animate/velocity.ui');
 
@@ -20,6 +20,13 @@
         }
         $(this).toggleClass('close');
       });
+
+    }
+  };
+  Drupal.behaviors.opcionsFoudation = {
+    attach: function (context, settings) {
+
+      $(context).foundation();
 
     }
   };
