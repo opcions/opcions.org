@@ -3,10 +3,41 @@
   @include callout($light-gray);
 }
 
+.node--view-mode-full .node__content > .field--type-image {
+  max-height: 45vh;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+  }
+}
+
 .guia-navigation {
   border-top: 1px solid $medium-gray;
   margin-top: 2em;
   padding-top: 2em;
   padding-bottom: 2em;
   background-color: $light-gray;
+}
+
+blockquote {
+  position: relative;
+  padding: 2em;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  position: absolute;
+  font-family: serif;
+  color: #ccc;
+  content: open-quote;
+  font-size: 14em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+  top: 7rem;
+  left: 1rem;
+  z-index: -1;
+  opacity: 0.3;
+}
+blockquote > * {
+  display: inline;
 }

@@ -8,6 +8,8 @@ libraries:
   - opcions/global-css
   - opcions/global-js
 regions:
+  ads_top: Ads top
+  header_secondary: Header secondary
   header: Header # Items for the header region.
   navigation_top: Navigation Top # Items for the primary menu region.
   search_top: Top Search (hidden by default) # Items for the full extenden menu region.

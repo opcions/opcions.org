@@ -66,7 +66,6 @@
 {%
 set classes = [
 'node',
-'card',
 'node--type-' ~ node.bundle|clean_class,
 node.isPromoted() ? 'node--promoted',
 node.isSticky() ? 'node--sticky',
@@ -75,22 +74,28 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ]
 %}
 {{ attach_library('classy/node') }}
-
 <article{{ attributes.addClass(classes) }}>
-    <a class="card__clickable" href="{{ url }}">
-        <div class="card__image">
-            {{ content.field_image }}
-            <div class="text-overlay">
-                <h2>{{ label }}</h2>
+
+    {{ title_prefix }}
+    {% if not page %}
+        <h2{{ title_attributes }}>
+            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+    {% endif %}
+    {{ title_suffix }}
+
+    {% if display_submitted %}
+        <footer class="node__meta">
+            {{ author_picture }}
+            <div{{ author_attributes.addClass('node__submitted') }}>
+                {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+                {{ metadata }}
             </div>
-        </div>
-        <div class="card__content">
-            {{ content.field_summary }}
-        </div>
-    </a>
-    <div class="card__action">
-        <a href="/#" class="card__action--category">{{ content.field_article_categories }}</a>
-        <a href="{{ url }}" class="card__action--read-more">{{ "Read more" | t }}</a>
+        </footer>
+    {% endif %}
+
+    <div{{ content_attributes.addClass('node__content') }}>
+        {{ content }}
     </div>
 
 </article>

@@ -1,4 +1,4 @@
-$button-size : 1.5rem;
+$button-size : 1.4rem;
 $transition: .3s; // increase this to see the transformations in slow-motion
 
 .lines-button {
@@ -23,7 +23,7 @@ $transition: .3s; // increase this to see the transformations in slow-motion
   display: inline-block;
   width: $button-size;
   height: $button-size/7;
-  background: $anchor-color;
+  background: $white;
   border-radius: $button-size/14;
   transition: $transition;
 }
@@ -53,8 +53,9 @@ $transition: .3s; // increase this to see the transformations in slow-motion
   opacity: 1;
 
   .lines {
-    &:before { top: $button-size/3.5; }
-    &:after { top: -$button-size/3.5; }
+    background-color: $brand-orange;
+    &:before { top: $button-size/3.5; background-color: $brand-orange;}
+    &:after { top: -$button-size/3.5; background-color: $brand-orange;}
   }
 }
 

@@ -1,27 +1,59 @@
-.header {
-  background-color: $light-gray;
-  padding-bottom: 0;
-  text-align: right;
-  @include clearfix;
-}
-
-.header__brand {
-  float: left;
-  padding: 0;
-  .site-logo img {
-    max-width: 200px;
-    width: 100%;
+.layout-container > header {
+  background-color: $brand-red;
+  color: $white;
+  margin-bottom: 2em;
+  a {
+    color: $white;
+  }
+  a.is-active,
+  a:active,
+  a:hover {
+    color: $brand-orange;
   }
 }
 
-.header__language,
-.header__actions {
-  display: inline-block;
-  margin-top: 1.5rem;
+.region-header-secondary {
+  background-color: $brand-blue;
+  font-size: 0.8em;
+  & > * {
+    vertical-align: middle;
+  }
+}
+
+.header__brand {
+  img {
+    margin: 1rem auto;
+    max-width: 150px;
+    width: 100%;
+  }
 }
 
 .header__actions .menu,
 .header__language .links {
   @include menu-base;
   @include menu-direction(horizontal);
+  & > li > a {
+    padding: 0.7rem;
+  }
+}
+
+.header__language .links {
+  text-transform: lowercase;
+}
+
+header .region-header-secondary .block-search.search-block-form {
+  @include show-for(large);
+  padding: 0;
+  input {
+    margin: 0.3em 0;
+    height: 1.8rem;
+    line-height: 1;
+    padding: 0 0.5em;
+    font-size: 1em;
+    max-width: 15em;
+    float: right;
+    &.button {
+      background-color: $brand-green;
+    }
+  }
 }

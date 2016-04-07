@@ -18,7 +18,7 @@ function opcions_collections_help($route_name, RouteMatchInterface $route_match)
     // Main module help for the opcions_collections module.
     case 'help.page.opcions_collections':
       $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<h3>' . t('Opcions Collections') . '</h3>';
       $output .= '<p>' . t('Opcions collection tweaks for guides, series and revistas') . '</p>';
       return $output;
 
@@ -69,21 +69,28 @@ function opcions_collections_theme($existing, $type, $theme, $path)
     ],
     'paragraph__collection_reference_as_quote' => [
       'base hook' => 'paragraph'
+    ],
+    'paragraph__collection_reference_override' => [
+      'base hook' => 'paragraph'
     ]
 
   ];
+}
+
+function opcions_collections_preprocess_paragraph__collection_reference_override(&$variables) {
+  array_keys($variables);
 }
 
 function template_preprocess_paragraph__collection_reference_as_quote(&$variables) {
 
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['elements']['#paragraph'];
-
   $variables['quote'] = $paragraph->get('field_quote')->getString();
-  $source  = $paragraph->get('field_quote_source')->getString();
-  $cite = $source ?: null;
+  $cite  = $paragraph->get('field_quote_source')->getString() ?: null;
   $id = $paragraph->get('field_node_reference')->getString();
-  $node = Node::load($id);
-  $variables['link'] = \Drupal::service('entity.repository')->getTranslationFromContext($node)->toLink($cite);
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = \Drupal::service('entity.repository')->getTranslationFromContext(Node::load($id));
+  $variables['link'] = $node->toLink($cite);
+  $variables['url'] = $node->toUrl()->toString();
 
 }

@@ -1,2 +1,17 @@
-$header-font-family: Roboto, Geneva, Lucida Console, sans-serif;
-$body-font-family: Lora, Georgia, serif;
+
+
+/* typography */
+
+$body-font-family: Lato, Geneva, Lucida Console, sans-serif;
+$heder-font-family: Lato, Geneva, Lucida Console, sans-serif;
+$header-font-weight: 900;
+$header-sizes: (
+  small: (
+    'h1': 24,
+    'h2': 20,
+    'h3': 19,
+    'h4': 18,
+    'h5': 17,
+    'h6': 16
+  )
+);

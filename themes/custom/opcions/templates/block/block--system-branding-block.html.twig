@@ -15,16 +15,11 @@
 #}
 {% block content %}
   {% if site_logo %}
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo">
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo header__logo">
       <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
     </a>
   {% endif %}
-  {% if site_name %}
-    <div class="site-name header__logo">
-      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-    </div>
-  {% endif %}
   {% if site_slogan %}
-    <div class="site-slogan">{{ site_slogan }}</div>
+    <div class="site-slogan header__slogan">{{ site_slogan }}</div>
   {% endif %}
 {% endblock %}

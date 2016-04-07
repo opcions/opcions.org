@@ -1,9 +1,13 @@
 .layout-container > footer {
   border-top: 1px solid $light-gray;
   box-shadow: 0 0 10px hsl(0, 0%, 60%);
+  background-color: $secondary-color;
+  color: $light-gray;
+  a {
+    color: $light-gray;
+  }
 }
 .region-footer {
-  background-color: transparent;
   text-align: center;
   font-size: 1.2rem;
   padding: 4rem;

@@ -54,7 +54,7 @@
 
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes.addClass(classes, 'collection').setAttribute('data-equalizer', '') }}>
+    <div{{ attributes.addClass(classes, 'collection').setAttribute('data-equalizer', '').setAttribute('data-equalize-by-row', 'true') }}>
       {% for item in items %}
         <div{{ item.attributes.addClass('collection__item').setAttribute('data-equalizer-watch', '') }}>{{ item.content }}</div>
       {% endfor %}

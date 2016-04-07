@@ -41,22 +41,9 @@ set classes = [
 'paragraph',
 'paragraph--type--' ~ paragraph.bundle|clean_class,
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-'collection-quote'
 ]
 %}
 <div{{ attributes.addClass(classes) }}>
-
-        <blockquote>
-            <h3 class="quote-text">
-                <a href="{{ url }}">
-                    {{ quote }}
-                </a>
-            </h3>
-            <footer>
-                <cite>
-                    {{ link }}
-                </cite>
-            </footer>
-        </blockquote>
-
+    {# kint(content) #}
+    {{ content }}
 </div>

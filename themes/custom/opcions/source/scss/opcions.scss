@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
+@import "colors";
+@import "settings";
 @import "foundation";
-@import "settings/settings";
-@import "overrides";
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -46,6 +46,7 @@
 
 @import "util";
 @import "mixins";
+@import "typography";
 @import "header";
 @import "navigation";
 @import "search";

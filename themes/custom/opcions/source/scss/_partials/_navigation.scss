@@ -1,6 +1,16 @@
-.menu--main .menu {
+.header__navigation {
+  position:relative;
+  text-transform: uppercase;
+  @include breakpoint(medium) {
+    padding-top: 2.4rem;
+  }
+}
+
+.header__navigation .menu {
   @include menu-base;
   @include menu-direction(horizontal);
+  white-space: nowrap;
+  overflow-x: hidden;
 
   .menu-item--collapsed {
     list-style-type: none;
@@ -8,20 +18,22 @@
   }
 }
 
-.navigation-top {
-  @include grid-column-row;
-  position: relative;
-  background-color: $light-gray;
-  overflow: hidden;
-}
-
-.navigation-top__toggle {
-  z-index: 4;
+.header__navigation .header__navigation--toggle {
+  @include menu-base;
+  background: $brand-red;
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
-  background-color: white;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  line-height: 1;
+  a {
+    color: $white;
+  }
+  &:before {
+    position: absolute;
+    content: " ";
+    left: -3em;
+    width: 3em;
+    height: 100%;
+    background: linear-gradient(to left, $brand-red, transparent);
+  }
 }
-

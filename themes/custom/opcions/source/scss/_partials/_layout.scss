@@ -1,13 +1,50 @@
-.layout-container > * {
+.region-ads-top,
+.region-header,
+.region-footer,
+.layout-content,
+.layout-container > .region {
   @include grid-row;
-  @include clearfix;
 }
 
-.layout-content {
-  @include grid-column-row;
+.region-content  {
+  @include grid-column;
 }
 
-.layout-content {
-  @include grid-column-row;
+.region-header-secondary {
+  @include grid-row($width: none);
+  @include grid-column;
 }
 
+.header__actions,
+.region-header-secondary .block-search,
+.header__language {
+  display: inline-block;
+  width: auto;
+  float: right;
+}
+
+.region-header-secondary .block-search {
+  max-width: 20em;
+}
+
+.header__actions {
+  float: left;
+  text-align: left;
+}
+
+.header__brand {
+  @include grid-col(4);
+  @include grid-col-pos(center);
+
+  @include breakpoint(medium) {
+    @include grid-col-size(3);
+    @include grid-column-unposition;
+  }
+}
+
+.header__navigation {
+  @include grid-col(12);
+  @include breakpoint(medium) {
+    @include grid-col(9);
+  }
+}
