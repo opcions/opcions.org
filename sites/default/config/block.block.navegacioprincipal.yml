@@ -11,8 +11,8 @@ dependencies:
     - opcions
 id: navegacioprincipal
 theme: opcions
-region: navigation_top
-weight: -10
+region: header
+weight: -12
 provider: null
 plugin: 'system_menu_block:main'
 settings:

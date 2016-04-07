@@ -10,8 +10,8 @@ dependencies:
     - opcions
 id: opcions_account_menu
 theme: opcions
-region: header
-weight: -8
+region: header_secondary
+weight: -13
 provider: null
 plugin: 'system_menu_block:account'
 settings:

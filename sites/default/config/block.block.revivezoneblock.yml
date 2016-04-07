@@ -9,8 +9,8 @@ dependencies:
     - opcions
 id: revivezoneblock
 theme: opcions
-region: header
-weight: -10
+region: ads_top
+weight: -13
 provider: null
 plugin: revive_zone_block
 settings:

@@ -9,8 +9,8 @@ dependencies:
     - opcions
 id: opcions_search
 theme: opcions
-region: search_top
-weight: -9
+region: header_secondary
+weight: -12
 provider: null
 plugin: search_form_block
 settings:

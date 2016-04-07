@@ -8,8 +8,8 @@ dependencies:
     - opcions
 id: commutadordellengua
 theme: opcions
-region: header
-weight: -7
+region: header_secondary
+weight: -11
 provider: null
 plugin: 'language_block:language_interface'
 settings:
