@@ -2021,16 +2021,19 @@ header .region-header-secondary .block-search.search-block-form {
   .layout-container > .region::after {
     clear: both; }
 
-.region-content {
+.region-content,
+.region-ads-top .block-revive-zone-block {
   width: 100%;
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
   @media screen and (min-width: 40em) {
-    .region-content {
+    .region-content,
+    .region-ads-top .block-revive-zone-block {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  .region-content:last-child:not(:first-child) {
+  .region-content:last-child:not(:first-child),
+  .region-ads-top .block-revive-zone-block:last-child:not(:first-child) {
     float: right; }
 
 .region-header-secondary {

@@ -6,7 +6,8 @@
   @include grid-row;
 }
 
-.region-content  {
+.region-content,
+.region-ads-top .block-revive-zone-block {
   @include grid-column;
 }
 
