@@ -19,10 +19,13 @@ g,0<c.length&&(c=Aa[c[0]])&&(a.c[e]=c))}a.c[e]||(c=Aa[e])&&(a.c[e]=c);for(c=0;c<
 
 
 },{}],2:[function(require,module,exports){
+'use strict';
+
 /* global require */
 (function () {
 
   'use strict';
+
   var WebFont = require('webfontloader');
 
   WebFont.load({
@@ -30,7 +33,6 @@ g,0<c.length&&(c=Aa[c[0]])&&(a.c[e]=c))}a.c[e]||(c=Aa[e])&&(a.c[e]=c);for(c=0;c<
       families: ['Lato:400,900,700,400italic:latin']
     }
   });
-
 })();
 
 },{"webfontloader":1}]},{},[2]);

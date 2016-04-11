@@ -1,7 +1,8 @@
 .region-ads-top,
-.region-header,
 .region-footer,
 .layout-content,
+.region-header,
+.region-navigation-main,
 .layout-container > .region {
   @include grid-row;
 }
@@ -11,9 +12,9 @@
   @include grid-column;
 }
 
+.layout-container > header,
 .region-header-secondary {
   @include grid-row($width: none);
-  @include grid-column;
 }
 
 .header__actions,
@@ -35,17 +36,29 @@
 
 .header__brand {
   @include grid-col(4);
-  @include grid-col-pos(center);
 
   @include breakpoint(medium) {
     @include grid-col-size(3);
-    @include grid-column-unposition;
   }
 }
 
+.region-header {
+  position: relative;
+}
+
 .header__navigation {
-  @include grid-col(12);
+  position: absolute;
+  bottom: 22%;
+  right: 0;
+  .menu {
+    @include show-for(medium);
+  }
+  @include grid-col(8);
   @include breakpoint(medium) {
     @include grid-col(9);
   }
+}
+
+.layout-container > main {
+  margin-top: 2em;
 }

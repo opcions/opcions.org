@@ -3,6 +3,7 @@ content-ads:
     js/content-ads.js: {}
   dependencies:
       - core/jquery
+      - core/jquery.once
       - core/drupalSettings
 
 revive.spcjs:

@@ -17,3 +17,8 @@
 .hide {
   display: none;
 }
+
+.u-no-scroll,
+.u-no-scroll body {
+  overflow: hidden;
+}

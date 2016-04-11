@@ -1,24 +1,31 @@
 /* global require */
-(function ($, Drupal) {
+(function ($, Drupal, Foundation) {
   'use strict';
 
-  require('foundation-sites');
+  require('velocity-animate');
   require('velocity-animate');
   require('velocity-animate/velocity.ui');
 
   Drupal.behaviors.opcionsToggle = {
     attach: function (context, settings) {
 
-      $(context).find('.js-navigation-top-toggle').on('click', function (e) {
+      $(context).find('.js-navigation-main-toggle', '.js-navigation-main-close').on('click', function (e) {
         e.preventDefault();
 
-        if ($(this).hasClass('close')) {
-          $('.js-navitation-main').velocity('slideUp');
+        if ($('.js-navigation-main-toggle').hasClass('close')) {
+          $('.js-navigation-main').velocity('slideUp');
+          $('.layout-container').removeClass('js-navigation-open');
+          $('html').removeClass('u-no-scroll');
         }
         else {
-          $('.js-navitation-main').velocity('slideDown');
+          $('.js-navigation-main').velocity('slideDown');
+          $('.layout-container').addClass('js-navigation-open');
+          if (Foundation.MediaQuery.current === 'small') {
+            $('html').addClass('u-no-scroll');
+          }
+
         }
-        $(this).toggleClass('close');
+        $('.js-navigation-main-toggle').toggleClass('close');
       });
 
     }
@@ -30,4 +37,4 @@
 
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, Foundation);

@@ -8,9 +8,16 @@ global-js:
   js:
     js/opcions.js: {}
   dependencies:
-    - core/jquery
     - core/drupal
+    - core/jquery.once
+    - opcions/foundation
 webfonts:
   header: true
   js:
     js/opcions-fonts.js: {}
+
+foundation:
+  js:
+    js/foundation.js: {}
+  dependencies:
+    - core/jquery

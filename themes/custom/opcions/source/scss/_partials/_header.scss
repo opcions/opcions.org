@@ -1,7 +1,7 @@
-.layout-container > header {
+.layout-container > header,
+.region-header-secondary {
   background-color: $brand-red;
   color: $white;
-  margin-bottom: 2em;
   a {
     color: $white;
   }
@@ -22,7 +22,7 @@
 
 .header__brand {
   img {
-    margin: 1rem auto;
+    margin: 0.5rem auto;
     max-width: 150px;
     width: 100%;
   }

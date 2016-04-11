@@ -2,6 +2,8 @@
   "private": true,
   "devDependencies": {
     "autoprefixer": "^5.2.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babelify": "^7.2.0",
     "browser-sync": "^2.9.11",
     "browserify": "latest",
     "cssnano": "^2.1.1",
@@ -26,10 +28,15 @@
     "preoptimize:css": "npm run -s build:css",
     "optimize:css": "postcss --config postcss.config.json",
     "prebuild:js": "npm run lint",
-    "build:js": "browserify -e source/js/opcions.js -o js/opcions.js && browserify -e source/js/opcions-fonts.js -o js/opcions-fonts.js ",
+    "build:js": "browserify -e source/js/opcions.js -o js/opcions.js && browserify -e source/js/opcions-fonts.js -o js/opcions-fonts.js && browserify -e source/js/foundation.js -o js/foundation.js",
     "build": "npm run build:css && npm run build:js",
     "build:watch": "watch 'npm run -s build' source",
-    "bsync": "browser-sync start --proxy \"opcions.dev\" --reload-delay 2000 --files \"css, js, templates, opcions.*\"",
+    "bsync": "browser-sync start --proxy \"opcions.dev\" --reload-delay 3000 --files \"css, js, templates, opcions.*\"",
     "dev": "parallelshell -v 'npm run bsync' 'npm run build:watch'"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }
