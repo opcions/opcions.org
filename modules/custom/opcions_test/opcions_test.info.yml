@@ -1,0 +1,5 @@
+name: Opcions Test
+type: module
+description: Opcions Test helpers
+core: 8.x
+package: Opcions

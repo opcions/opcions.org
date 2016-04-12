@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains opcions_test.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function opcions_test_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the opcions_test module.
+    case 'help.page.opcions_test':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Opcions Test helpers') . '</p>';
+      return $output;
+
+    default:
+  }
+}

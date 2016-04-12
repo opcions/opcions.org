@@ -1,0 +1,127 @@
+# Subscription menu items definition
+opcions.test.main.1:
+  title: 'Reflexion'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: main
+  weight: 100
+
+opcions.test.main.2:
+  title: 'Inspiración'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: main
+  weight: 100
+
+opcions.test.main.3:
+  title: 'Denuncia'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: main
+  weight: 100
+
+opcions.test.main.4:
+  title: 'Consejos'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: main
+  weight: 10
+
+opcions.test.main.5:
+  title: 'La revista'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: main
+  weight: 10
+
+
+opcions.test.category.1:
+  title: 'Reflexion'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: categories
+  weight: 100
+
+opcions.test.category.2:
+  title: 'Inspiracion'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: categories
+  weight: 100
+
+opcions.test.category.3:
+  title: 'Denuncia'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: categories
+  weight: 100
+
+opcions.test.category.4:
+  title: 'Consejos'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: categories
+  weight: 10
+
+opcions.test.category.5:
+  title: 'La revista'
+  url: 'http://opcions.dev'
+  description: 'Category test link'
+  menu_name: categories
+  weight: 10
+
+opcions.test.tags.1:
+  title: 'Filosiofía CCT'
+  url: 'http://opcions.dev'
+  description: 'Tag link'
+  menu_name: tags
+  weight: 10
+
+opcions.test.tags.2:
+  title: 'Números publicados'
+  url: 'http://opcions.dev/revista'
+  description: 'Tag link'
+  menu_name: tags
+  weight: 10
+  
+opcions.test.tags.3:
+  title: 'Anunciate en Opcions'
+  url: 'http://opcions.dev'
+  description: 'Category tag link'
+  menu_name: tags
+  weight: 10
+  
+opcions.test.tags.4:
+  title: 'El Equipo'
+  url: 'http://opcions.dev'
+  description: 'Category tag link'
+  menu_name: tags
+  weight: 10
+
+opcions.test.tags.5:
+  title: 'Investigación sobre Consumo'
+  url: 'http://opcions.dev'
+  description: 'Category tag link'
+  menu_name: tags
+  weight: 10
+  
+opcions.test.tags.6:
+  title: 'Reflexion'
+  url: 'http://opcions.dev'
+  description: 'Category tag link'
+  menu_name: tags
+  weight: 10
+  
+opcions.test.tags.7:
+  title: 'Reflexion'
+  url: 'http://opcions.dev'
+  description: 'Category tag link'
+  menu_name: tags
+  weight: 10
+  
+opcions.test.tags.8:
+  title: 'Reflexion'
+  url: 'http://opcions.dev'
+  description: 'Category tag link'
+  menu_name: tags
+  weight: 10
