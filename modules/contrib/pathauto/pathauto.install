@@ -216,3 +216,52 @@ function pathauto_update_8101() {
     $pattern_config->save();
   }
 }
+
+/**
+ * Update node type conditions from entity_bundle to node_type.
+ */
+function pathauto_update_8102() {
+  // Load all pattern configuration entities.
+  foreach (\Drupal::configFactory()->listAll('pathauto.pattern.') as $pattern_config_name) {
+    $pattern_config = \Drupal::configFactory()->getEditable($pattern_config_name);
+
+    // Loop patterns and swap the entity_bundle:node plugin by the node_type
+    // plugin.
+    if ($pattern_config->get('type') == 'canonical_entities:node') {
+      $selection_criteria = $pattern_config->get('selection_criteria');
+      foreach ($selection_criteria as $uuid => $condition) {
+        if ($condition['id'] == 'entity_bundle:node') {
+          $selection_criteria[$uuid]['id'] = 'node_type';
+          $pattern_config->set('selection_criteria', $selection_criteria);
+          $pattern_config->save();
+          break;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Fix invalid default value for ignore_words.
+ */
+function pathauto_update_8103() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('pathauto.settings');
+  $ignore_words = $config->get('ignore_words');
+  if ($ignore_words === ', in, is,that, the  , this, with, ') {
+    $config->set('ignore_words', 'a, an, as, at, before, but, by, for, from, is, in, into, like, of, off, on, onto, per, since, than, the, this, that, to, up, via, with')->save(TRUE);
+  }
+}
+
+/*
+ * Resave patterns so that lookup keys are updated.
+ */
+function pathauto_update_8104() {
+  \Drupal::entityTypeManager()->clearCachedDefinitions();
+  // Load all pattern configuration entities and save them, so that the new
+  // status lookup keys are saved.
+  foreach (\Drupal::configFactory()->listAll('pathauto.pattern.') as $pattern_config_name) {
+    $pattern_config = \Drupal::configFactory()->getEditable($pattern_config_name);
+    $pattern_config->save();
+  }
+}

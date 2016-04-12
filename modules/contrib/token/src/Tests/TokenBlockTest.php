@@ -54,7 +54,7 @@ class TokenBlockTest extends TokenTestBase {
     $this->drupalGet($block->urlInfo());
     $this->drupalPostForm(NULL, array(), t('Save block'));
     // Ensure token validation is working on the block.
-    $this->assertText('The Title is using the following invalid tokens: [user:name].');
+    $this->assertText('Title is using the following invalid tokens: [user:name].');
 
     // Create the block for real now with a valid title.
     $settings = $block->get('settings');
