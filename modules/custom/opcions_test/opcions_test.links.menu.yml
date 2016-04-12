@@ -104,24 +104,59 @@ opcions.test.tags.5:
   description: 'Category tag link'
   menu_name: tags
   weight: 10
-  
-opcions.test.tags.6:
-  title: 'Reflexion'
+
+opcions.test.guies.1:
+  title: 'Ordenadores'
   url: 'http://opcions.dev'
   description: 'Category tag link'
-  menu_name: tags
+  menu_name: guies-de-consum
+  weight: 10
+
+opcions.test.guies.2:
+  title: 'Detergentes'
+  url: 'http://opcions.dev'
+  description: 'Category tag link'
+  menu_name: guies-de-consum
+  weight: 10
+
+opcions.test.guies.3:
+  title: 'Pasta de dientes'
+  url: 'http://opcions.dev'
+  description: 'Category tag link'
+  menu_name: guies-de-consum
+  weight: 10
+
+opcions.test.guies.6:
+  title: 'Transporte'
+  url: 'http://opcions.dev'
+  description: 'Category tag link'
+  menu_name: guies-de-consum
   weight: 10
   
-opcions.test.tags.7:
-  title: 'Reflexion'
+opcions.test.guies.7:
+  title: 'Azucar'
   url: 'http://opcions.dev'
   description: 'Category tag link'
-  menu_name: tags
+  menu_name: guies-de-consum
   weight: 10
   
-opcions.test.tags.8:
-  title: 'Reflexion'
+opcions.test.guies.8:
+  title: 'Zapatillas'
   url: 'http://opcions.dev'
   description: 'Category tag link'
-  menu_name: tags
+  menu_name: guies-de-consum
+  weight: 10
+
+opcions.test.footer.1:
+  title: 'Creative Commons'
+  url: 'http://opcions.dev'
+  description: 'footer link'
+  menu_name: footer
+  weight: 10
+
+opcions.test.footer.2:
+  title: 'Politica de Privacidad'
+  url: 'http://opcions.dev'
+  description: 'footer link'
+  menu_name: footer
   weight: 10
