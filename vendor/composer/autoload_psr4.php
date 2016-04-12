@@ -59,6 +59,7 @@ return array(
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
     'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
+    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
     'Commercie\\Currency\\' => array($vendorDir . '/commercie/currency/src'),
     'Commercie\\CurrencyExchange\\' => array($vendorDir . '/commercie/currency-exchange/src'),
     'CommerceGuys\\Zone\\' => array($vendorDir . '/commerceguys/zone/src'),
