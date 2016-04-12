@@ -2376,17 +2376,6 @@ blockquote > * {
     order: 1; }
   .collection::after {
     clear: both; }
-  .collection .collection__item {
-    width: 100%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem; }
-    @media screen and (min-width: 40em) {
-      .collection .collection__item {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
-    .collection .collection__item:last-child:not(:first-child) {
-      float: right; }
   .collection > .collection__item {
     width: 100%;
     float: left; }
@@ -2418,13 +2407,12 @@ blockquote > * {
         float: left; } }
 
 .collection__item {
-  position: relative; }
+  padding: 1em; }
 
 .collection__item .collection-quote {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: auto; }
+  height: 100%; }
 
 .card-list {
   max-width: 75rem;

@@ -2,10 +2,6 @@
 
   @include grid-row();
 
-  .collection__item {
-    @include grid-column;
-  }
-
   @include grid-layout(1,'.collection__item');
 
   @include breakpoint(medium) {
@@ -18,16 +14,12 @@
 }
 
 .collection__item {
-  position: relative;
+  padding: 1em;
 }
 
 .collection__item .collection-quote {
-
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: auto;
-
-
+  height: 100%;
 }
 
