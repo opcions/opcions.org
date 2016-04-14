@@ -1,0 +1,22 @@
+uuid: e1ad6c97-1a79-4d8e-8607-7a026bb31137
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.revista
+  module:
+    - text
+id: node.revista.body
+field_name: body
+entity_type: node
+bundle: revista
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

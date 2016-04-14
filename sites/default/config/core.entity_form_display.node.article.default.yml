@@ -18,10 +18,26 @@ dependencies:
   module:
     - comment
     - datetime
+    - field_group
     - image
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_changelog:
+      children:
+        - field_changelog
+      parent_name: ''
+      weight: 6
+      label: 'Gestió de canvis'
+      format_type: details
+      format_settings:
+        label: 'Gestió de canvis'
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -37,12 +53,12 @@ content:
     type: text_textarea_with_summary
   comment:
     type: comment_default
-    weight: 12
+    weight: 13
     settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 9
+    weight: 10
     settings: {  }
     third_party_settings: {  }
   field_categories:
@@ -52,16 +68,16 @@ content:
     type: options_select
   field_changelog:
     type: entity_reference_paragraphs
-    weight: 6
+    weight: 7
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
     third_party_settings: {  }
   field_free_access_at:
-    weight: 16
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -73,13 +89,13 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
   field_is_premium_content:
-    weight: 15
+    weight: 16
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_scheduled_at:
-    weight: 14
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -98,20 +114,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 14
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 11
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 12
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -121,12 +137,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 8
     settings:
       match_operator: CONTAINS
       size: 60

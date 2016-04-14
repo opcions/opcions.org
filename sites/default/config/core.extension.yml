@@ -32,6 +32,7 @@ module:
   entity_reference_revisions: 0
   features: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -45,6 +46,8 @@ module:
   linkit: 0
   locale: 0
   menu_ui: 0
+  metatag: 0
+  metatag_open_graph: 0
   node: 0
   opcions_collections: 0
   opcions_main: 0

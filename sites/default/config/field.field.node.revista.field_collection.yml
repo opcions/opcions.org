@@ -1,0 +1,40 @@
+uuid: e679bb92-3e16-42de-b300-f5ed409c9695
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collection
+    - node.type.revista
+  module:
+    - entity_reference_revisions
+id: node.revista.field_collection
+field_name: field_collection
+entity_type: node
+bundle: revista
+label: Col·lecció
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      collection_reference: collection_reference
+      collection_reference_as_quote: collection_reference_as_quote
+      collection_reference_override: collection_reference_override
+    target_bundles_drag_drop:
+      collection_reference:
+        enabled: true
+        weight: 5
+      collection_reference_as_quote:
+        enabled: true
+        weight: 6
+      collection_reference_override:
+        enabled: true
+        weight: 7
+      content_changelog:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,35 @@
+uuid: 721eb6ab-89ef-4976-ad4a-74a5fd0ba541
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.field.node.revista.body
+    - field.field.node.revista.field_collection
+    - node.type.revista
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.revista.default
+targetEntityType: node
+bundle: revista
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_collection:
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+  links:
+    weight: 100
+hidden:
+  langcode: true

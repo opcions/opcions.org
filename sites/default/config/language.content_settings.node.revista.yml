@@ -1,0 +1,16 @@
+uuid: 349514d4-5782-43c6-a906-6b6d83210521
+langcode: ca
+status: true
+dependencies:
+  config:
+    - node.type.revista
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.revista
+target_entity_type_id: node
+target_bundle: revista
+default_langcode: current_interface
+language_alterable: true
