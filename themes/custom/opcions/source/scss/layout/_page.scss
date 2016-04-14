@@ -1,19 +1,23 @@
+/* Main regions */
 .region-ads-top,
-.region-footer,
-.layout-content,
+.region-header-secondary,
 .region-header,
 .region-navigation-main,
-.layout-container > .region {
+.region-content > div,
+.region-footer {
   @include grid-row;
 }
 
-.region-content,
-.region-ads-top .block-revive-zone-block {
-  @include grid-column;
+/* Content blocks */
+.block-page-title-block,
+.block-system-main-block > *,
+.block-revive-zone-block {
+  @include grid-column-row;
 }
 
+/* Full width containers */
 .layout-container > header,
-.region-header-secondary {
+.header__secondary--wrapper {
   @include grid-row($width: none);
 }
 
@@ -35,10 +39,10 @@
 }
 
 .header__brand {
-  @include grid-col(4);
+  @include grid-col(2);
 
   @include breakpoint(medium) {
-    @include grid-col-size(3);
+    @include grid-col-size(2);
   }
 }
 
@@ -53,12 +57,28 @@
   .menu {
     @include show-for(medium);
   }
-  @include grid-col(8);
+  @include grid-col(10);
   @include breakpoint(medium) {
-    @include grid-col(9);
+    @include grid-col(10);
   }
 }
 
 .layout-container > main {
   margin-top: 2em;
+}
+
+/** FOOTER **/
+
+.region-footer {
+  padding: 2em 0 4em;
+}
+
+.region-footer .block-menu {
+  @include breakpoint(medium) {
+    @include grid-col(3);
+  }
+}
+
+.region-footer .menu--footer {
+  @include grid-col-size(12);
 }

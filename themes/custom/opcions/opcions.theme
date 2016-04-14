@@ -44,10 +44,10 @@ function opcions_preprocess_region(&$variables)
       $variables['attributes']['class'][] = 'navigation-top--collapsed';
       break;
     case 'search_top':
-      $variables['attributes']['class'][] = 'hide js-search-top';
+      $variables['attributes']['class'][] = 'u-hide js-search-top';
       break;
     case 'navigation_main':
-      $variables['attributes']['class'][] = 'hide js-navigation-main';
+      $variables['attributes']['class'][] = 'u-hide js-navigation-main';
       break;
     default:
       //dpm($variables['region']);

@@ -1,4 +1,5 @@
-.collection {
+.collection,
+.collection--view .view-content {
 
   @include grid-row();
 

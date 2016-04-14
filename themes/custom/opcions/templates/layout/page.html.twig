@@ -48,12 +48,15 @@
  * @see html.html.twig
  */
 #}
+{{ page.ads_top }}
 <div class="layout-container">
 
-  {{ page.ads_top }}
+
 
   <header role="banner">
-    {{ page.header_secondary }}
+    <div class="header__secondary--wrapper">
+      {{ page.header_secondary }}
+    </div>
     {{ page.header }}
   </header>
 

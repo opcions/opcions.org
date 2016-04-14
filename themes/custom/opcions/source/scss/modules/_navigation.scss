@@ -1,6 +1,5 @@
 .header__navigation {
   position:relative;
-  text-transform: uppercase;
   @include breakpoint(medium) {
     padding-top: 2.4rem;
   }

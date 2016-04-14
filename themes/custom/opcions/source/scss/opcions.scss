@@ -1,63 +1,31 @@
 @charset "UTF-8";
 
-@import "colors";
-@import "settings";
+@import "vars/colors";
+@import "vars/fonts";
+
+@import "foundation/settings";
 @import "foundation";
+@import "foundation/includes";
 
-@include foundation-global-styles;
-@include foundation-grid;
-@include foundation-typography;
-@include foundation-forms;
-@include foundation-button;
-//@include foundation-visibility-classes;
-@include foundation-float-classes;
-//@include foundation-accordion;
-//@include foundation-accordion-menu;
-//@include foundation-badge;
-//@include foundation-breadcrumbs;
-//@include foundation-button-group;
-@include foundation-callout;
-//@include foundation-close-button;
-//@include foundation-drilldown-menu;
-//@include foundation-dropdown;
-//@include foundation-dropdown-menu;
-//@include foundation-flex-video;
-//@include foundation-label;
-//@include foundation-media-object;
-//@include foundation-menu;
-//@include foundation-menu-icon;
-//@include foundation-off-canvas;
-//@include foundation-orbit;
-//@include foundation-pagination;
-//@include foundation-progress-bar;
-//@include foundation-slider;
-//@include foundation-sticky;
-//@include foundation-reveal;
-//@include foundation-switch;
-//@include foundation-table;
-//@include foundation-tabs;
-//@include foundation-thumbnail;
-//@include foundation-title-bar;
-//@include foundation-tooltip;
-//@include foundation-top-bar;
+@import "other/util";
+@import "other/mixins";
+@import "other/transformicons";
 
-//@import "motion-ui";
-//@include motion-ui-transitions;
+@import "base/typography";
 
-@import "util";
-@import "mixins";
-@import "typography";
-@import "header";
-@import "navigation";
-@import "search";
-@import "layout";
-@import "footer";
-@import "forms";
-@import "toc";
-@import "guias";
-@import "card";
-@import "collection";
-@import "card-list";
-@import "publi";
-@import "transformicons";
+@import "layout/page";
+@import "modules/header";
+@import "modules/footer";
 
+@import "modules/ads";
+@import "modules/forms";
+@import "modules/guias";
+@import "modules/search";
+@import "modules/navigation";
+@import "modules/collection";
+
+@import "theme/footer";
+
+// probably not needed
+//@import "modules/card";
+//@import "modules/card-list";

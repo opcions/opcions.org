@@ -15,9 +15,6 @@
 .region-header-secondary {
   background-color: $brand-blue;
   font-size: 0.8em;
-  & > * {
-    vertical-align: middle;
-  }
 }
 
 .header__brand {

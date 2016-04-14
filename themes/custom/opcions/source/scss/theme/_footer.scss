@@ -1,0 +1,29 @@
+.region-footer .menu {
+  @include menu-base;
+  @include menu-direction(vertical);
+}
+
+.menu--footer .menu {
+  @include menu-direction;
+  text-align: center;
+}
+
+.layout-container > footer {
+  border-top: 1px solid $light-gray;
+  box-shadow: 0 0 10px hsl(0, 0%, 60%);
+  background-color: $secondary-color;
+}
+
+.region-footer {
+  color: $light-gray;
+
+  h2 {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: $brand-red;
+    padding: 1em 1em 0;
+  }
+  a {
+    color: $light-gray;
+  }
+}

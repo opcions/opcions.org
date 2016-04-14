@@ -3,12 +3,8 @@
   @include callout($light-gray);
 }
 
-.node--view-mode-full .node__content > .field--type-image {
-  max-height: 45vh;
-  overflow: hidden;
-  img {
-    object-fit: cover;
-  }
+.node--type-guia .node__content > .field--type-image {
+  @include aspect-ratio(16, 9, img);
 }
 
 .guia-navigation {
