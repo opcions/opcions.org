@@ -1,0 +1,10 @@
+uuid: 16df6044-d52a-4273-8b00-b247f281a08d
+langcode: ca
+status: true
+dependencies:
+  module:
+    - opcions_subscription
+id: subscription.token
+label: Token
+targetEntityType: subscription
+cache: true

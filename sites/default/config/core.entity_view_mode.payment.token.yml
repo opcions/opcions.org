@@ -1,0 +1,10 @@
+uuid: 77b4b373-8dc7-4104-ab00-e2555f725dd5
+langcode: ca
+status: true
+dependencies:
+  module:
+    - payment
+id: payment.token
+label: Token
+targetEntityType: payment
+cache: true

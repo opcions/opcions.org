@@ -1,0 +1,23 @@
+uuid: 86c537b8-d755-43ed-b802-2fc1e9e090e6
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_premium_content
+    - node.type.article
+id: node.article.field_is_premium_content
+field_name: field_is_premium_content
+entity_type: node
+bundle: article
+label: 'Contigut per a socis'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Actiu
+  off_label: Inactiu
+field_type: boolean

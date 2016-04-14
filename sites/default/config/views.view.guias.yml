@@ -57,8 +57,8 @@ display:
       style:
         type: default
         options:
-          row_class: card-list__item
-          default_row_class: true
+          row_class: collection__item
+          default_row_class: false
           uses_fields: false
       row:
         type: 'entity:node'
@@ -227,7 +227,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      css_class: card-list
+      css_class: collection--view
     cache_metadata:
       max-age: -1
       contexts:

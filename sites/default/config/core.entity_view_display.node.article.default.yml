@@ -7,11 +7,15 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_categories
     - field.field.node.article.field_changelog
+    - field.field.node.article.field_free_access_at
     - field.field.node.article.field_image
+    - field.field.node.article.field_is_premium_content
+    - field.field.node.article.field_scheduled_at
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
     - node.type.article
   module:
+    - datetime
     - responsive_image
     - text
     - user
@@ -33,6 +37,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_free_access_at:
+    weight: 8
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
   field_image:
     type: responsive_image
     weight: 0
@@ -41,6 +53,23 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
+  field_is_premium_content:
+    weight: 7
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_scheduled_at:
+    weight: 6
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
   field_tags:
     type: entity_reference_label
     weight: 4

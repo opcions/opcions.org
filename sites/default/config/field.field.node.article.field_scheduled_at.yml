@@ -1,0 +1,21 @@
+uuid: ef346c86-8d4a-4eff-9905-5b98985d91d4
+langcode: ca
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scheduled_at
+    - node.type.article
+  module:
+    - datetime
+id: node.article.field_scheduled_at
+field_name: field_scheduled_at
+entity_type: node
+bundle: article
+label: 'Publicació programada'
+description: 'Aquest article será publicat a la data i hora programada.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

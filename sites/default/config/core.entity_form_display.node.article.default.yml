@@ -7,13 +7,17 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_categories
     - field.field.node.article.field_changelog
+    - field.field.node.article.field_free_access_at
     - field.field.node.article.field_image
+    - field.field.node.article.field_is_premium_content
+    - field.field.node.article.field_scheduled_at
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
     - image.style.thumbnail
     - node.type.article
   module:
     - comment
+    - datetime
     - image
     - paragraphs
     - path
@@ -56,6 +60,11 @@ content:
       add_mode: dropdown
       form_display_mode: default
     third_party_settings: {  }
+  field_free_access_at:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
   field_image:
     type: image_image
     weight: 2
@@ -63,6 +72,17 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_is_premium_content:
+    weight: 15
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_scheduled_at:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
   field_tags:
     type: entity_reference_autocomplete_tags
     weight: 5
