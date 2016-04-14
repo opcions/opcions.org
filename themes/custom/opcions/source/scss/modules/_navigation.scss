@@ -1,73 +1,58 @@
 .header__navigation {
-  position:relative;
+  position: relative;
+
   @include breakpoint(medium) {
     padding-top: 2.4rem;
   }
-}
 
-.header__navigation .menu {
-  @include menu-base;
-  @include menu-direction(horizontal);
-  white-space: nowrap;
-  overflow: hidden;
-
-  .menu-item--collapsed {
-    list-style-type: none;
-    list-style-image: none;
+  .is-navigation-open & .menu {
+    opacity: 0;
   }
-}
 
-.header__navigation .header__navigation--toggle {
-  @include menu-base;
-  background: $brand-red;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  line-height: 1;
-  a {
-    color: $white;
+  .menu {
+    @include menu-base;
+    @include menu-direction(horizontal);
+    white-space: nowrap;
+    overflow: hidden;
+
+    .menu-item--collapsed {
+      list-style-type: none;
+      list-style-image: none;
+    }
   }
-  &:before {
+
+  .header__navigation--toggle {
+    background: $brand-red;
     position: absolute;
-    content: " ";
-    left: -3em;
-    width: 3em;
-    height: 100%;
-    background: linear-gradient(to left, $brand-red, transparent);
+    bottom: 0;
+    right: 0;
+    line-height: 1;
+    a {
+      color: $white;
+    }
+    &:before {
+      position: absolute;
+      content: " ";
+      left: -3em;
+      width: 3em;
+      height: 100%;
+      background: linear-gradient(to left, $brand-red, transparent);
+    }
   }
+
 }
 
-.region-navigation-main {
+.navigation-main {
 
   border: 1px solid $brand-red;
 
+  .menu {
+    @include menu-base;
+    @include menu-direction;
+  }
+
   .navigation-main__close {
-    @include button();
+    @include show-for-only(small)
+    @include button-expand;
   }
-  @include breakpoint(small only) {
-    background: $white;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    z-index: 10;
-    .navigation-main__close {
-      @include button-expand();
-    }
-  }
-}
-
-.navigation__top-bar {
-  background-color: $brand-red;
-  @include grid-col-row;
-  > * {
-    display: inline-block;
-  }
-  .navigation__top-bar--logo {
-    max-width: 120px;
-  }
-  .navigation__top-bar--toggle {
-    float: right;
-  }
-
-
-
 }

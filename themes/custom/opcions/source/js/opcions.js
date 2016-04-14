@@ -14,12 +14,12 @@
 
         if ($('.js-navigation-main-toggle').hasClass('close')) {
           $('.js-navigation-main').velocity('slideUp');
-          $('.layout-container').removeClass('js-navigation-open');
+          $('.layout-container').removeClass('is-navigation-open');
           $('html').removeClass('u-no-scroll');
         }
         else {
           $('.js-navigation-main').velocity('slideDown');
-          $('.layout-container').addClass('js-navigation-open');
+          $('.layout-container').addClass('is-navigation-open');
           if (Foundation.MediaQuery.current === 'small') {
             $('html').addClass('u-no-scroll');
           }
