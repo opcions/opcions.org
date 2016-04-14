@@ -33,6 +33,18 @@ function opcions_main_entity_extra_field_info() {
     return $extra;
 }
 
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function opcions_main_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+    $service = "opcions.main.${form_id}.alter";
+    if(Drupal::hasService($service)) {
+        Drupal::service($service)->alter($form, $form_state);
+    }
+}
+
 /**
  * Implements hook_ENTITY_TYPE_view().
  */

@@ -1,0 +1,3 @@
+services:
+  opcions.main.node_article_form.alter:
+    class: Drupal\opcions_main\Hook\NodeFormAlter
